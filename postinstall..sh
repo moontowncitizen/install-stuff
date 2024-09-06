@@ -51,6 +51,7 @@ sudo dnf install qbittorrent -y
 sudo dnf install libreoffice -y
 
 # Install Surfshark (beta version via Snap)
+sudo snap refresh
 sudo snap install surfshark --beta
 
 # Install Flatpak
@@ -71,7 +72,7 @@ cp -rv Gruvbox-Plus-Dark ~/.local/share/icons
 cd
 
 # Install GTK theme
-sudo dnf install gtk-murrine-engine
+sudo dnf install gtk-murrine-engine -y
 cd git
 git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git
 cd Gruvbox-GTK-Theme
@@ -105,8 +106,7 @@ chmod +x setup.sh
 cd
 
 # Notify user of completion
-echo "
- _          _          _          _       _      _     _   _             __               _                _
+echo "_          _          _          _       _      _     _   _             __               _                _
 | |        | |        | |        | |     | |    | |   | | | |           / _|             | |              (_)
 | |__   ___| |__   ___| |__   ___| |__   | | ___| |_  | |_| |__   ___  | |_ _   _ _ __   | |__   ___  __ _ _ _ __
 | '_ \ / _ \ '_ \ / _ \ '_ \ / _ \ '_ \  | |/ _ \ __| | __| '_ \ / _ \ |  _| | | | '_ \  | '_ \ / _ \/ _` | | '_ \
