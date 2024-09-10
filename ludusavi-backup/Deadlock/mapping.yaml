@@ -1,0 +1,141 @@
+---
+name: Deadlock
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-10T19:05:46.878136967Z"
+    os: linux
+    files:
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/boot.vcfg:
+        hash: f04251785228d09bfe428a88a1a40bc5644a2fba
+        size: 11
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_1v1_match.cfg:
+        hash: 6027fed7362414e626e36b16da917706ab141444
+        size: 153
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_6v6_spectator.cfg:
+        hash: b636b0b68f50aeaf6d8b884aedb273f9994d5386
+        size: 677
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_build_test.cfg:
+        hash: ed2dc4724311abe4b32b2b10969c257e92f8cf03
+        size: 678
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_practice_1v1.cfg:
+        hash: 8cdcf84361fa53b55f75953cfc4cc1ea619e9e56
+        size: 110
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_practice_2v2_guided.cfg:
+        hash: 5b7a71997fd98763be975b7a385c8f4efcf22f1d
+        size: 1134
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_practice_6v6.cfg:
+        hash: dbf681c29faeb890f89ae71183236a998a738226
+        size: 1221
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_practice_6v6_easy.cfg:
+        hash: d9e6098caf4ec0c144930cae5437a14835838614
+        size: 1252
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_practice_6v6_guided.cfg:
+        hash: 7289bfa4c3af79466f6d50436dd19b6ba0c14ba4
+        size: 1157
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_practice_6v6_hard.cfg:
+        hash: a045f1a00006792df6fd769a70b36d7928da7d48
+        size: 1256
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_practice_6v6_medium.cfg:
+        hash: 01f696314cf73c4980e246389259ab0f7a78d2a2
+        size: 1255
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_botmatch_test.cfg:
+        hash: 6bf0237ee21b8fc2bf7817df04de47c22da76351
+        size: 618
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_dev_intro_test.cfg:
+        hash: 1ff4874873ec450bf730d8b2dbf6d76cb1a5ea46
+        size: 380
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_lane_challenge.cfg:
+        hash: 010dea39c2a6415b83cfcb5ef005bddf569ad45d
+        size: 1194
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_lane_challenge_end.cfg:
+        hash: 023d4fb8a7fea65985f51ee10fca57ec32793ac7
+        size: 113
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_sandbox_match.cfg:
+        hash: 83e5e1632fc999816dfd1fc5562084e77a83181e
+        size: 149
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/citadel_server.cfg:
+        hash: 3f393ea5b1f408e4fd632e928c0d5bda47c37611
+        size: 474
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/configdefaults.linux.vcfg:
+        hash: c3e875e6eb5d69b91a73b002bee141ff3f57392c
+        size: 18
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/configdefaults.osx.vcfg:
+        hash: c3e875e6eb5d69b91a73b002bee141ff3f57392c
+        size: 18
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/configdefaults.pc.vcfg:
+        hash: c3e875e6eb5d69b91a73b002bee141ff3f57392c
+        size: 18
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/configschema.vcfg:
+        hash: e065a0114f61cf7dc7067f2d13bd8204fe428e1d
+        size: 73
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/machine_convars.vcfg:
+        hash: f3d1fc4e338970bfd97159a426589256a37042f1
+        size: 7769
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/machine_convars_default.vcfg:
+        hash: 12dce703863f0c6ed6b375b1f799f9bdd41bb7a6
+        size: 256
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/ps5_controller_mapping.vdf:
+        hash: 66f464fdc3a28ef5c14155bafe0ea35c86238ff6
+        size: 31329
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/steam_input_manifest.vdf:
+        hash: 18898b3700e4859a96c28543e1b7802ba2d22aa2
+        size: 5938
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/steamdeck_mapping.vdf:
+        hash: 9c1005209f44dbd28e0d0b9a5b450e0a7768a91e
+        size: 36343
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_convars_0_slot0.vcfg:
+        hash: 1f08806248f897e68d0b3d89b14c6400786e0aec
+        size: 1402
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_convars_0_slot0.vcfg_lastclouded:
+        hash: 1f08806248f897e68d0b3d89b14c6400786e0aec
+        size: 1402
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_keys_0_slot0.vcfg:
+        hash: d3ba0723f44217840ac5279688621a418e8eab16
+        size: 62
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_keys_0_slot0.vcfg_lastclouded:
+        hash: d3ba0723f44217840ac5279688621a418e8eab16
+        size: 62
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_keys_0_slot1.vcfg:
+        hash: 0aaa877feef1eb431d0fea131c389472d4944fa0
+        size: 16
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_keys_0_slot2.vcfg:
+        hash: 0aaa877feef1eb431d0fea131c389472d4944fa0
+        size: 16
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_keys_0_slot3.vcfg:
+        hash: 0aaa877feef1eb431d0fea131c389472d4944fa0
+        size: 16
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_keys_default.vcfg:
+        hash: 9f3557f8fb657edbaaa43e410040e9c62512b714
+        size: 818
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/user_keys_dev_default.vcfg:
+        hash: b0e5b75be6a473f5f53c5c915f6af619f1eae0ce
+        size: 1077
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/video.txt:
+        hash: fcaf527a12d84cde068fc1fd94686c3d7a38487d
+        size: 2080
+      /home/leigh/.local/share/Steam/steamapps/common/Deadlock/game/citadel/cfg/video.txt.bak:
+        hash: 809dd29c2c6d43028e21b01a8bf30753654f31b5
+        size: 309
+      /home/leigh/.local/share/Steam/userdata/252023632/1422450/remote/cfg/cached_hero_builds.kv3:
+        hash: 767fe070895c2c431aa381d823993863bf439b76
+        size: 589
+      /home/leigh/.local/share/Steam/userdata/252023632/1422450/remote/cfg/citadelkeys_personal.lst:
+        hash: 84d7afa75dc301be85efb2264fa7dacb50990c1d
+        size: 2584
+      /home/leigh/.local/share/Steam/userdata/252023632/1422450/remote/cfg/pending_replay_requests.lst:
+        hash: f3729c42d2e8b8161024ac4e30276a2362ff6585
+        size: 28
+      /home/leigh/.local/share/Steam/userdata/252023632/1422450/remote/user_convars.vcfg:
+        hash: 81f580f65148e59c7ee48e21bf70ed18eddef21c
+        size: 1354
+      /home/leigh/.local/share/Steam/userdata/252023632/1422450/remote/user_keys.vcfg:
+        hash: dcc513247c62fda46eff47e8d4284ceffb5ad9f8
+        size: 55
+      /home/leigh/.local/share/Steam/userdata/252023632/1422450/remote/voice_ban.dt:
+        hash: 2c5c48655f74be0b6d83b0d5d9dfd1f44021e556
+        size: 10
+    registry:
+      hash: ~
+    children: []

@@ -1,0 +1,440 @@
+[Public]
+;Object=(Name=Engine.Console,Class=Class,MetaClass=Engine.Console)
+Object=(Name=Engine.ServerCommandlet,Class=Class,MetaClass=Core.Commandlet)
+Preferences=(Caption="Advanced",Parent="Advanced Options")
+Preferences=(Caption="Game Engine Settings",Parent="Advanced",Class=Engine.GameEngine,Category=Settings,Immediate=True)
+Preferences=(Caption="Key Aliases",Parent="Advanced",Class=Engine.Input,Immediate=True,Category=Aliases)
+Preferences=(Caption="Raw Key Bindings",Parent="Advanced",Class=Engine.Input,Immediate=True,Category=RawKeys)
+Preferences=(Caption="Drivers",Parent="Advanced Options",Class=Engine.Engine,Immediate=False,Category=Drivers)
+Preferences=(Caption="Public Server Information",Parent="Networking",Class=Engine.GameReplicationInfo,Immediate=True)
+Preferences=(Caption="Game Settings",Parent="Advanced Options",Class=Engine.GameInfo,Immediate=True)
+
+[Errors]
+NetOpen=Error opening file
+NetWrite=Error writing to file
+NetRefused=Server refused to send '%s'
+NetClose=Error closing file
+NetSize=File size mismatch
+NetMove=Error moving file
+NetInvalid=Received invalid file request
+NoDownload=Package '%s' is not downloadable
+DownloadFailed=Downloading package '%s' failed: %s
+RequestDenied=Server requested file from pending level: Denied
+ConnectionFailed=Connection failed
+ChAllocate=Couldn't allocate channel
+NetAlready=Already networking
+NetListen=Listen failed: No linker context available
+LoadEntry=Can't load Entry: %s
+InvalidUrl=Invalid URL: %s
+InvalidLink=Invalid Link: %s
+FailedBrowse=Failed to enter %s: %s
+Listen=Listen failed: %s
+AbortToEntry=Failed; returning to Entry
+ServerOpen=Servers can't open network URLs
+ServerListen=Dedicated server can't listen: %s
+Pending=Pending connect to '%s' failed; %s
+LoadPlayerClass=Failed to load player class
+ServerOutdated=This server is using an older version than your current version. You must join a different server.
+ClientOutdated=You need to apply the latest patches
+ConnectLost=Connection Lost
+Kicked=You have been kicked off this server
+Disconnected=Disconnected
+NoReplace=Couldn't replace '%s' with '%s'
+FailedEntry=Unable to load Entry. Your installation of POSTAL 2 may be corrupt. %s
+
+[Progress]
+CancelledConnect=Cancelled Connect Attempt
+RunningNet=%s: %s (%i players)
+NetReceiving=Receiving '%s': %i/%i
+NetReceiveOk=Successfully received '%s'
+NetSend=Sending '%s'
+NetSending=Sending '%s': %i/%i
+Connecting=Connecting...
+Listening=Listening for clients...
+Loading=Loading
+Saving=Saving
+Paused=Paused by %s
+ReceiveFile=Receiving '%s'
+ReceiveOptionalFile=Receiving optional file '%s'
+ReceiveSize=Size %iK, Complete %3.1f%%
+ConnectingText=Connecting to server:
+ConnectingURL=Postal2://%s/%s
+
+[Console]
+ClassCaption=Standard Postal2 Console
+LoadingMessage=LOADING
+SavingMessage=SAVING
+ConnectingMessage=CONNECTING
+PausedMessage=PAUSED
+PrecachingMessage=PRECACHING
+ChatChannel=(CHAT) 
+TeamChannel=(TEAM) 
+
+[General]
+Upgrade=To join this server you need the latest Postal2 update, available from the web site.
+UpgradeURL=http://www.postal2.com/ingame/upgrade
+UpgradeQuestion=Do you want to launch your web browser and go to the upgrade page now?
+Version=Version %i
+
+[Menu]
+HelpMessage=
+MenuList=
+LeftString=Left
+RightString=Right
+CenterString=Center
+EnabledString=Enabled
+DisabledString=Disabled
+HelpMessage[1]=This menu has not yet been implemented.
+YesString=yes
+NoString=no
+
+[Inventory]
+PickupMessage=Snagged an item
+M_Activated= activated
+M_Selected= selected
+M_Deactivated= deactivated
+ItemArticle=a
+
+[WarpZoneInfo]
+OtherSideURL=
+
+[GameInfo]
+SwitchLevelMessage=Switching Levels
+DefaultPlayerName=Player
+LeftMessage= left the game.
+FailedSpawnMessage=Failed to spawn player actor
+FailedPlaceMessage=Could not find starting spot (level might need a 'PlayerStart' actor)
+NameChangedMessage=Name changed to 
+EnteredMessage= entered the game.
+GameName=Game
+MaxedOutMessage=Server is already at capacity.
+WrongPassword=The password you entered is incorrect.
+NeedPassword=You need to enter a password to join this game.
+FailedTeamMessage=Could not find team for player
+
+[LevelInfo]
+Title=Untitled
+
+[Weapon]
+MessageNoAmmo=" has no ammo."
+PickupMessage=You got a weapon
+DeathMessage=%o was killed by %k's %w.
+ItemName=Weapon
+DeathMessage[0]=%o was killed by %k's %w.
+DeathMessage[1]=%o was killed by %k's %w.
+DeathMessage[2]=%o was killed by %k's %w.
+DeathMessage[3]=%o was killed by %k's %w.
+
+[Counter]
+CountMessage=Only %i more to go...
+CompleteMessage=Completed!
+
+[Ammo]
+PickupMessage=You picked up some ammo.
+
+[Pickup]
+ExpireMessage=
+PickupMessage=Snagged an item.
+
+[SpecialEvent]
+DamageString=
+
+[DamageType]
+Name=killed
+AltName=killed
+DeathString=%o was killed by %k.
+FemaleSuicide=%o killed herself.
+MaleSuicide=%o killed himself.
+
+[PlayerPawn]
+QuickSaveString=Quick Saving
+NoPauseMessage=Game is not pauseable
+ViewingFrom=Now viewing from 
+OwnCamera=own camera
+FailedView=Failed to change view.
+CantChangeNameMsg=You can't change your name during a global logged game.
+
+[Pawn]
+NameArticle= a 
+
+[Spectator]
+MenuName=Spectator
+
+[ServerCommandlet]
+HelpCmd=server
+HelpOneLiner=Network game server
+HelpUsage=server map.fuk[?game=gametype] [-option...] [parm=value]...
+HelpWebLink=http://www.postal2.com/ingame/tips
+HelpParm[0]=Log
+HelpDesc[0]=Specify the log file to generate
+HelpParm[1]=AllAdmin
+HelpDesc[1]=Give all players admin privelages
+
+[SubActionSceneSpeed]
+Desc=Scene Speed
+
+[MatSubAction]
+Desc=N/A
+
+[SubActionGameSpeed]
+Desc=Game Speed
+
+[SubActionOrientation]
+Desc=Orientation
+
+[SubActionCameraShake]
+Desc=Shake
+
+[SubActionFOV]
+Desc=FOV
+
+[SubActionTrigger]
+Desc=Trigger
+
+[SubActionFade]
+Desc=Fade
+
+[SubActionCameraEffect]
+Desc=Camera effect
+
+[TeamInfo]
+ColorNames[0]=Red
+ColorNames[1]=Blue
+ColorNames[2]=Green
+ColorNames[3]=Gold
+TeamName=Team
+
+[Volume]
+LocationName=unspecified
+
+[PlayerController]
+QuickSaveString=Quick Saving
+NoPauseMessage=Game is not pauseable
+ViewingFrom=Now viewing from
+OwnCamera=Now viewing from own camera
+TravelFailTitle=Error Loading Game or Map
+TravelFailText=The map or save game may depend on Steam Workshop and/or game mod resources no longer present, or your copy of POSTAL 2 may be corrupt.
+
+[HUD]
+LoadingMessage=LOADING
+SavingMessage=SAVING
+ConnectingMessage=CONNECTING
+PausedMessage=PAUSED
+
+[Crushed]
+DeathString="%o was crushed by %k."
+FemaleSuicide=%o was crushed.
+MaleSuicide=%o was crushed.
+
+[Gibbed]
+DeathString=%o exploded in a shower of body parts
+FemaleSuicide=%o exploded in a shower of body parts
+MaleSuicide=%o exploded in a shower of body parts
+
+[fell]
+DeathString=%o left a small crater
+FemaleSuicide=%o left a small crater
+MaleSuicide=%o left a small crater
+
+[Suicided]
+DeathString=%o had a sudden heart attack.
+
+[GameMessage]
+SwitchLevelMessage=Switching Levels
+LeftMessage=" left the game."
+FailedTeamMessage=Could not find team for player
+FailedPlaceMessage="Could not find a starting spot"
+FailedSpawnMessage="Could not spawn player"
+EnteredMessage=" entered the game."
+MaxedOutMessage=Server is already at capacity.
+OvertimeMessage=Score tied at the end of regulation. Sudden Death Overtime!!!
+GlobalNameChange=changed name to
+NewTeamMessage=is now with
+NoNameChange=Name is already in use.
+
+[AccessControl]
+IPBanned="Your IP address has been banned on this server."
+WrongPassword=The password you entered is incorrect.
+NeedPassword=You need to enter a password to join this game.
+
+[WeaponPickup]
+PickupMessage=You got a weapon
+
+[UpgradeDrivers]
+OutdatedDrivers=Your computer is using old video card drivers that may not work correctly with this game.
+InsertCD=Please make sure the Postal 2 CD is inserted
+NvidiaURL=http://www.nvidia.com/content/drivers/drivers.asp
+NvidiaDriverVersion=4109
+NvidiaWin9xDriver=\Extras\Drivers\Win9x\NVIDIA\41.09_win9x.exe
+NvidiaWin2kDriver=\Extras\Drivers\Win2k\NVIDIA\41.09_win2kxp.exe
+ATIWin9xDriverVersion=9082
+ATIWin9xDriver=\Extras\Drivers\Win9x\ATI\wme-radeon-4.14.01.9082-efg.exe
+ATIWin2kDriverVersion=6292
+ATIWin2kDriver=\Extras\Drivers\Win2k\ATI\w2k-radeon-5.14.01.6292-efg.exe
+ATIWinXpDriverVersion=6292
+ATIWinXpDriver=\Extras\Drivers\Win2k\ATI\wxp-radeon-6.14.01.6292-efg.exe
+AtiURL=http://www.ati.com/support/driver.html
+CDButton=Upgrade from CD
+WebButton=Upgrade from Web
+CancelButton=Don't Upgrade
+
+[InitialConfiguration]
+;ComputerBelowSpec=Your computer appears to be below the\0c\0cminimum system requirements for this game\0c\0cThe settings have been configured so the\0cgame may run on your computer but it may\0clook and perform poorly.\0c\0cYou should use the Options menu in the game\0cto turn off or reduce various performance-\0cintensive game features.
+;VideoBelowSpec=
+
+[Mutator]
+FriendlyName=Mutator
+Description=Description
+
+[PlayerReplicationInfo]
+StringDead=Dead
+StringSpectating=Spectating
+StringUnknown=Unknown
+
+[SteamWorkshop]
+Default=Workshop data
+Downloading=Downloading '%s'
+DownloadingPercent=Downloading '%s' (%i%%)
+Saving=Saving '%s'
+Decompressing=Decompressing '%s' (game may appear frozen)
+Unpackaging=Unpackaging '%s'
+Finalizing=Finalizing '%s'
+ErrorSteam=ERROR! Code %i
+ErrorGeneral=ERROR unpacking Workshop data! Try restarting POSTAL 2.
+UpdatingPaths=Finalizing
+RemovingFiles=Removing unsubscribed files
+FileData=File info: %i
+AcceptWorkshopAgreement=You must agree to the Steam Workshop Terms and Conditions before uploading a file.
+BannedFromWorkshop=Upload Error: You have been banned from the POSTAL 2 Steam Workshop.
+WorkshopTimeout=Upload Error: Connection timed out. Please try again.
+WorkshopNotLoggedOn=Upload Error: You are not logged into Steam.
+WorkshopErrorGeneric=Upload Error: %s
+UploadStatus0=Waiting...
+UploadStatus1=Processing Workshop item...
+UploadStatus2=Preparing content...
+UploadStatus3=Uploading content...
+UploadStatus4=Uploading preview file...
+UploadStatus5=Committing changes...
+UploadSuccess=Success!
+UploadSuccessAcceptWorkshopAgreement=Success! You must accept the Steam Workshop Terms of Service before your item is publicly visible.
+ErrorRetrievingPublishedFiles=Error: Unable to retrieve published files. Please try again. 
+RetrievedPublishedFiles=Published items retrieved.
+ErrorRetrievingFileDetails=Error: Unable to retrieve details of selected file. Please try again. 
+FileUploadFailed=Error: Failed to upload file. 
+PreviewUploadFailed=Error: Failed to upload preview file. 
+PublishFailed=Error: Failed to publish to Steam Workshop. 
+PublishErrorConnection=Connection to Steam failed. 
+PublishErrorFileNotFound=File was not found. 
+PublishErrorNotLoggedIn=You are not logged into Steam or the Steam servers are down. 
+PublishErrorNoFiles=Please add files to upload.
+PublishErrorNoPreviewImage=Please select a preview image for this Workshop item.
+PublishErrorBadPreviewImage=Error: Could not read preview image.
+PublishErrorTitleTooLong=Error: Title exceeds %i character limit.
+PublishErrorTitleMissing=Please input a title for this Workshop item.
+PublishErrorDescriptionTooLong=Error: Description exceeds %i character limit.
+PublishErrorDescriptionMissing=Please input a title for this Workshop item.
+PublishErrorUpdateDescriptionTooLong=Error: Update detail exceeds %i character limit.
+PublishErrorPreviewImageTooBig=Error: Preview image cannot exceed 1 MB in size.
+
+[SteamErrors]
+1=Success
+2=Generic failure
+3=No network connection
+4=Unknown error
+5=Invalid password
+6=User is already logged in elsewhere
+7=Invalid protocol version
+8=Invalid parameter
+9=File not found
+10=Called method busy
+11=Called object in invalid state
+12=Name is invalid
+13=Email is invalid
+14=Name is not unique
+15=Access denied
+16=Operation timed out
+17=User is VAC banned
+18=Account not found
+19=Invalid Steam ID
+20=Service unavailable
+21=Not logged in
+22=Request pending
+23=Encryption failure
+24=Insufficient privilege
+25=Limit exceeded
+26=Guest access revoked
+27=License expired
+28=Guest pass already redeemed
+29=Duplicate request
+30=Games already owned
+31=IP address not found
+32=Failed to write change to data store
+33=Failed to acquire access lock
+34=Logon session replaced
+35=Connection failed
+36=Handshake failed
+37=I/O failure
+38=Remote disconnect
+39=Shopping cart not found
+40=Blocked by target
+41=Ignored by target
+42=No match
+43=Account disabled
+44=Service is read-only
+45=Account not featured
+46=Administrator OK
+47=Content version mismatch
+48=Try another CM
+49=Cached login failed
+50=Already logged in elsewhere
+51=Operation suspended
+52=Operation cancelled
+53=Data corrupted
+54=Disk full
+55=Remote call failed
+56=Password unset
+57=External account not linked
+58=PSN ticket invalid
+59=External account already linked
+60=Remote file conflict
+61=Illegal password
+62=Same as previous value
+63=Two-factor auth failed
+64=Cannot use old password
+65=Invalid login auth code
+66=Two-factor auth failure, no email sent
+67=Hardware not capable of IPT
+68=IPT init error
+69=Parental controls restrict this action
+70=Facebook query error
+71=Expired login auth code
+72=IP login restriction failed
+73=Account locked down
+74=Account logon denied, verified email required
+75=No matching URL
+76=Bad response
+77=Password must be re-entered
+78=Value out of range
+79=Unexpected error
+80=Service disabled
+81=Invalid CEG submission
+82=Restricted device
+83=Region locked
+84=Rate limit exceeded, try again later
+85=Login failed, two-factor authentication required
+86=Item deleted
+87=Account login denied
+88=Two-factor code mismatch
+89=Two-factor activation code mismatch
+90=Account associated to multiple partners
+91=Data not modified
+92=No mobile device
+93=Time not synced
+94=SMS code failed
+95=Account limit exceeded
+96=Too many changes to this account
+97=Too many changes to this phone
+
+[UseTrigger]
+Message=Press %KEY_InventoryActivate% to use object.
+

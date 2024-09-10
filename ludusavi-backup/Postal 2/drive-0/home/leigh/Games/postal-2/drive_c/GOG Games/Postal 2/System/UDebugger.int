@@ -1,0 +1,5 @@
+[General]
+Start=POSTAL 2 [UnrealScript Debug Mode] (Starting)
+Exit=POSTAL 2 [UnrealScript Debug Mode] (Exiting)
+Run=POSTAL 2 [UnrealScript Debug Mode] (Running)
+Product=POSTAL 2 [UnrealScript Debug Mode]

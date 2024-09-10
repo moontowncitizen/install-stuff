@@ -1,0 +1,30 @@
+---
+name: Cruelty Squad
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-10T19:05:46.615003654Z"
+    os: linux
+    files:
+      /home/leigh/.local/share/Steam/steamapps/compatdata/1388770/pfx/drive_c/users/steamuser/AppData/Roaming/Godot/app_userdata/Cruelty Squad/backup.save:
+        hash: 00f6d07072f8b7aee8bb0a52e95fa7b16587ed11
+        size: 6350
+      /home/leigh/.local/share/Steam/steamapps/compatdata/1388770/pfx/drive_c/users/steamuser/AppData/Roaming/Godot/app_userdata/Cruelty Squad/logs/godot.log:
+        hash: 20b749caeb482db44f5557e200abe81a8997a801
+        size: 3300
+      /home/leigh/.local/share/Steam/steamapps/compatdata/1388770/pfx/drive_c/users/steamuser/AppData/Roaming/Godot/app_userdata/Cruelty Squad/savegame.save:
+        hash: 55d631874afacbdec415a9b3776bde12d2258738
+        size: 6350
+      /home/leigh/.local/share/Steam/steamapps/compatdata/1388770/pfx/drive_c/users/steamuser/AppData/Roaming/Godot/app_userdata/Cruelty Squad/settings.save:
+        hash: 348935c01556451d8d147b13978601daf82a5013
+        size: 544
+      /home/leigh/.local/share/Steam/steamapps/compatdata/1388770/pfx/drive_c/users/steamuser/AppData/Roaming/Godot/app_userdata/Cruelty Squad/stock_backup.save:
+        hash: cc4bcef5f741669fa8b79b1304715889adee8e9d
+        size: 8837
+      /home/leigh/.local/share/Steam/steamapps/compatdata/1388770/pfx/drive_c/users/steamuser/AppData/Roaming/Godot/app_userdata/Cruelty Squad/stocks.save:
+        hash: 34604cac834e85428bec73c523488539bf17bb7b
+        size: 8819
+    registry:
+      hash: ~
+    children: []

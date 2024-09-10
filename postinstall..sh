@@ -19,7 +19,7 @@ sudo dnf update -y
 # Copy Config and Icons
 cp -rv /home/leigh/install-stuff/.config /home/leigh/
 cp -rv /home/leigh/install-stuff/.icons /home/leigh/
-
+cp -rv /home/leigh/install-stuff/ludusavi-backup /home/leigh/
 # Install cli pride flags
 cd git
 sudo dnf install nodejs -y
@@ -106,7 +106,8 @@ chmod +x setup.sh
 cd
 
 # Notify user of completion
-echo "_          _          _          _       _      _     _   _             __               _                _
+echo "
+ _          _          _          _       _      _     _   _             __               _                _
 | |        | |        | |        | |     | |    | |   | | | |           / _|             | |              (_)
 | |__   ___| |__   ___| |__   ___| |__   | | ___| |_  | |_| |__   ___  | |_ _   _ _ __   | |__   ___  __ _ _ _ __
 | '_ \ / _ \ '_ \ / _ \ '_ \ / _ \ '_ \  | |/ _ \ __| | __| '_ \ / _ \ |  _| | | | '_ \  | '_ \ / _ \/ _` | | '_ \

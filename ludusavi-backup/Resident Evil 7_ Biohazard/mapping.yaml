@@ -1,0 +1,15 @@
+---
+name: "Resident Evil 7: Biohazard"
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-10T19:05:46.617308063Z"
+    os: linux
+    files:
+      /home/leigh/Games/resident-evil-7-biohazard/drive_c/Program Files (x86)/DODI-Repacks/Resident Evil 7 Biohazard/re7_config.ini:
+        hash: 1824655d83c3cbb8ca210197401147585d4455c3
+        size: 7932
+    registry:
+      hash: ~
+    children: []

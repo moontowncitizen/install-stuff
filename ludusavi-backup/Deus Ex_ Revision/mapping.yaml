@@ -1,0 +1,33 @@
+---
+name: "Deus Ex: Revision"
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-10T19:05:46.868541277Z"
+    os: linux
+    files:
+      /home/leigh/.local/share/Steam/steamapps/common/Deus Ex/Revision/Save/QuickSave/05_NYC_UNATCOMJ12lab.dxs:
+        hash: a388a58498f88fab98aeb41aa6ea62f955878046
+        size: 11887432
+      /home/leigh/.local/share/Steam/steamapps/common/Deus Ex/Revision/Save/QuickSave/SaveInfo.dxs:
+        hash: f097975bccab044a2d34ea68d03ac72975278ded
+        size: 34575
+      /home/leigh/.local/share/Steam/steamapps/common/Deus Ex/Revision/Save/Save-005/05_NYC_UNATCOMJ12lab.dxs:
+        hash: 1878496d8fecfa22e9f755860ea895fdc9e01a32
+        size: 11887774
+      /home/leigh/.local/share/Steam/steamapps/common/Deus Ex/Revision/Save/Save-005/SaveInfo.dxs:
+        hash: fb02c4314c8c498b651d0722a9aea9bbbddb5efb
+        size: 34574
+      /home/leigh/.local/share/Steam/steamapps/common/Deus Ex/Revision/Save/Save-006/05_NYC_UNATCOMJ12lab.dxs:
+        hash: 870c5213e230827bf2cec1eb74f6cb10da82b85f
+        size: 11906283
+      /home/leigh/.local/share/Steam/steamapps/common/Deus Ex/Revision/Save/Save-006/SaveInfo.dxs:
+        hash: cdb3880e714e1716b240bf4e7cadc92ad00695e6
+        size: 34575
+      /home/leigh/.local/share/Steam/steamapps/common/Deus Ex/Revision/Save/steam_autocloud.vdf:
+        hash: 1a74523f90ec93b987182867bb08cfd0e5ad5181
+        size: 52
+    registry:
+      hash: ~
+    children: []

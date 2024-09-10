@@ -1,0 +1,48 @@
+---
+name: Dolphin
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-10T19:05:46.801429807Z"
+    os: linux
+    files:
+      /home/leigh/.config/dolphin-emu/DSUClient.ini:
+        hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+        size: 0
+      /home/leigh/.config/dolphin-emu/Debugger.ini:
+        hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+        size: 0
+      /home/leigh/.config/dolphin-emu/Dolphin.ini:
+        hash: 6cf42f86cc1b2d3db27d55690cc24b4e03e9de55
+        size: 634
+      /home/leigh/.config/dolphin-emu/FreeLook.ini:
+        hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+        size: 0
+      /home/leigh/.config/dolphin-emu/FreeLookController.ini:
+        hash: f665b5d0e5e397b9185f33e725196a49cd345425
+        size: 951
+      /home/leigh/.config/dolphin-emu/GBA.ini:
+        hash: 913fd83952fdc4d0785dbd16207904a60dd3b466
+        size: 373
+      /home/leigh/.config/dolphin-emu/GCKeyNew.ini:
+        hash: ae6f6e7249e5a10494423564388358ddafdb18fa
+        size: 1507
+      /home/leigh/.config/dolphin-emu/GCPadNew.ini:
+        hash: 18aa0312e1c3a448a1b997ad4a233b3bb2dbb783
+        size: 1226
+      /home/leigh/.config/dolphin-emu/GFX.ini:
+        hash: 23e33c3fb8ec1f6b318b6536986dfcfc3cdf6781
+        size: 659
+      /home/leigh/.config/dolphin-emu/Logger.ini:
+        hash: 8b9914de682128c3bd276078b97a8091b09fdb65
+        size: 882
+      /home/leigh/.config/dolphin-emu/Qt.ini:
+        hash: 665ff13b41b2c385f18465a76f3a09c74a33b98f
+        size: 5890
+      /home/leigh/.config/dolphin-emu/WiimoteNew.ini:
+        hash: 87753f01a92623a327c1c2d7b0b78f1688a49af1
+        size: 3180
+    registry:
+      hash: ~
+    children: []

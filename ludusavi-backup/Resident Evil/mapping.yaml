@@ -1,0 +1,21 @@
+---
+name: Resident Evil
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-10T19:05:46.598622969Z"
+    os: linux
+    files:
+      /home/leigh/Games/resident-evil-hd/system.reg:
+        hash: b1256ba595c5abedbc349b518f9660b1f78c1ea4
+        size: 3773162
+      /home/leigh/Games/resident-evil-hd/user.reg:
+        hash: b13e6ce68c938307af8265943a4e2f6c23cc5ac4
+        size: 79608
+      /home/leigh/Games/resident-evil-hd/userdef.reg:
+        hash: c27df303c9bb6af528a1025502879aa09b717804
+        size: 4052
+    registry:
+      hash: ~
+    children: []

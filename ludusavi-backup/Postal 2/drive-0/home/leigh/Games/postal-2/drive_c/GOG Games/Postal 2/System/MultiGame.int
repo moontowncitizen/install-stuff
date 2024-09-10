@@ -1,0 +1,286 @@
+[MpScoreBoard]
+MapTitleIn=in
+ElapsedTimeString=Elapsed Time:
+RemainingTimeString=Time Remaining:
+ScoreGoalString=Score Limit:
+MaxLivesString=Max Lives:
+PlayerString=Player
+ScoreString=Score
+FragsString=Frags
+DeathsString=Deaths
+PingString=Ping
+NetString=Net
+TimeString=Time
+PostGameEndMessage=" won the round!"
+TieGameMessage=Round ends with no winner.
+SomePlayersNotShownPrefix=[
+SomePlayersNotShownSuffix=" additional players not shown]"
+DeadFireText=You were killed.  Press %KEY_Fire% to restart.
+OutFireText=You are OUT.  Press %KEY_Fire% to view other players.
+WaitingToSpawn=Press %KEY_Fire% to join the match!
+InitialViewingString="Press %KEY_Fire% to track other players or %KEY_AltFire% for free cam"
+StartFireText=Press %KEY_Fire% to start
+ReadyText=READY
+NotReadyText=NOT
+OutText=OUT
+ForNextText=Press %KEY_AltFire% for next tip.
+ToggleScoreText=Press %KEY_ShowScores% to toggle scoreboard.
+MpHints[0]=Guns have much less recoil when standing still or crouching.
+MpHints[2]=Shooting a gun while running makes it much harder to control.
+MpHints[4]=Shots to the head (headshots) will always
+MpHints[5]=do more damange than shots to the body.
+MpHints[6]=Extra skull fragments squirt out when you shoot
+MpHints[7]=someone in the head.  That signals a headshot!
+MpHints[8]=A single shotgun to the head at close range will kill anyone.
+MpHints[9]=Instantly.
+MpHints[10]=Kick doors open to go through them faster!
+MpHints[12]=Alt-Fire grenades to drop them as grenade traps.
+MpHints[13]=You can kick your own grenade three times before it blows up.
+MpHints[14]=Shoot seeking rockets out of the air
+MpHints[15]=or kick them away to buy yourself some time!
+MpHints[16]=The fish radar only tracks people that are moving.
+MpHints[17]=Stand still to hide your position!
+MpHints[18]=When snipers aim at you, your screen will go dark.
+MpHints[19]=When your screen goes dark, run for it!
+MpHints[20]=When your sniper scope is up it will reflect
+MpHints[21]=flashes of light and give away your position.
+MpHints[22]=Keep the Fire button down for grenades, molotovs
+MpHints[23]=and rockets to have them ready to use!
+MpHints[24]=Close-range shotgun blasts to the head
+MpHints[25]=will kill anyone with one shot.
+MpHints[26]=Watch out for grenade traps -- they look like
+MpHints[27]=grenade pickups but the grenade traps don't glow.
+MpHints[28]=Piss yourself out if you're on fire!
+MpHints[29]=Or run into other people to catch them on fire!
+MpHints[30]=A white puff coming from someone's head means they
+MpHints[31]=just smoked a health pipe and regained 125 in health!
+MpHints[32]=Use the Quickhealth key to quickly
+MpHints[33]=regain health during a fire-fight!
+MpHints[34]=Breadcrumbs falling from someone's face means
+MpHints[35]=they just ate fast food and regained health!
+MpHints[36]=Kevlar does not stop headshots.
+MpHints[37]=Kevlar protects the entire body but not the head.
+MpHints[38]=If you're shooting someone and they're just not dying,
+MpHints[39]=they're probably eating food or smoking a health pipe.
+MpHints[40]=Bigger items on the radar are ABOVE you.
+MpHints[41]=Smaller items on the radar are BELOW you.
+ServerText=Server: 
+
+[TeamScoreBoard]
+WaitingPlayerString=Spectating
+TeamHints[0]=If you're shooting someone and they're not
+TeamHints[1]=getting hurt, they're probably on your team!
+TeamHints[2]=Travel in packs with your teammates to
+TeamHints[3]=increase your chances.
+TeamHints[4]=Switch to your hands and press Fire
+TeamHints[5]=to tell teammates to follow you.
+TeamHints[6]=Switch to your hands and press Secondary Fire
+TeamHints[7]=to tell teammates to stay put.
+TeamHints[8]=Explosions hurt everyone, regardless of team.
+
+[TeamIntro]
+YourTeamString=Your Team
+EnemyTeamString=Enemy Team
+
+[MpHUD]
+ViewFrom=Tracking 
+LoadoutMessage=Your next character:
+LoadoutCycle=" (F7 cycles)"
+RankingText[0]=1st
+RankingText[1]=2nd
+RankingText[2]=3rd
+RankingText[3]=4th
+RankingText[4]=5th
+RankingText[5]=6th
+RankingText[6]=7th
+RankingText[7]=8th
+RankingText[8]=9th
+RankingText[9]=10th
+RankingText[10]=11th
+RankingText[11]=12th
+RankingText[12]=13th
+RankingText[13]=14th
+RankingText[14]=15th
+RankingText[15]=16th
+
+[TeamHUD]
+StartupTeamPrefix=You are on 
+StartupTeamChange=(F4 changes)
+
+[GBScoreboard]
+GBHints[0]=Grab 10 Bags to Win!
+GBHints[1]=You gain more attack power with each bag!
+GBHints[2]=You get 25% more powerful with each bag you grab.
+GBHints[4]=The extra power you get from grabbing bags helps you defend
+GBHints[5]=yourself when everyone else tries to get them from you!
+GBHints[6]=Each of your weapons gets stronger the more bags you have!
+GBHints[8]=Pistol headshots normally kill with 2 shots but get more powerful
+GBHints[9]=with each bag you have.  With 4 bags they take just 1 shot.
+GBHints[10]=When people are killed they drop all their bags.
+GBHints[11]=That's the time to sweep in and grab them!
+GBHints[12]=Dropped bags show up as yellow starfish on the radar.
+GBHints[14]=People without bags show up as WHITE fish on the radar.
+GBHints[15]=People with bags show up as RED fish -- go after them!
+GBHints[16]=Bags automatically return to their original positions 30 seconds
+GBHints[17]="after being dropped -- if they aren't picked up before then."
+GBHints[18]=Players with bags will ALWAYS show up on the radar!
+ScoreGoalString=Bag Goal:
+ScoreString=Bags
+MatchHintText1=Grab 10 Bags to Win!
+MatchHintText2=You gain more attack power with each bag!
+
+[DMScoreboard]
+DMHints[0]=Deaths count against your score.
+DMHints[1]=Try to stay alive as long as possible!
+DMHints[4]=It takes 6 machinegun headshots to kill someone will full health,
+DMHints[5]=or 8 if they just used a health pipe.
+DMHints[6]=Shotguns are not very effective at long distances.
+MpHints[2]=It takes 2 pistol headshots to kill someone will full health,
+MpHints[3]=or 3 if they just used a health pipe.
+
+[TimeMessage]
+TimeMessage[0]=1...
+TimeMessage[1]=2...
+TimeMessage[2]=3...
+TimeMessage[3]=4...
+TimeMessage[4]="5 seconds and counting..."
+TimeMessage[5]="6..."
+TimeMessage[6]=7...
+TimeMessage[7]=8...
+TimeMessage[8]=9...
+TimeMessage[9]=10 seconds left!
+TimeMessage[10]=30 seconds left!
+TimeMessage[11]=1 minute left in the game!
+TimeMessage[12]=2 minutes left in the game!
+TimeMessage[13]=3 minutes left in the game!
+TimeMessage[14]=4 minutes left in the game!
+TimeMessage[15]=5 minutes left in the game!
+
+[CTFScoreboard]
+CTFHints[0]=Snatch the enemy's Babe and get her
+CTFHints[1]=in bed with your own Babe to score!
+CTFHints[2]=Try storming the enemy base in a group
+CTFHints[3]=to increase your chances!
+CTFHints[4]=Litter your base with grenade traps
+CTFHints[5]=for protection and early alerts!
+CTFHints[6]=Use the fish finder radar to find out
+CTFHints[7]=where the Babes are!
+CTFHints[8]=Drop cowheads around your Babe to injure
+CTFHints[9]=those trying to snatch her!
+CTFHints[10]=Try to keep at least one person guarding
+CTFHints[11]=your Babe at all times.
+CTFHints[12]=Use cowheads to hinder movement through
+CTFHints[13]=important chokepoints!
+ScoreGoalString=Capture Limit:
+
+[MutNoSavedHealth]
+FriendlyName=No Health Hoarding
+Description=Changes health pipes and fast food so they give you health when you pick them up instead of going into your inventory.  This keeps you from hoarding health and then using it during battle.
+
+[xDeathMessage]
+KilledString=was killed by
+SomeoneString=someone
+
+[MutNoCrack]
+FriendlyName=No Health Pipes
+Description=Changes all health pipes to medkits.  This keeps you from getting huge health boosts during battle.
+
+[KillerMessagePlus]
+YouKilled=You killed
+
+[VictimMessage]
+YouWereKilledBy=You were killed by
+KilledByTrailer=!
+
+[MutCTFNoTouchReturns]
+FriendlyName=CTF No Touch Return
+Description=Only for Snatch-CTF games.  Turns off being able to return a dropped chick by touching her.  Instead she'll stay there for 20 seconds and then automatically return.  This leaves her vulnerable to attack and forces her team to guard her.
+
+[TeamBand]
+TeamDescription=When not selling fudge bars to fund their drunken Band Camp trips, these gene-boosted Liberaces of bloodsport practice their skillz relentlessly.  They MUST be badasses to run around in uniforms like THOSE...
+TeamName=The Band
+
+[TeamButchers]
+TeamDescription=Actually they're 'Slaughterers', a distinction they're very sensitive about.  That's why they call themselves 'The Butchers', because it really pisses them off.  Considering what they do for a living, you'd definitely rather they not be pissed off.
+TeamName=The Butchers
+
+[TeamCops]
+TeamDescription=You have the right to have the crap kicked out of you.  If you refuse that right, it'll only be more fun when we kick the crap out of you.
+TeamName=The Cops
+
+[TeamDude]
+TeamDescription=Surprisingly they're not related, they all just happen to have the same brooding, disaffected, individualistic sense of style.  Go figure.
+TeamName=Team Dude
+
+[TeamFanatics]
+TeamDescription="They're about to slap a Fatwa on your infidel ass SO BIG that your whole town will drown in a sea of their own blood.  Not to be confused with The Zealots."
+TeamName=The Taliban
+
+[TeamGary]
+TeamDescription=And lo, the sixth seal was opened. The sun became as sackcloth and a plague of Garys descended upon the earth, devouring everything in their path until all was barren and sorrow was upon the land.
+TeamName=Team Gary
+
+[TeamGimp]
+TeamDescription=The sharp patina of vinyl, soothed by the subtle bouquet of talc. An Intoxication of the Senses, Gene-Boosted.  A man in leather invests himself with water sports. People around him respond accordingly.  Pirates know this. Porn stars and U-boat captains know it. And the French, in their own way, know it, too.
+TeamName=Team Gimp
+
+[TeamMilitary]
+TeamDescription=Kicking the surrender fries right out of every enemy combatant's face for Uncle SAm!  They redefine FUN while leaving the spelling essentially the same.
+TeamName=The Military
+
+[TeamParcelworkers]
+TeamDescription=[Description removed by order of Liebowitz, Liebowitz, Zachary, Milhouse, Crock, Barnes, Smith, Shlomo, Perez, Lipshitz, Woskowykz, Bluto, Bartholomew, Pomoganate, Smith, Sass, Etcetera, Etcetera & Associates Law firm]
+TeamName=The Parcelworkers
+
+[TeamPostal]
+TeamDescription=All your favorites together again for the first time.  Gene-boosted.
+TeamName=Team Postal
+
+[TeamPriests]
+TeamDescription=Holy warriors of gene-boosted morality who'll either save you from yourself, or kill you trying.  Little does Team Gimp know that the clergy's feelings for them are considerably less than hostile.
+TeamName=The Clergy
+
+[TeamRednecks]
+TeamDescription=SuuuEEEEEEEEEEE
+TeamName=The Rednecks
+
+[TeamRobbers]
+TeamDescription=Today they may know something, tomorrow they may know something else.  But yesterday they didn't know anything.
+TeamName=The Robbers
+
+[TeamRWS]
+TeamDescription=Who needs a gun when you've got hands and teeth?  -YOU do, unless you enjoy eating  Face-fulls of buckshot.  Moron.
+TeamName=Team RWS
+
+[TeamSWAT]
+TeamDescription=Because nothing says 'victory' like not losing.
+TeamName=Team SWAT
+
+[TeamTheMan]
+TeamDescription=Now keeping EVERYBODY down.
+TeamName=The Man
+
+[TeamZealots]
+TeamDescription=They're NOT zealots, and they'll blow up the house of anyone who says different.
+TeamName=The Zealots
+
+[xDMRoster]
+TeamDescription=This is the default roster and it includes all the multiplayer characters.
+TeamName=All Characters
+
+[MutEDStuff]
+FriendlyName=ED weapons stuff
+Description=Changes some weapons to ED ones.
+
+[MutSledge]
+FriendlyName=Sledge replaces shovel
+Description=Changes all shovels pickups to sledges.
+
+[MutScythe]
+FriendlyName=Scythe replaces shovel
+Description=Changes all shovels pickups to scythes.
+
+[MutMachete]
+FriendlyName=Machete replaces scissors
+Description=Changes all scissors pickups to machetes.
+

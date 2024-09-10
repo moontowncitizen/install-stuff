@@ -1,0 +1,253 @@
+"KeyBindings"
+{
+	"Name"		"DEFAULT"
+	"Version"		"1"
+	"AlgorithmicUpdateVersion"		"2"
+	"Keys"
+	{
+		"AbilityMelee"
+		{
+			"Key"		"Q"
+		}
+		"Ability1"
+		{
+			"Key"		"1"
+		}
+		"Ability2"
+		{
+			"Key"		"2"
+		}
+		"Ability3"
+		{
+			"Key"		"3"
+		}
+		"Ability4"
+		{
+			"Key"		"4"
+		}
+		"Item1"
+		{
+			"Key"		"Z"
+		}
+		"Item2"
+		{
+			"Key"		"X"
+		}
+		"Item3"
+		{
+			"Key"		"C"
+		}
+		"Item4"
+		{
+			"Key"		"V"
+		}
+		"Mantle"
+		{
+			"Key"		"SPACE"
+		}
+		"OpenHeroSheet"
+		{
+			"Key"		"B"
+		}
+		"Roll"
+		{
+			"Key"		"SHIFT"
+		}
+		"Crouch"
+		{
+			"Key"		"CTRL"
+		}
+		"PushToTalk"
+		{
+			"Key"		"T"
+		}
+		"Scoreboard"
+		{
+			"Key"		"TAB"
+		}
+		"Reload"
+		{
+			"Key"		"R"
+		}
+		"ExtraInfo"
+		{
+			"Key"		"ALT"
+		}
+		"AltCastDirect"
+		{
+			"Key"		"MOUSE3"
+		}
+		"AltCastModifier"
+		{
+		}
+		"ReplayDeath"
+		{
+			"Key"		"R"
+		}
+		"StopReplayDeath"
+		{
+			"Key"		"R"
+		}
+		"MoveForward"
+		{
+			"Key"		"W"
+		}
+		"MoveBackwards"
+		{
+			"Key"		"S"
+		}
+		"MoveLeft"
+		{
+			"Key"		"A"
+		}
+		"MoveRight"
+		{
+			"Key"		"D"
+		}
+		"Attack"
+		{
+			"Key"		"MOUSE1"
+		}
+		"ADS"
+		{
+			"Key"		"MOUSE2"
+		}
+		"Chat"
+		{
+			"Key"		"ENTER"
+			"Modifier"		"SHIFT"
+		}
+		"ChatTeam"
+		{
+			"Key"		"ENTER"
+		}
+		"Ping"
+		{
+			"Key"		"MOUSE3"
+		}
+		"MouseWheel"
+		{
+			"Key"		"Y"
+		}
+		"HeldItem"
+		{
+			"Key"		"F"
+		}
+		"SwitchPlayerCam1"
+		{
+			"Key"		"F1"
+		}
+		"SwitchPlayerCam2"
+		{
+			"Key"		"F2"
+		}
+		"SwitchPlayerCam3"
+		{
+			"Key"		"F3"
+		}
+		"SwitchPlayerCam4"
+		{
+			"Key"		"F4"
+		}
+		"SwitchPlayerCam5"
+		{
+			"Key"		"F5"
+		}
+		"ToggleSpectatorCamera"
+		{
+			"Key"		"C"
+		}
+		"ToggleFreeCursor"
+		{
+			"Key"		"J"
+		}
+		"ToggleSpectatorTeam"
+		{
+			"Key"		"SPACE"
+		}
+		"SpectatorNextTarget"
+		{
+			"Key"		"MOUSE1"
+		}
+		"SpectatorPrevTarget"
+		{
+			"Key"		"MOUSE2"
+		}
+		"SpectatorChase"
+		{
+			"Key"		"MWHEELDOWN"
+		}
+		"SpectatorInEye"
+		{
+			"Key"		"MWHEELUP"
+		}
+		"SpectatorFlyUp"
+		{
+			"Key"		"SHIFT"
+		}
+		"SpectatorFlyDown"
+		{
+			"Key"		"CTRL"
+		}
+		"ToggleReplayCamera"
+		{
+			"Key"		"C"
+		}
+		"ToggleReplayTeam"
+		{
+			"Key"		"SPACE"
+		}
+		"ReplayNextTarget"
+		{
+			"Key"		"MOUSE1"
+		}
+		"ReplayPrevTarget"
+		{
+			"Key"		"MOUSE2"
+		}
+		"ReplayChase"
+		{
+			"Key"		"MWHEELDOWN"
+		}
+		"ReplayInEye"
+		{
+			"Key"		"MWHEELUP"
+		}
+		"ReplayFlyUp"
+		{
+			"Key"		"SHIFT"
+		}
+		"ReplayFlyDown"
+		{
+			"Key"		"CTRL"
+		}
+		"ReplayIncreaseSpeed"
+		{
+			"Key"		"="
+		}
+		"ReplayDecreaseSpeed"
+		{
+			"Key"		"-"
+		}
+		"ReplayTogglePause"
+		{
+			"Key"		"P"
+		}
+		"DevConsole"
+		{
+			"Key"		"F7"
+		}
+		"Pause"
+		{
+			"Key"		"P"
+		}
+		"Teleport"
+		{
+			"Key"		"G"
+		}
+		"CancelAbility"
+		{
+			"Key"		"SPACE"
+		}
+	}
+}

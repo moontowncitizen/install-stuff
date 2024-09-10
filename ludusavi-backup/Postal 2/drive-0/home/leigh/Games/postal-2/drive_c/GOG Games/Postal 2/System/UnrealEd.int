@@ -1,0 +1,26 @@
+[General]
+FrameWindow=%s (%s %s)
+Product=POSTed
+ActorChangeWarning=Changing %i actor(s) to class '%s'. THIS ACTION CAN NOT BE UNDONE. Proceed?
+ActorChangeSetClass=Select a target class in the Actor Browser first.
+ActorChangeNoneSelected=Select one or more actors in the map first.
+
+[AssetSearch]
+IdleText=Enter search query and click 'Search' to begin search.
+SearchingText=Searching, please wait...
+SearchCompleteText=Done. Use filter box to filter results. Double-click result to view, or right-click to copy.
+ExactMatchText=Will return exact matches only.
+PartialMatchText=Will return partial matches as well as exact matches.
+LoadAllWarningText=WARNING: Loading all packages slows down loading and saving of maps.
+AssetCopiedToClipboard=Copied selection to clipboard.
+
+[Matinee]
+DeleteSMConfirmation=Delete '%s' and associated actions/subactions?
+DeleteActionConfirmation=Delete action %i and its subactions?
+DeleteSubActionConfirmation=Delete subaction %i?
+
+[DlgUploadToSteamWorkshop]
+DLCRequiredManualSetup=Currently, this setting cannot be changed from POSTed. After publishing your item, please view the item details in Steam and under 'Owner Controls', select the 'Add/Remove Required DLC' option and check 'Paradise Lost'.
+ManualInstallRequired1=Your Workshop submission contains no INT files and no map files starting with the prefix 'ws-'! Your Workshop item will be unplayable by end users.
+ManualInstallRequired2=You can upload this submission anyway, but the 'Manual Install Required' tag will automatically be applied, and you will need to give your users specific installation instructions in the description.
+ManualInstallRequired3=Proceed anyway?
