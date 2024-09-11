@@ -1,0 +1,18 @@
+---
+name: "Halo 3: ODST"
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-11T23:17:44.247696766Z"
+    os: linux
+    files:
+      /home/leigh/.local/share/Steam/userdata/252023632/976730/remote/2535430799291368/Saves/SaveGame/halo5/campaign/deepSave:
+        hash: f0dd4561d0257b098519841eeb18d4378c21213b
+        size: 1284895
+      /home/leigh/.local/share/Steam/userdata/252023632/976730/remote/2535430799291368/Saves/SaveGame/halo5/campaign/header:
+        hash: 1a79ac4f754c43da20937908066224e82b5e2855
+        size: 4477
+    registry:
+      hash: ~
+    children: []

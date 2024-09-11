@@ -1,0 +1,18 @@
+---
+name: "Halo: Reach"
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-11T23:17:44.259349572Z"
+    os: linux
+    files:
+      /home/leigh/.local/share/Steam/userdata/252023632/976730/remote/2535430799291368/Saves/SaveGame/halo6/campaign/deepSave:
+        hash: 4eeba1dc0364b357ca8cde4ebf6245ea3c18bed3
+        size: 687505
+      /home/leigh/.local/share/Steam/userdata/252023632/976730/remote/2535430799291368/Saves/SaveGame/halo6/campaign/header:
+        hash: b03d70f9c679b2a7dcf1fd8cc867bcfdd059180f
+        size: 9576
+    registry:
+      hash: ~
+    children: []
