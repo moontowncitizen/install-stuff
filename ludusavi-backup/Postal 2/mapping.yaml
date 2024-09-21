@@ -4,12 +4,12 @@ drives:
   drive-0: ""
 backups:
   - name: "."
-    when: "2024-09-10T19:05:45.955363894Z"
+    when: "2024-09-17T21:53:37.715385724Z"
     os: linux
     files:
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/Save/Save21.usa:
-        hash: 1c88377c4bff00481a24373949b8bf4005cb2f38
-        size: 16230236
+        hash: ecf4093690ad1927c603d5edefb4132f4a6b7884
+        size: 10689843
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/System/AIPack.u:
         hash: be54e212372e24e19b147ae3276202249ac6aad8
         size: 1456263
@@ -338,14 +338,14 @@ backups:
         hash: 2ca5003f7d3aaee9c06e87172ae325bf5460bcc3
         size: 215040
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/System/Postal2.ini:
-        hash: 25ca69d2604fac2f8e83e964bca0cf17e6fda590
-        size: 41746
+        hash: 0760558475b8a7379f6a2cdab78698ffb0833a3f
+        size: 41828
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/System/Postal2.int:
         hash: 221b563e0c347875a95ff8c90cbb4b7276d5bca3
         size: 103
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/System/Postal2.log:
-        hash: 6d3fe634e6f0313ca54923f2c8185a74bab75ca8
-        size: 252887
+        hash: 81d3c430d7bbbc49a805a83e73c3c45c6b453d2d
+        size: 144273
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/System/Postal2Extras.u:
         hash: 8e8621e3951cb8862d4b09add62a4b39986deed3
         size: 270287
@@ -365,8 +365,8 @@ backups:
         hash: df0e999eb06578fa7c625cb123be4be105f6fe51
         size: 6895
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/System/SavedGameInfo.ini:
-        hash: df1d04a55d885c23229e3d138b5afb35353a77ef
-        size: 1292
+        hash: a45e2f8ae97effebb60d629509aedc952fc31450
+        size: 1302
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/System/SetupSuburbs.int:
         hash: 02468f11b2c3153984abc80f6e78d52ee86c5195
         size: 318
@@ -461,8 +461,8 @@ backups:
         hash: 6bbdb5c4245e32c453c72f412cf6e35a0e76efee
         size: 21504
       /home/leigh/Games/postal-2/drive_c/GOG Games/Postal 2/System/xPatch.ini:
-        hash: 44cbff61627afda397b1b0fe62e3c23f4a7ad4a6
-        size: 1001
+        hash: 575970ddb2bfbe39099831d9c66b083c67d02c78
+        size: 1000
     registry:
       hash: ~
     children: []

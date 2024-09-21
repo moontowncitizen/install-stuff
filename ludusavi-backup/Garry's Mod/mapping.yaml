@@ -1,0 +1,36 @@
+---
+name: "Garry's Mod"
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-20T06:24:57.262278639Z"
+    os: linux
+    files:
+      /home/leigh/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/cfg/autoexec.cfg:
+        hash: 8ef64eed5604145fe8189a79c802e642ebe17e49
+        size: 3
+      /home/leigh/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/cfg/game.cfg:
+        hash: e88a8481987963848b40923dd09750e39efc613c
+        size: 72
+      /home/leigh/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/cfg/listenserver.cfg:
+        hash: 66928e6cbb59c3a3bce606959ef4a865fe04e642
+        size: 4
+      /home/leigh/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/cfg/mapcycle.txt:
+        hash: 676cadcbcf4cff14f7ffb997fa7606c59790ba3a
+        size: 231
+      /home/leigh/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/cfg/mount.cfg:
+        hash: 9eee8f38c4c2a8084fc167b9539cbca6c35135d5
+        size: 767
+      /home/leigh/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/cfg/server.cfg:
+        hash: 66928e6cbb59c3a3bce606959ef4a865fe04e642
+        size: 4
+      /home/leigh/.local/share/Steam/steamapps/common/GarrysMod/garrysmod/saves/steam_autocloud.vdf:
+        hash: 1a74523f90ec93b987182867bb08cfd0e5ad5181
+        size: 52
+      /home/leigh/.local/share/Steam/userdata/252023632/4000/remote/cfg/config.cfg:
+        hash: de617d310af83e7fe819ebec6b101ce7bbef4cdb
+        size: 8710
+    registry:
+      hash: ~
+    children: []

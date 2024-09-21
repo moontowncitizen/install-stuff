@@ -4,12 +4,12 @@ drives:
   drive-0: ""
 backups:
   - name: "."
-    when: "2024-09-10T19:05:46.617308063Z"
+    when: "2024-09-17T21:53:38.403022654Z"
     os: linux
     files:
       /home/leigh/Games/resident-evil-7-biohazard/drive_c/Program Files (x86)/DODI-Repacks/Resident Evil 7 Biohazard/re7_config.ini:
-        hash: 1824655d83c3cbb8ca210197401147585d4455c3
-        size: 7932
+        hash: ba54fd5519069b845b33b5ceff77b2db50a4d18d
+        size: 7925
     registry:
       hash: ~
     children: []

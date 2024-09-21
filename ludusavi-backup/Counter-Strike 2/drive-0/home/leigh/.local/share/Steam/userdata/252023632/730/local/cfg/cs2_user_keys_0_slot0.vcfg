@@ -1,0 +1,7 @@
+"config"
+{
+	"bindings"
+	{
+		"MOUSE4"		"+voicerecord"
+	}
+}

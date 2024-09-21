@@ -4,48 +4,15 @@ drives:
   drive-0: ""
 backups:
   - name: "."
-    when: "2024-09-10T19:05:47.080549250Z"
+    when: "2024-09-17T21:53:38.991516597Z"
     os: linux
     files:
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/chapter1.cfg:
-        hash: f2b0e0c7ea2cf071620aed55cecd6fdf2eb7e270
-        size: 56
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/chapter2.cfg:
-        hash: 0c87edc6d6e2a546d2790c94dc97cdebe0606453
-        size: 22
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/chapter3.cfg:
-        hash: 4a83afef72605e315c8b0dcc64dbd494626511c4
-        size: 24
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/chapter4.cfg:
-        hash: 467ef907c7cf99ac3d171942c808e05616d62af4
-        size: 23
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/chapter5.cfg:
-        hash: 38b7d5517cadca29c75aa9afb104d0c223c3544b
-        size: 22
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/chapter6.cfg:
-        hash: 8c7023477723382c41ac22e2f6017077d101e0c2
-        size: 22
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/chapter7.cfg:
-        hash: 68f4a401925a2cb197e94fce4e0f0b042a3f7e1e
-        size: 23
       /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/config.cfg:
         hash: fcd055a0122ae31384c6399d21108ceba63c7037
         size: 7488
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/leipzig.cfg:
-        hash: d2ea47e28dcfdbce76875b35293882bf000ab841
-        size: 104
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/perf.cfg:
-        hash: 502762b23582749565598440181afafa400d3933
-        size: 6587
       /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/server_blacklist.txt:
         hash: bf1a8c12eb5baf94a4e171d2feb048a9ac6be0b8
         size: 22
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/skill_episodic.cfg:
-        hash: 76280499e7e77910b92be4a81c7f2d207cecde42
-        size: 522
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/cfg/sourcevr_ep2.cfg:
-        hash: a8436dd6cb7179088901a82b1d8909516bfcfc72
-        size: 99
       /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/ep2/save/autosave.sav:
         hash: 54da90f69b20f9292f180183673f128b3197ba04
         size: 2016933

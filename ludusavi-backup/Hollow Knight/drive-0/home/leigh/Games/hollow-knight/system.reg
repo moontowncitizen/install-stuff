@@ -72730,8 +72730,8 @@ WINE REGISTRY Version 2
 "CommonPictures"=str(2):"%PUBLIC%\\Pictures"
 "CommonVideo"=str(2):"%PUBLIC%\\Videos"
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\Fonts] 1724847591
-#time=1daf94494cfe866
+[Software\\Microsoft\\Windows\\CurrentVersion\\Fonts] 1726638990
+#time=1db098f823f07e4
 "@Droid Sans Fallback (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansFallbackFull.ttf"
 "@Microsoft Yahei (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\msyh.ttf"
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-sans-cjk-vf-fonts\\NotoSansCJK-VF.ttc"
@@ -72774,6 +72774,8 @@ WINE REGISTRY Version 2
 "Comfortaa SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\aajohan-comfortaa-fonts\\Comfortaa-SemiBold.otf"
 "Courier"="coure.fon"
 "Courier New (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\cour.ttf"
+"CozetteVector (TrueType)"="Z:\\home\\leigh\\.fonts\\c\\CozetteVector.ttf"
+"CozetteVectorBold (TrueType)"="Z:\\home\\leigh\\.fonts\\c\\CozetteVectorBold.ttf"
 "D050000L (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\D050000L.otf"
 "DejaVu Sans (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans.ttf"
 "DejaVu Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans-Bold.ttf"
@@ -72786,7 +72788,6 @@ WINE REGISTRY Version 2
 "DejaVu Sans Oblique (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans-Oblique.ttf"
 "Droid Arabic Kufi (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidKufi-Regular.ttf"
 "Droid Arabic Kufi Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidKufi-Bold.ttf"
-"Droid Sans (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSans.ttf"
 "Droid Sans Armenian (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansArmenian.ttf"
 "Droid Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSans-Bold.ttf"
 "Droid Sans Devanagari (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansDevanagari-Regular.ttf"
@@ -72800,6 +72801,60 @@ WINE REGISTRY Version 2
 "Droid Sans Tamil (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansTamil-Regular.ttf"
 "Droid Sans Tamil Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansTamil-Bold.ttf"
 "Droid Sans Thai (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansThai.ttf"
+"Fantasque Sans Mono Regular (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\fantasque_sans_mono.ttf"
+"feather (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\feather.ttf"
+"Fira Mono (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Regular.otf"
+"Fira Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Bold.otf"
+"Fira Mono Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Medium.otf"
+"Fira Sans (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Regular.otf"
+"Fira Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Bold.otf"
+"Fira Sans Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-BoldItalic.otf"
+"Fira Sans Book (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Book.otf"
+"Fira Sans Book Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-BookItalic.otf"
+"Fira Sans Condensed Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Bold.otf"
+"Fira Sans Condensed Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-BoldItalic.otf"
+"Fira Sans Condensed Book Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-BookItalic.otf"
+"Fira Sans Condensed Eight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-EightItalic.otf"
+"Fira Sans Condensed ExtraBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraboldItalic.otf"
+"Fira Sans Condensed ExtraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraLightItalic.otf"
+"Fira Sans Condensed Four Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-FourItalic.otf"
+"Fira Sans Condensed Hair Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-HairItalic.otf"
+"Fira Sans Condensed Heavy Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-HeavyItalic.otf"
+"Fira Sans Condensed Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Italic.otf"
+"Fira Sans Condensed Light Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-LightItalic.otf"
+"Fira Sans Condensed Medium Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-MediumItalic.otf"
+"Fira Sans Condensed SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-SemiboldItalic.otf"
+"Fira Sans Condensed Thin Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ThinItalic.otf"
+"Fira Sans Condensed Two Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-TwoItalic.otf"
+"Fira Sans Condensed Ultra Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraItalic.otf"
+"Fira Sans Condensed UltraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraLightItalic.otf"
+"Fira Sans Eight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Eight.otf"
+"Fira Sans Eight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-EightItalic.otf"
+"Fira Sans ExtraBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraBold.otf"
+"Fira Sans ExtraBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraBoldItalic.otf"
+"Fira Sans ExtraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraLight.otf"
+"Fira Sans ExtraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraLightItalic.otf"
+"Fira Sans Four (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Four.otf"
+"Fira Sans Four Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-FourItalic.otf"
+"Fira Sans Hair (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Hair.otf"
+"Fira Sans Hair Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-HairItalic.otf"
+"Fira Sans Heavy (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Heavy.otf"
+"Fira Sans Heavy Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-HeavyItalic.otf"
+"Fira Sans Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Italic.otf"
+"Fira Sans Light (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Light.otf"
+"Fira Sans Light Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-LightItalic.otf"
+"Fira Sans Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Medium.otf"
+"Fira Sans Medium Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-MediumItalic.otf"
+"Fira Sans SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-SemiBold.otf"
+"Fira Sans SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-SemiBoldItalic.otf"
+"Fira Sans Thin (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Thin.otf"
+"Fira Sans Thin Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ThinItalic.otf"
+"Fira Sans Two (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Two.otf"
+"Fira Sans Two Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-TwoItalic.otf"
+"Fira Sans Ultra (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Ultra.otf"
+"Fira Sans Ultra Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraItalic.otf"
+"Fira Sans UltraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraLight.otf"
+"Fira Sans UltraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraLightItalic.otf"
 "FiraCode Nerd Font Bold (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Bold.ttf"
 "FiraCode Nerd Font Light (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Light.ttf"
 "FiraCode Nerd Font Med (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Medium.ttf"
@@ -72818,6 +72873,21 @@ WINE REGISTRY Version 2
 "FiraCode Nerd Font Reg (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Regular.ttf"
 "FiraCode Nerd Font Ret (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Retina.ttf"
 "FiraCode Nerd Font SemBd (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_SemiBold.ttf"
+"FiraSansCondensed-Book (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Book.otf"
+"FiraSansCondensed-Eight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Eight.otf"
+"FiraSansCondensed-ExtraBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraBold.otf"
+"FiraSansCondensed-ExtraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraLight.otf"
+"FiraSansCondensed-Four (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Four.otf"
+"FiraSansCondensed-Hair (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Hair.otf"
+"FiraSansCondensed-Heavy (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Heavy.otf"
+"FiraSansCondensed-Light (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Light.otf"
+"FiraSansCondensed-Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Medium.otf"
+"FiraSansCondensed-Regular (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Regular.otf"
+"FiraSansCondensed-SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-SemiBold.otf"
+"FiraSansCondensed-Thin (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Thin.otf"
+"FiraSansCondensed-Two (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Two.otf"
+"FiraSansCondensed-Ultra (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Ultra.otf"
+"FiraSansCondensed-UltraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraLight.otf"
 "Gila (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gila.otf"
 "Gila Bold (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gila_Bold.otf"
 "Gothamono v0.2 Regular (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gothamonov0.2_Regular.otf"
@@ -72839,6 +72909,8 @@ WINE REGISTRY Version 2
 "Hurmit Nerd Font Propo Italic (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_Italic.otf"
 "Hurmit Nerd Font Propo Light (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_Light.otf"
 "Hurmit Nerd Font Propo Light Italic (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_LightItalic.otf"
+"icomoon-feather (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\panels\\icomoon_feather.ttf"
+"Iosevka Nerd Font Complete (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\iosevka_nerd_font.ttf"
 "Jomolhari (TrueType)"="Z:\\usr\\share\\fonts\\jomolhari-fonts\\Jomolhari-alpha3c-0605331.ttf"
 "Liberation Mono (TrueType)"="Z:\\usr\\share\\fonts\\liberation-mono\\LiberationMono-Regular.ttf"
 "Liberation Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\liberation-mono\\LiberationMono-Bold.ttf"
@@ -72858,6 +72930,8 @@ WINE REGISTRY Version 2
 "Liberation Serif Italic (TrueType)"="Z:\\usr\\share\\fonts\\liberation-serif\\LiberationSerif-Italic.ttf"
 "Madan2 (TrueType)"="Z:\\usr\\share\\fonts\\madan-fonts\\madan.ttf"
 "Marlett (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\marlett.ttf"
+"Material (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\panels\\material.ttf"
+"Material-Design-Iconic-Font (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\material_design_iconic_font.ttf"
 "Microsoft Yahei (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\msyh.ttf"
 "Mingzat (TrueType)"="Z:\\usr\\share\\fonts\\sil-mingzat-fonts\\Mingzat-Regular.ttf"
 "MS Sans Serif"="sserife.fon"
@@ -72879,7 +72953,6 @@ WINE REGISTRY Version 2
 "NimbusSansNarrow-BoldOblique (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-BoldOblique.otf"
 "NimbusSansNarrow-Oblique (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-Oblique.otf"
 "NimbusSansNarrow-Regular (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-Regular.otf"
-"Noto Emoji Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-emoji-fonts\\NotoEmoji-Regular.ttf"
 "Noto Naskh Arabic Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoNaskhArabic[wght].ttf"
 "Noto Sans Arabic Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoSansArabic[wght].ttf"
 "Noto Sans Armenian Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoSansArmenian[wght].ttf"
@@ -73130,6 +73203,8 @@ WINE REGISTRY Version 2
 "Open Sans Semibold (TrueType)"="Z:\\usr\\share\\fonts\\open-sans\\OpenSans-Semibold.ttf"
 "Open Sans Semibold Italic (TrueType)"="Z:\\usr\\share\\fonts\\open-sans\\OpenSans-SemiboldItalic.ttf"
 "OpenSymbol (TrueType)"="Z:\\usr\\share\\fonts\\opensymbol\\opens___.ttf"
+"OPTITimes-Roman (TrueType)"="Z:\\usr\\local\\share\\fonts\\o\\OPTITimes_Roman.otf"
+"OPTITimesRoman-Italic (TrueType)"="Z:\\usr\\local\\share\\fonts\\o\\OPTITimesRoman_Italic.otf"
 "P052-Bold (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-Bold.otf"
 "P052-BoldItalic (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-BoldItalic.otf"
 "P052-Italic (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-Italic.otf"
@@ -73572,14 +73647,14 @@ WINE REGISTRY Version 2
 "MinLevel"=dword:00012000
 "RecommendedLevel"=dword:00012000
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{2103294F-5523-420A-8FB1-56BA61075807}] 1725404198
-#time=1dafe5488d9a078
-"DeviceState"=dword:00000001
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{2103294F-5523-420A-8FB1-56BA61075807}] 1726638994
+#time=1db098f84379a3e
+"DeviceState"=dword:00000004
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{2103294F-5523-420A-8FB1-56BA61075807}\\Properties] 1725404198
-#time=1dafe5488d9c436
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{2103294F-5523-420A-8FB1-56BA61075807}\\Properties] 1726638994
+#time=1db098f8437cfa4
 "{026E516E-B814-414B-83CD-856D6FEF4822},2"="Monitor of Rembrandt Radeon High Definition Audio Controller"
-"{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},0"=dword:00000002
+"{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},0"=dword:00000004
 "{233164C8-1B2C-4C7D-BC68-B671687A2567},1"="{2103294F-5523-420A-8FB1-56BA61075807}"
 "{A45C254E-DF1C-4EFD-8020-67D146A850E0},14"="Monitor of Rembrandt Radeon High Definition Audio Controller"
 "{A45C254E-DF1C-4EFD-8020-67D146A850E0},2"="Monitor of Rembrandt Radeon High Definition Audio Controller"
@@ -73591,8 +73666,8 @@ WINE REGISTRY Version 2
   08,00,0c,00,10,00,16,00,10,00,3f,00,00,00,01,00,00,00,00,00,10,00,80,00,00,\
   aa,00,38,9b,71
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{25DA76D0-033C-4235-9002-19F48894AC6F}] 1725404198
-#time=1dafe5488d96fd6
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{25DA76D0-033C-4235-9002-19F48894AC6F}] 1726638994
+#time=1db098f8438c788
 "DeviceState"=dword:00000001
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{25DA76D0-033C-4235-9002-19F48894AC6F}\\Properties] 1725404198
@@ -73610,8 +73685,8 @@ WINE REGISTRY Version 2
   02,00,04,00,10,00,16,00,10,00,03,00,00,00,01,00,00,00,00,00,10,00,80,00,00,\
   aa,00,38,9b,71
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{9648DB14-3656-4197-8B62-CF2330BDBC2F}] 1725404198
-#time=1dafe5488d9e22c
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{9648DB14-3656-4197-8B62-CF2330BDBC2F}] 1726638994
+#time=1db098f8438eb82
 "DeviceState"=dword:00000001
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{9648DB14-3656-4197-8B62-CF2330BDBC2F}\\Properties] 1725404198
@@ -73629,14 +73704,14 @@ WINE REGISTRY Version 2
   02,00,04,00,10,00,16,00,10,00,03,00,00,00,01,00,00,00,00,00,10,00,80,00,00,\
   aa,00,38,9b,71
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{B570FAD2-D5CE-48C6-8612-E04B85335DE7}] 1725404198
-#time=1dafe5488d981d8
-"DeviceState"=dword:00000001
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{B570FAD2-D5CE-48C6-8612-E04B85335DE7}] 1726638994
+#time=1db098f84380a14
+"DeviceState"=dword:00000004
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{B570FAD2-D5CE-48C6-8612-E04B85335DE7}\\Properties] 1725404198
-#time=1dafe5488d99e3e
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{B570FAD2-D5CE-48C6-8612-E04B85335DE7}\\Properties] 1726638994
+#time=1db098f84381b8a
 "{026E516E-B814-414B-83CD-856D6FEF4822},2"="Monitor of HDA NVidia Digital Surround 5.1 (HDMI/AC3)"
-"{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},0"=dword:00000002
+"{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},0"=dword:00000004
 "{233164C8-1B2C-4C7D-BC68-B671687A2567},1"="{B570FAD2-D5CE-48C6-8612-E04B85335DE7}"
 "{A45C254E-DF1C-4EFD-8020-67D146A850E0},14"="Monitor of HDA NVidia Digital Surround 5.1 (HDMI/AC3)"
 "{A45C254E-DF1C-4EFD-8020-67D146A850E0},2"="Monitor of HDA NVidia Digital Surround 5.1 (HDMI/AC3)"
@@ -73648,8 +73723,8 @@ WINE REGISTRY Version 2
   08,00,0c,00,10,00,16,00,10,00,3f,00,00,00,01,00,00,00,00,00,10,00,80,00,00,\
   aa,00,38,9b,71
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{C519F781-15C1-4133-8904-38F6EBBC3356}] 1725404198
-#time=1dafe5488d9c5a8
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{C519F781-15C1-4133-8904-38F6EBBC3356}] 1726638994
+#time=1db098f8438d958
 "DeviceState"=dword:00000001
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Capture\\{C519F781-15C1-4133-8904-38F6EBBC3356}\\Properties] 1725404198
@@ -73667,9 +73742,9 @@ WINE REGISTRY Version 2
   02,00,04,00,10,00,16,00,10,00,03,00,00,00,01,00,00,00,00,00,10,00,80,00,00,\
   aa,00,38,9b,71
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{56A88D12-5CBC-4059-910F-5F2E9168829D}] 1725404198
-#time=1dafe5488d92e4a
-"DeviceState"=dword:00000001
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{56A88D12-5CBC-4059-910F-5F2E9168829D}] 1726638994
+#time=1db098f8438407e
+"DeviceState"=dword:00000004
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{56A88D12-5CBC-4059-910F-5F2E9168829D}\\Properties] 1725404198
 #time=1dafe5488d94bd2
@@ -73687,9 +73762,9 @@ WINE REGISTRY Version 2
   08,00,0c,00,10,00,16,00,10,00,3f,00,00,00,01,00,00,00,00,00,10,00,80,00,00,\
   aa,00,38,9b,71
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{798F6A31-2168-4EDA-94F9-E6E00209A693}] 1725404198
-#time=1dafe5488d911ee
-"DeviceState"=dword:00000001
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{798F6A31-2168-4EDA-94F9-E6E00209A693}] 1726638994
+#time=1db098f8438558c
+"DeviceState"=dword:00000004
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{798F6A31-2168-4EDA-94F9-E6E00209A693}\\Properties] 1725404198
 #time=1dafe5488d92c9c
@@ -73707,8 +73782,8 @@ WINE REGISTRY Version 2
   08,00,0c,00,10,00,16,00,10,00,3f,00,00,00,01,00,00,00,00,00,10,00,80,00,00,\
   aa,00,38,9b,71
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{B5C722FF-37EC-403A-A7DB-CEAB8235B564}] 1725404198
-#time=1dafe5488d94d94
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{B5C722FF-37EC-403A-A7DB-CEAB8235B564}] 1726638994
+#time=1db098f8438af14
 "DeviceState"=dword:00000001
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{B5C722FF-37EC-403A-A7DB-CEAB8235B564}\\Properties] 1725404198
@@ -73727,8 +73802,8 @@ WINE REGISTRY Version 2
   02,00,04,00,10,00,16,00,10,00,03,00,00,00,01,00,00,00,00,00,10,00,80,00,00,\
   aa,00,38,9b,71
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{FD47D9CC-4218-4135-9CE2-0C195C87405B}] 1725404198
-#time=1dafe5488d8f8da
+[Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{FD47D9CC-4218-4135-9CE2-0C195C87405B}] 1726638994
+#time=1db098f843898d0
 "DeviceState"=dword:00000001
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\MMDevices\\Audio\\Render\\{FD47D9CC-4218-4135-9CE2-0C195C87405B}\\Properties] 1725404198
@@ -75779,8 +75854,8 @@ WINE REGISTRY Version 2
 #time=1daf8a96dbc1862
 "MAPI"="1"
 
-[Software\\Microsoft\\Windows NT\\CurrentVersion] 1725404194
-#time=1dafe54868e3054
+[Software\\Microsoft\\Windows NT\\CurrentVersion] 1726638991
+#time=1db098f826baa4c
 "CSDVersion"=""
 "CurrentBuild"="19043"
 "CurrentBuildNumber"="19043"
@@ -75850,8 +75925,8 @@ WINE REGISTRY Version 2
 [Software\\Microsoft\\Windows NT\\CurrentVersion\\FontMapper] 1724780953
 #time=1daf8a96dba6134
 
-[Software\\Microsoft\\Windows NT\\CurrentVersion\\Fonts] 1724847591
-#time=1daf94494cfe8c0
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\Fonts] 1726638990
+#time=1db098f823f0848
 "@Droid Sans Fallback (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansFallbackFull.ttf"
 "@Microsoft Yahei (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\msyh.ttf"
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-sans-cjk-vf-fonts\\NotoSansCJK-VF.ttc"
@@ -75894,6 +75969,8 @@ WINE REGISTRY Version 2
 "Comfortaa SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\aajohan-comfortaa-fonts\\Comfortaa-SemiBold.otf"
 "Courier"="coure.fon"
 "Courier New (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\cour.ttf"
+"CozetteVector (TrueType)"="Z:\\home\\leigh\\.fonts\\c\\CozetteVector.ttf"
+"CozetteVectorBold (TrueType)"="Z:\\home\\leigh\\.fonts\\c\\CozetteVectorBold.ttf"
 "D050000L (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\D050000L.otf"
 "DejaVu Sans (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans.ttf"
 "DejaVu Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans-Bold.ttf"
@@ -75906,7 +75983,6 @@ WINE REGISTRY Version 2
 "DejaVu Sans Oblique (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans-Oblique.ttf"
 "Droid Arabic Kufi (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidKufi-Regular.ttf"
 "Droid Arabic Kufi Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidKufi-Bold.ttf"
-"Droid Sans (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSans.ttf"
 "Droid Sans Armenian (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansArmenian.ttf"
 "Droid Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSans-Bold.ttf"
 "Droid Sans Devanagari (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansDevanagari-Regular.ttf"
@@ -75920,6 +75996,60 @@ WINE REGISTRY Version 2
 "Droid Sans Tamil (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansTamil-Regular.ttf"
 "Droid Sans Tamil Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansTamil-Bold.ttf"
 "Droid Sans Thai (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansThai.ttf"
+"Fantasque Sans Mono Regular (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\fantasque_sans_mono.ttf"
+"feather (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\feather.ttf"
+"Fira Mono (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Regular.otf"
+"Fira Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Bold.otf"
+"Fira Mono Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Medium.otf"
+"Fira Sans (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Regular.otf"
+"Fira Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Bold.otf"
+"Fira Sans Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-BoldItalic.otf"
+"Fira Sans Book (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Book.otf"
+"Fira Sans Book Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-BookItalic.otf"
+"Fira Sans Condensed Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Bold.otf"
+"Fira Sans Condensed Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-BoldItalic.otf"
+"Fira Sans Condensed Book Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-BookItalic.otf"
+"Fira Sans Condensed Eight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-EightItalic.otf"
+"Fira Sans Condensed ExtraBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraboldItalic.otf"
+"Fira Sans Condensed ExtraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraLightItalic.otf"
+"Fira Sans Condensed Four Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-FourItalic.otf"
+"Fira Sans Condensed Hair Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-HairItalic.otf"
+"Fira Sans Condensed Heavy Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-HeavyItalic.otf"
+"Fira Sans Condensed Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Italic.otf"
+"Fira Sans Condensed Light Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-LightItalic.otf"
+"Fira Sans Condensed Medium Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-MediumItalic.otf"
+"Fira Sans Condensed SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-SemiboldItalic.otf"
+"Fira Sans Condensed Thin Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ThinItalic.otf"
+"Fira Sans Condensed Two Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-TwoItalic.otf"
+"Fira Sans Condensed Ultra Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraItalic.otf"
+"Fira Sans Condensed UltraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraLightItalic.otf"
+"Fira Sans Eight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Eight.otf"
+"Fira Sans Eight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-EightItalic.otf"
+"Fira Sans ExtraBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraBold.otf"
+"Fira Sans ExtraBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraBoldItalic.otf"
+"Fira Sans ExtraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraLight.otf"
+"Fira Sans ExtraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraLightItalic.otf"
+"Fira Sans Four (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Four.otf"
+"Fira Sans Four Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-FourItalic.otf"
+"Fira Sans Hair (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Hair.otf"
+"Fira Sans Hair Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-HairItalic.otf"
+"Fira Sans Heavy (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Heavy.otf"
+"Fira Sans Heavy Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-HeavyItalic.otf"
+"Fira Sans Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Italic.otf"
+"Fira Sans Light (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Light.otf"
+"Fira Sans Light Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-LightItalic.otf"
+"Fira Sans Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Medium.otf"
+"Fira Sans Medium Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-MediumItalic.otf"
+"Fira Sans SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-SemiBold.otf"
+"Fira Sans SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-SemiBoldItalic.otf"
+"Fira Sans Thin (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Thin.otf"
+"Fira Sans Thin Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ThinItalic.otf"
+"Fira Sans Two (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Two.otf"
+"Fira Sans Two Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-TwoItalic.otf"
+"Fira Sans Ultra (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Ultra.otf"
+"Fira Sans Ultra Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraItalic.otf"
+"Fira Sans UltraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraLight.otf"
+"Fira Sans UltraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraLightItalic.otf"
 "FiraCode Nerd Font Bold (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Bold.ttf"
 "FiraCode Nerd Font Light (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Light.ttf"
 "FiraCode Nerd Font Med (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Medium.ttf"
@@ -75938,6 +76068,21 @@ WINE REGISTRY Version 2
 "FiraCode Nerd Font Reg (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Regular.ttf"
 "FiraCode Nerd Font Ret (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Retina.ttf"
 "FiraCode Nerd Font SemBd (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_SemiBold.ttf"
+"FiraSansCondensed-Book (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Book.otf"
+"FiraSansCondensed-Eight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Eight.otf"
+"FiraSansCondensed-ExtraBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraBold.otf"
+"FiraSansCondensed-ExtraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraLight.otf"
+"FiraSansCondensed-Four (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Four.otf"
+"FiraSansCondensed-Hair (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Hair.otf"
+"FiraSansCondensed-Heavy (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Heavy.otf"
+"FiraSansCondensed-Light (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Light.otf"
+"FiraSansCondensed-Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Medium.otf"
+"FiraSansCondensed-Regular (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Regular.otf"
+"FiraSansCondensed-SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-SemiBold.otf"
+"FiraSansCondensed-Thin (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Thin.otf"
+"FiraSansCondensed-Two (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Two.otf"
+"FiraSansCondensed-Ultra (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Ultra.otf"
+"FiraSansCondensed-UltraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraLight.otf"
 "Gila (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gila.otf"
 "Gila Bold (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gila_Bold.otf"
 "Gothamono v0.2 Regular (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gothamonov0.2_Regular.otf"
@@ -75959,6 +76104,8 @@ WINE REGISTRY Version 2
 "Hurmit Nerd Font Propo Italic (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_Italic.otf"
 "Hurmit Nerd Font Propo Light (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_Light.otf"
 "Hurmit Nerd Font Propo Light Italic (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_LightItalic.otf"
+"icomoon-feather (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\panels\\icomoon_feather.ttf"
+"Iosevka Nerd Font Complete (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\iosevka_nerd_font.ttf"
 "Jomolhari (TrueType)"="Z:\\usr\\share\\fonts\\jomolhari-fonts\\Jomolhari-alpha3c-0605331.ttf"
 "Liberation Mono (TrueType)"="Z:\\usr\\share\\fonts\\liberation-mono\\LiberationMono-Regular.ttf"
 "Liberation Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\liberation-mono\\LiberationMono-Bold.ttf"
@@ -75978,6 +76125,8 @@ WINE REGISTRY Version 2
 "Liberation Serif Italic (TrueType)"="Z:\\usr\\share\\fonts\\liberation-serif\\LiberationSerif-Italic.ttf"
 "Madan2 (TrueType)"="Z:\\usr\\share\\fonts\\madan-fonts\\madan.ttf"
 "Marlett (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\marlett.ttf"
+"Material (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\panels\\material.ttf"
+"Material-Design-Iconic-Font (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\material_design_iconic_font.ttf"
 "Microsoft Yahei (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\msyh.ttf"
 "Mingzat (TrueType)"="Z:\\usr\\share\\fonts\\sil-mingzat-fonts\\Mingzat-Regular.ttf"
 "MS Sans Serif"="sserife.fon"
@@ -75999,7 +76148,6 @@ WINE REGISTRY Version 2
 "NimbusSansNarrow-BoldOblique (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-BoldOblique.otf"
 "NimbusSansNarrow-Oblique (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-Oblique.otf"
 "NimbusSansNarrow-Regular (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-Regular.otf"
-"Noto Emoji Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-emoji-fonts\\NotoEmoji-Regular.ttf"
 "Noto Naskh Arabic Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoNaskhArabic[wght].ttf"
 "Noto Sans Arabic Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoSansArabic[wght].ttf"
 "Noto Sans Armenian Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoSansArmenian[wght].ttf"
@@ -76250,6 +76398,8 @@ WINE REGISTRY Version 2
 "Open Sans Semibold (TrueType)"="Z:\\usr\\share\\fonts\\open-sans\\OpenSans-Semibold.ttf"
 "Open Sans Semibold Italic (TrueType)"="Z:\\usr\\share\\fonts\\open-sans\\OpenSans-SemiboldItalic.ttf"
 "OpenSymbol (TrueType)"="Z:\\usr\\share\\fonts\\opensymbol\\opens___.ttf"
+"OPTITimes-Roman (TrueType)"="Z:\\usr\\local\\share\\fonts\\o\\OPTITimes_Roman.otf"
+"OPTITimesRoman-Italic (TrueType)"="Z:\\usr\\local\\share\\fonts\\o\\OPTITimesRoman_Italic.otf"
 "P052-Bold (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-Bold.otf"
 "P052-BoldItalic (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-BoldItalic.otf"
 "P052-Italic (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-Italic.otf"
@@ -86400,44 +86550,14 @@ WINE REGISTRY Version 2
 @="Disk drives"
 "Class"="DiskDrive"
 
-[System\\CurrentControlSet\\Control\\Class\\{4D36E968-E325-11CE-BFC1-08002BE10318}] 1725404197
-#time=1dafe5487d433f0
+[System\\CurrentControlSet\\Control\\Class\\{4D36E968-E325-11CE-BFC1-08002BE10318}] 1726638992
+#time=1db098f832c8640
 "Class"="Display"
 
-[System\\CurrentControlSet\\Control\\Class\\{4D36E968-E325-11CE-BFC1-08002BE10318}\\0000] 1725404197
-#time=1dafe5487d397ce
-"DriverDate"="9-3-2024"
-"DriverDateData"=hex:e2,54,d3,87,54,fe,da,01
-"DriverDesc"="AMD Radeon 660M (RADV REMBRANDT)"
-"DriverVersion"="31.0.21902.5"
-"HardwareInformation.AdapterString"=hex:41,00,4d,00,44,00,20,00,52,00,61,00,64,\
-  00,65,00,6f,00,6e,00,20,00,36,00,36,00,30,00,4d,00,20,00,28,00,52,00,41,00,\
-  44,00,56,00,20,00,52,00,45,00,4d,00,42,00,52,00,41,00,4e,00,44,00,54,00,29,\
-  00,00,00
-"HardwareInformation.BiosString"=hex:41,00,4d,00,44,00,20,00,52,00,61,00,64,00,\
-  65,00,6f,00,6e,00,20,00,36,00,36,00,30,00,4d,00,20,00,28,00,52,00,41,00,44,\
-  00,56,00,20,00,52,00,45,00,4d,00,42,00,52,00,41,00,4e,00,44,00,54,00,29,00,\
-  00,00
-"HardwareInformation.ChipType"=hex:41,00,4d,00,44,00,20,00,52,00,61,00,64,00,\
-  65,00,6f,00,6e,00,20,00,36,00,36,00,30,00,4d,00,20,00,28,00,52,00,41,00,44,\
-  00,56,00,20,00,52,00,45,00,4d,00,42,00,52,00,41,00,4e,00,44,00,54,00,29,00,\
-  00,00
-"HardwareInformation.DacType"=hex:49,00,6e,00,74,00,65,00,72,00,67,00,72,00,61,\
-  00,74,00,65,00,64,00,20,00,52,00,41,00,4d,00,44,00,41,00,43,00,00,00
-"SymbolicLinkValue"=hex(6):5c,00,52,00,65,00,67,00,69,00,73,00,74,00,72,00,79,\
-  00,5c,00,4d,00,61,00,63,00,68,00,69,00,6e,00,65,00,5c,00,53,00,79,00,73,00,\
-  74,00,65,00,6d,00,5c,00,43,00,75,00,72,00,72,00,65,00,6e,00,74,00,43,00,6f,\
-  00,6e,00,74,00,72,00,6f,00,6c,00,53,00,65,00,74,00,5c,00,43,00,6f,00,6e,00,\
-  74,00,72,00,6f,00,6c,00,5c,00,43,00,6c,00,61,00,73,00,73,00,5c,00,7b,00,34,\
-  00,44,00,33,00,36,00,45,00,39,00,36,00,38,00,2d,00,45,00,33,00,32,00,35,00,\
-  2d,00,31,00,31,00,43,00,45,00,2d,00,42,00,46,00,43,00,31,00,2d,00,30,00,38,\
-  00,30,00,30,00,32,00,42,00,45,00,31,00,30,00,33,00,31,00,38,00,7d,00,5c,00,\
-  30,00,30,00,30,00,30,00
-
-[System\\CurrentControlSet\\Control\\Class\\{4D36E968-E325-11CE-BFC1-08002BE10318}\\0001] 1725404197
-#time=1dafe5487d4372e
-"DriverDate"="9-3-2024"
-"DriverDateData"=hex:23,f1,d3,87,54,fe,da,01
+[System\\CurrentControlSet\\Control\\Class\\{4D36E968-E325-11CE-BFC1-08002BE10318}\\0000] 1726638992
+#time=1db098f832ca350
+"DriverDate"="9-18-2024"
+"DriverDateData"=hex:d9,7b,2c,83,8f,09,db,01
 "DriverDesc"="NVIDIA GeForce RTX 2050"
 "DriverVersion"="31.0.15.3625"
 "HardwareInformation.AdapterString"=hex:4e,00,56,00,49,00,44,00,49,00,41,00,20,\
@@ -86451,13 +86571,22 @@ WINE REGISTRY Version 2
   00,30,00,35,00,30,00,00,00
 "HardwareInformation.DacType"=hex:49,00,6e,00,74,00,65,00,72,00,67,00,72,00,61,\
   00,74,00,65,00,64,00,20,00,52,00,41,00,4d,00,44,00,41,00,43,00,00,00
+"SymbolicLinkValue"=hex(6):5c,00,52,00,65,00,67,00,69,00,73,00,74,00,72,00,79,\
+  00,5c,00,4d,00,61,00,63,00,68,00,69,00,6e,00,65,00,5c,00,53,00,79,00,73,00,\
+  74,00,65,00,6d,00,5c,00,43,00,75,00,72,00,72,00,65,00,6e,00,74,00,43,00,6f,\
+  00,6e,00,74,00,72,00,6f,00,6c,00,53,00,65,00,74,00,5c,00,43,00,6f,00,6e,00,\
+  74,00,72,00,6f,00,6c,00,5c,00,43,00,6c,00,61,00,73,00,73,00,5c,00,7b,00,34,\
+  00,44,00,33,00,36,00,45,00,39,00,36,00,38,00,2d,00,45,00,33,00,32,00,35,00,\
+  2d,00,31,00,31,00,43,00,45,00,2d,00,42,00,46,00,43,00,31,00,2d,00,30,00,38,\
+  00,30,00,30,00,32,00,42,00,45,00,31,00,30,00,33,00,31,00,38,00,7d,00,5c,00,\
+  30,00,30,00,30,00,30,00
 
-[System\\CurrentControlSet\\Control\\Class\\{4D36E96E-E325-11CE-BFC1-08002BE10318}] 1725404197
-#time=1dafe5487d3bbd2
+[System\\CurrentControlSet\\Control\\Class\\{4D36E96E-E325-11CE-BFC1-08002BE10318}] 1726638992
+#time=1db098f832cbe44
 "Class"="Monitor"
 
-[System\\CurrentControlSet\\Control\\Class\\{4D36E96E-E325-11CE-BFC1-08002BE10318}\\0000] 1725404197
-#time=1dafe5487d3bbd2
+[System\\CurrentControlSet\\Control\\Class\\{4D36E96E-E325-11CE-BFC1-08002BE10318}\\0000] 1726638992
+#time=1db098f832cbe44
 
 [System\\CurrentControlSet\\Control\\Class\\{4d36e978-e325-11ce-bfc1-08002be10318}] 1724780953
 #time=1daf8a96dba0f90
@@ -86573,6 +86702,10 @@ WINE REGISTRY Version 2
 #time=1dafe5487cc14fe
 "DeviceInstance"="PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000"
 
+[System\\CurrentControlSet\\Control\\DeviceClasses\\{1CA05180-A699-450A-9A0C-DE4FBE3DDD89}\\##?#PCI#VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00#00000000#{1CA05180-A699-450A-9A0C-DE4FBE3DDD89}] 1726638992
+#time=1db098f83272a2e
+"DeviceInstance"="PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000"
+
 [System\\CurrentControlSet\\Control\\DeviceClasses\\{1CA05180-A699-450A-9A0C-DE4FBE3DDD89}\\##?#PCI#VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00#00000001#{1CA05180-A699-450A-9A0C-DE4FBE3DDD89}] 1725404196
 #time=1dafe5487ccc304
 "DeviceInstance"="PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001"
@@ -86581,8 +86714,8 @@ WINE REGISTRY Version 2
 #time=1daf8a96fbc8ca0
 "DeviceInstance"="HID\\VID_845E&PID_0001\\0&0000&0&0&0"
 
-[System\\CurrentControlSet\\Control\\DeviceClasses\\{378DE44C-56EF-11D1-BC8C-00A0C91405DD}\\##?#hid#vid_845e&pid_0001#0&0000&0&0&0#{378de44c-56ef-11d1-bc8c-00a0c91405dd}\\#] 1725404194
-#time=1dafe5486698614
+[System\\CurrentControlSet\\Control\\DeviceClasses\\{378DE44C-56EF-11D1-BC8C-00A0C91405DD}\\##?#hid#vid_845e&pid_0001#0&0000&0&0&0#{378de44c-56ef-11d1-bc8c-00a0c91405dd}\\#] 1726638990
+#time=1db098f82404898
 "SymbolicLink"="\\\\?\\hid#vid_845e&pid_0001#0&0000&0&0&0#{378de44c-56ef-11d1-bc8c-00a0c91405dd}"
 
 [System\\CurrentControlSet\\Control\\DeviceClasses\\{4D1E55B2-F16F-11CF-88CB-001111000030}\\##?#hid#vid_045e&pid_02ea&ig_00#769&0600b7925e040000ea02000001030000.0&0&0&1#{4d1e55b2-f16f-11cf-88cb-001111000030}] 1724847591
@@ -86605,21 +86738,25 @@ WINE REGISTRY Version 2
 #time=1daf8a96fbc7d64
 "DeviceInstance"="HID\\VID_845E&PID_0001\\0&0000&0&0&0"
 
-[System\\CurrentControlSet\\Control\\DeviceClasses\\{4D1E55B2-F16F-11CF-88CB-001111000030}\\##?#hid#vid_845e&pid_0001#0&0000&0&0&0#{4d1e55b2-f16f-11cf-88cb-001111000030}\\#] 1725404194
-#time=1dafe5486697ef8
+[System\\CurrentControlSet\\Control\\DeviceClasses\\{4D1E55B2-F16F-11CF-88CB-001111000030}\\##?#hid#vid_845e&pid_0001#0&0000&0&0&0#{4d1e55b2-f16f-11cf-88cb-001111000030}\\#] 1726638990
+#time=1db098f824040b4
 "SymbolicLink"="\\\\?\\hid#vid_845e&pid_0001#0&0000&0&0&0#{4d1e55b2-f16f-11cf-88cb-001111000030}"
 
 [System\\CurrentControlSet\\Control\\DeviceClasses\\{4D1E55B2-F16F-11CF-88CB-001111000030}\\##?#hid#vid_845e&pid_0002#0&0000&0&0&0#{4d1e55b2-f16f-11cf-88cb-001111000030}] 1724780956
 #time=1daf8a96fbf665a
 "DeviceInstance"="HID\\VID_845E&PID_0002\\0&0000&0&0&0"
 
-[System\\CurrentControlSet\\Control\\DeviceClasses\\{4D1E55B2-F16F-11CF-88CB-001111000030}\\##?#hid#vid_845e&pid_0002#0&0000&0&0&0#{4d1e55b2-f16f-11cf-88cb-001111000030}\\#] 1725404194
-#time=1dafe54866a4978
+[System\\CurrentControlSet\\Control\\DeviceClasses\\{4D1E55B2-F16F-11CF-88CB-001111000030}\\##?#hid#vid_845e&pid_0002#0&0000&0&0&0#{4d1e55b2-f16f-11cf-88cb-001111000030}\\#] 1726638990
+#time=1db098f82412f88
 "SymbolicLink"="\\\\?\\hid#vid_845e&pid_0002#0&0000&0&0&0#{4d1e55b2-f16f-11cf-88cb-001111000030}"
 
 [System\\CurrentControlSet\\Control\\DeviceClasses\\{5B45201D-F2F2-4F3B-85BB-30FF1F953599}\\##?#PCI#VEN_1002&DEV_1681&SUBSYS_00000000&REV_00#00000000#{5B45201D-F2F2-4F3B-85BB-30FF1F953599}] 1725404196
 #time=1dafe5487cc1238
 "DeviceInstance"="PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000"
+
+[System\\CurrentControlSet\\Control\\DeviceClasses\\{5B45201D-F2F2-4F3B-85BB-30FF1F953599}\\##?#PCI#VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00#00000000#{5B45201D-F2F2-4F3B-85BB-30FF1F953599}] 1726638992
+#time=1db098f8327256a
+"DeviceInstance"="PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000"
 
 [System\\CurrentControlSet\\Control\\DeviceClasses\\{5B45201D-F2F2-4F3B-85BB-30FF1F953599}\\##?#PCI#VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00#00000001#{5B45201D-F2F2-4F3B-85BB-30FF1F953599}] 1725404196
 #time=1dafe5487ccbfe4
@@ -86645,12 +86782,12 @@ WINE REGISTRY Version 2
 #time=1daf8a96fbf7492
 "DeviceInstance"="HID\\VID_845E&PID_0002\\0&0000&0&0&0"
 
-[System\\CurrentControlSet\\Control\\DeviceClasses\\{884B96C3-56EF-11D1-BC8C-00A0C91405DD}\\##?#hid#vid_845e&pid_0002#0&0000&0&0&0#{884b96c3-56ef-11d1-bc8c-00a0c91405dd}\\#] 1725404194
-#time=1dafe54866a5116
+[System\\CurrentControlSet\\Control\\DeviceClasses\\{884B96C3-56EF-11D1-BC8C-00A0C91405DD}\\##?#hid#vid_845e&pid_0002#0&0000&0&0&0#{884b96c3-56ef-11d1-bc8c-00a0c91405dd}\\#] 1726638990
+#time=1db098f8241360e
 "SymbolicLink"="\\\\?\\hid#vid_845e&pid_0002#0&0000&0&0&0#{884b96c3-56ef-11d1-bc8c-00a0c91405dd}"
 
-[System\\CurrentControlSet\\Control\\DeviceClasses\\{E6F07B5F-EE97-4A90-B076-33F57BF4EAA7}\\##?#DISPLAY#Default_Monitor#0000&0000#{E6F07B5F-EE97-4A90-B076-33F57BF4EAA7}] 1725404199
-#time=1dafe548901fd02
+[System\\CurrentControlSet\\Control\\DeviceClasses\\{E6F07B5F-EE97-4A90-B076-33F57BF4EAA7}\\##?#DISPLAY#Default_Monitor#0000&0000#{E6F07B5F-EE97-4A90-B076-33F57BF4EAA7}] 1726638994
+#time=1db098f84669eba
 "DeviceInstance"="DISPLAY\\DEFAULT_MONITOR\\0000&0000"
 
 [System\\CurrentControlSet\\Control\\hivelist] 1724780953
@@ -87910,16 +88047,16 @@ WINE REGISTRY Version 2
 #time=1daf8a96dc2cf86
 "CSDVersion"=dword:00000000
 
-[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000] 1725404197
-#time=1dafe5487d3b10a
+[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000] 1726638992
+#time=1db098f832cb4e4
 "Class"="Monitor"
 "ClassGUID"="{4D36E96E-E325-11CE-BFC1-08002BE10318}"
 "DeviceDesc"="Generic Non-PnP Monitor"
 "Driver"="{4D36E96E-E325-11CE-BFC1-08002BE10318}\\0000"
 "HardwareID"=str(7):"MONITOR\\Default_Monitor\0"
 
-[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Device Parameters] 1725404197
-#time=1dafe5487d3afe8
+[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Device Parameters] 1726638992
+#time=1db098f832cb3ea
 "EDID"=hex:00,ff,ff,ff,ff,ff,ff,00,00,00,00,00,00,00,00,00,00,00,01,04,a0,20,\
   12,00,06,00,00,00,00,00,00,00,00,00,00,00,00,00,01,01,01,01,01,01,01,01,01,\
   01,01,01,01,01,01,01,f4,b0,80,f0,72,38,61,40,a8,d0,35,00,20,12,00,00,00,1c,\
@@ -87927,29 +88064,29 @@ WINE REGISTRY Version 2
   00,00,00,00,00,00,00,00,00,00,00,00,00,00,10,00,00,00,00,00,00,00,00,00,00,\
   00,00,00,00,00,de
 
-[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{233a9ef3-afc4-4abd-b564-c32f21f1535b}\\0002] 1725404197
-#time=1dafe5487d3b2fe
+[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{233a9ef3-afc4-4abd-b564-c32f21f1535b}\\0002] 1726638992
+#time=1db098f832cb692
 @=hex(ffff0007):03,00,00,00
 
-[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{233a9ef3-afc4-4abd-b564-c32f21f1535b}\\0003] 1725404197
-#time=1dafe5487d3b42a
+[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{233a9ef3-afc4-4abd-b564-c32f21f1535b}\\0003] 1726638992
+#time=1db098f832cb7a0
 @=hex(ffff1003):00,00,00,00,00,00,00,00,80,07,00,00,38,04,00,00
 
-[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{233a9ef3-afc4-4abd-b564-c32f21f1535b}\\0004] 1725404197
-#time=1dafe5487d3b556
+[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{233a9ef3-afc4-4abd-b564-c32f21f1535b}\\0004] 1726638992
+#time=1db098f832cb8a4
 @=hex(ffff1003):00,00,00,00,00,00,00,00,80,07,00,00,38,04,00,00
 
-[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{233a9ef3-afc4-4abd-b564-c32f21f1535b}\\0005] 1725404197
-#time=1dafe5487d3b682
+[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{233a9ef3-afc4-4abd-b564-c32f21f1535b}\\0005] 1726638992
+#time=1db098f832cb99e
 @=hex(ffff0012):5c,00,5c,00,2e,00,5c,00,44,00,49,00,53,00,50,00,4c,00,41,00,59,\
   00,31,00,00,00
 
-[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{CA085853-16CE-48AA-B114-DE9C72334223}\\0001] 1725404197
-#time=1dafe5487d3b98e
-@=hex(ffff0008):f0,03,00,00,00,00,00,00
+[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{CA085853-16CE-48AA-B114-DE9C72334223}\\0001] 1726638992
+#time=1db098f832cbc3c
+@=hex(ffff0008):f4,03,00,00,00,00,00,00
 
-[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{CA085853-16CE-48AA-B114-DE9C72334223}\\0002] 1725404197
-#time=1dafe5487d3bab0
+[System\\CurrentControlSet\\Enum\\DISPLAY\\Default_Monitor\\0000&0000\\Properties\\{CA085853-16CE-48AA-B114-DE9C72334223}\\0002] 1726638992
+#time=1db098f832cbd36
 @=hex(ffff0007):00,00,00,00
 
 [System\\CurrentControlSet\\Enum\\HID\\VID_045E&PID_02EA&IG_00\\769&0600B7925E040000EA02000001030000.0&0&0&1] 1724847591
@@ -88030,79 +88167,43 @@ WINE REGISTRY Version 2
 [System\\CurrentControlSet\\Enum\\HID\\VID_845E&PID_0002\\0&0000&0&0&0\\Device Parameters] 1724780956
 #time=1daf8a96fbf089a
 
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000] 1724780949
-#time=1daf8a96b64f066
-"Class"="Display"
-"ClassGUID"="{4D36E968-E325-11CE-BFC1-08002BE10318}"
-"DeviceDesc"="AMD Radeon 660M (RADV REMBRANDT)"
-"Driver"="{4D36E968-E325-11CE-BFC1-08002BE10318}\\0000"
-"HardwareID"=str(7):"PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\0"
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00] 1726638992
+#time=1db098f8327d4e2
 
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000\\Device Parameters] 1724780949
-#time=1daf8a96b64f174
-"VideoID"="{47b8c721-11e0-42cc-9430-74d02fa1cbb8}"
-
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000\\Properties\\{233A9EF3-AFC4-4ABD-B564-C32F21F1535C}\\0002] 1724780949
-#time=1daf8a96b64f48a
-@=hex(ffff000d):00,00,00,00,06,00,00,00,00,00,00,00,00,00,00,00
-
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000\\Properties\\{540B947E-8B40-45BC-A8A2-6A0B894CBDA2}\\0005] 1725404197
-#time=1dafe5487d384e6
-@=hex(ffff0011):01,00,00,00
-
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000\\Properties\\{60B193CB-5276-4D0F-96FC-F173ABAD3EC6}\\0002] 1724780949
-#time=1daf8a96b64fafc
-@=hex(ffff0009):f0,03,00,00,00,00,00,00
-
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000\\Properties\\{A45C254E-DF1C-4EFD-8020-67D146A850E0}\\0017] 1724780949
-#time=1daf8a96b64ed64
-@=hex(ffff0007):00,00,00,00
-
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000\\Properties\\{A45C254E-DF1C-4EFD-8020-67D146A850E0}\\0021] 1724780949
-#time=1daf8a96b64ef08
-@=hex(ffff0007):01,00,00,00
-
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_1002&DEV_1681&SUBSYS_00000000&REV_00\\00000000\\Properties\\{A8B865DD-2E3D-4094-AD97-E593A70C75D6}\\0008] 1724780949
-#time=1daf8a96b64ea1c
-@=hex(ffff0012):50,00,43,00,49,00,5c,00,56,00,45,00,4e,00,5f,00,31,00,30,00,30,\
-  00,32,00,26,00,44,00,45,00,56,00,5f,00,31,00,36,00,38,00,31,00,26,00,53,00,\
-  55,00,42,00,53,00,59,00,53,00,5f,00,30,00,30,00,30,00,30,00,30,00,30,00,30,\
-  00,30,00,26,00,52,00,45,00,56,00,5f,00,30,00,30,00,00,00
-
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001] 1724780949
-#time=1daf8a96b65a592
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000] 1726638992
+#time=1db098f832712e6
 "Class"="Display"
 "ClassGUID"="{4D36E968-E325-11CE-BFC1-08002BE10318}"
 "DeviceDesc"="NVIDIA GeForce RTX 2050"
-"Driver"="{4D36E968-E325-11CE-BFC1-08002BE10318}\\0001"
+"Driver"="{4D36E968-E325-11CE-BFC1-08002BE10318}\\0000"
 "HardwareID"=str(7):"PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\0"
 
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001\\Device Parameters] 1724780949
-#time=1daf8a96b65a66e
-"VideoID"="{f9db5865-4691-4609-97b3-008cf667ee8c}"
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000\\Device Parameters] 1726638992
+#time=1db098f832713b8
+"VideoID"="{59a3ef07-d398-4cc7-8dc2-c15a3da61776}"
 
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001\\Properties\\{233A9EF3-AFC4-4ABD-B564-C32F21F1535C}\\0002] 1724780949
-#time=1daf8a96b65a97a
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000\\Properties\\{233A9EF3-AFC4-4ABD-B564-C32F21F1535C}\\0002] 1726638992
+#time=1db098f832716ce
 @=hex(ffff000d):d7,51,fc,fa,9b,1c,bc,38,ba,39,bd,3f,45,e0,c5,af
 
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001\\Properties\\{540B947E-8B40-45BC-A8A2-6A0B894CBDA2}\\0005] 1725404197
-#time=1dafe5487d431ac
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000\\Properties\\{540B947E-8B40-45BC-A8A2-6A0B894CBDA2}\\0005] 1726638992
+#time=1db098f832c8302
 @=hex(ffff0011):01,00,00,00
 
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001\\Properties\\{60B193CB-5276-4D0F-96FC-F173ABAD3EC6}\\0002] 1724780949
-#time=1daf8a96b65b050
-@=hex(ffff0009):f1,03,00,00,00,00,00,00
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000\\Properties\\{60B193CB-5276-4D0F-96FC-F173ABAD3EC6}\\0002] 1726638992
+#time=1db098f83271e08
+@=hex(ffff0009):f4,03,00,00,00,00,00,00
 
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001\\Properties\\{A45C254E-DF1C-4EFD-8020-67D146A850E0}\\0017] 1724780949
-#time=1daf8a96b65a330
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000\\Properties\\{A45C254E-DF1C-4EFD-8020-67D146A850E0}\\0017] 1726638992
+#time=1db098f832710de
+@=hex(ffff0007):00,00,00,00
+
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000\\Properties\\{A45C254E-DF1C-4EFD-8020-67D146A850E0}\\0021] 1726638992
+#time=1db098f832711e2
 @=hex(ffff0007):01,00,00,00
 
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001\\Properties\\{A45C254E-DF1C-4EFD-8020-67D146A850E0}\\0021] 1724780949
-#time=1daf8a96b65a470
-@=hex(ffff0007):01,00,00,00
-
-[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000001\\Properties\\{A8B865DD-2E3D-4094-AD97-E593A70C75D6}\\0008] 1724780949
-#time=1daf8a96b65a024
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_10DE&DEV_25AD&SUBSYS_00000000&REV_00\\00000000\\Properties\\{A8B865DD-2E3D-4094-AD97-E593A70C75D6}\\0008] 1726638992
+#time=1db098f83270e36
 @=hex(ffff0012):50,00,43,00,49,00,5c,00,56,00,45,00,4e,00,5f,00,31,00,30,00,44,\
   00,45,00,26,00,44,00,45,00,56,00,5f,00,32,00,35,00,41,00,44,00,26,00,53,00,\
   55,00,42,00,53,00,59,00,53,00,5f,00,30,00,30,00,30,00,30,00,30,00,30,00,30,\

@@ -1,0 +1,17 @@
+These textures are just upscales with no extra work done to them. They are here so users can use
+the "GPU Texture Decoding" option without breaking mipmaps, with the added bonus of slightly
+higher quality.
+
+The texture "tex1_256x256_m_e4d4dfdd9664f87e_1_arb" is an interesting case. This dumps on the
+overworld for both World 1 and World 2, but the mipmaps differ between both. The final mipmap
+is the important difference: it is white in World 1 to illuminate the distance, and black in 
+World 2 which means transparent in the distance. I chose to make the final mipmap gray to 
+attempt to compensate for both situations. It's not perfect, but it's close enough.
+
+So it seems "tex1_256x256_m_a41696d6ef3997f7_1_arb" also has this issue. This one is used on
+both "Starship Mario" which has gray mipmaps, and "Yoshi Star Galaxy" which uses white mipmaps.
+The same problem exists, fixing it one area breaks it in another, and it may even be used in
+other places. I chose to go with the gray, as it's easier to look at than bright white when
+white is not expected. Unfortunately, there is no perfect compromise for this texture.
+
+I've included a JPG titled "notice.jpg" to illustrate this issue.

@@ -4,39 +4,9 @@ drives:
   drive-0: ""
 backups:
   - name: "."
-    when: "2024-09-10T19:05:46.989489222Z"
+    when: "2024-09-17T21:53:38.882291476Z"
     os: linux
     files:
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/chapter1.cfg:
-        hash: d143a188c312d903cf21d5c8d1665e1f2ae40f8a
-        size: 20
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/chapter2.cfg:
-        hash: 9966c2b55a64e98d3302c27af157a0b30247a910
-        size: 20
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/chapter3.cfg:
-        hash: e75e3a2871406323fdde7b963c72daf6021b902b
-        size: 16
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/chapter4.cfg:
-        hash: 653ae8ed450c22089c8445997d828d9e20587ab5
-        size: 16
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/chapter5.cfg:
-        hash: 7fd1634ae854b3b486058691bdd528ea5a2d727c
-        size: 16
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/config_default.cfg:
-        hash: 8a5382bdbf2c7f2c4c30a5fa9fe3abd23096b36e
-        size: 970
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/modsettings.cfg:
-        hash: 866a42fb487045c79be55afb7d7bdc19a1a37d6d
-        size: 472
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/skill_episodic.cfg:
-        hash: eb9ddbe476807a5de3ded2da96f2b92b88a89294
-        size: 166
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/skill_manifest.cfg:
-        hash: 76208dd12db3c523e5a04c710bde1e1e19367751
-        size: 41
-      /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/cfg/sourcevr_episodic.cfg:
-        hash: a8436dd6cb7179088901a82b1d8909516bfcfc72
-        size: 99
       /home/leigh/.local/share/Steam/steamapps/common/Half-Life 2/episodic/save/autosave.sav:
         hash: 48b32a58e1ce2e8851e0f4ee80fbd94708536ce4
         size: 1101783

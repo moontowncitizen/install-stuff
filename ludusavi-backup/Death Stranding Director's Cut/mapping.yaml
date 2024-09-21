@@ -1,0 +1,15 @@
+---
+name: "Death Stranding Director's Cut"
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-17T21:53:37.876214588Z"
+    os: linux
+    files:
+      /home/leigh/.local/share/Steam/steamapps/common/DEATH STRANDING DIRECTORS CUT/settings.cfg:
+        hash: 7d6cbf770ddbad22820e4ea5514277c18eb93b6f
+        size: 714
+    registry:
+      hash: ~
+    children: []

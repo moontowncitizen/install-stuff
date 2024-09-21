@@ -1,0 +1,66 @@
+---
+name: Counter-Strike 2
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-20T06:24:56.555863004Z"
+    os: linux
+    files:
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_machine_convars.vcfg:
+        hash: 40e5b4847747c7dc36dabf1737a19eece57022cb
+        size: 12419
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_user_convars_0_slot0.vcfg:
+        hash: b686cedc143cd110760a1bd757bd95dae102c3a7
+        size: 3220
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_user_convars_0_slot0.vcfg_lastclouded:
+        hash: b686cedc143cd110760a1bd757bd95dae102c3a7
+        size: 3220
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_user_keys_0_slot0.vcfg:
+        hash: eede66311f2a9cb88c728ed42b0db40ac1979ea7
+        size: 58
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_user_keys_0_slot0.vcfg_lastclouded:
+        hash: eede66311f2a9cb88c728ed42b0db40ac1979ea7
+        size: 58
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_user_keys_0_slot1.vcfg:
+        hash: 8b16ea5ffd5ca90efd1c909d0625202b7200318d
+        size: 13
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_user_keys_0_slot2.vcfg:
+        hash: 8b16ea5ffd5ca90efd1c909d0625202b7200318d
+        size: 13
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_user_keys_0_slot3.vcfg:
+        hash: 8b16ea5ffd5ca90efd1c909d0625202b7200318d
+        size: 13
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/cs2_video.txt:
+        hash: 7847a2bd80374128c2dc199041faff40aa8fea82
+        size: 1006
+      /home/leigh/.local/share/Steam/userdata/252023632/730/local/cfg/qmmconnect.dt:
+        hash: 1f104d657b3ad925b2d171974aba9587987c88c0
+        size: 57
+      /home/leigh/.local/share/Steam/userdata/252023632/730/remote/cfg/cs2_loadout_favorites.txt:
+        hash: b61d0d6c7a46bbd0654051bcf9bab1e7d6f26cad
+        size: 101
+      /home/leigh/.local/share/Steam/userdata/252023632/730/remote/cfg/cs2_preferred_items.txt:
+        hash: 02712fb23b41446d3d84e28a20fbbcadbc2d0355
+        size: 1167
+      /home/leigh/.local/share/Steam/userdata/252023632/730/remote/cfg/cs2_shuffle_slots.txt:
+        hash: 71e750a41c42d68d603843e4fcc5fb6c31bd8f68
+        size: 19
+      /home/leigh/.local/share/Steam/userdata/252023632/730/remote/cfg/csgo_saved_item_shuffles.txt:
+        hash: c7bdc563982fc4ddddb9e6f8853b298967d858f9
+        size: 24
+      /home/leigh/.local/share/Steam/userdata/252023632/730/remote/cs2_user_convars.vcfg:
+        hash: b686cedc143cd110760a1bd757bd95dae102c3a7
+        size: 3220
+      /home/leigh/.local/share/Steam/userdata/252023632/730/remote/cs2_user_keys.vcfg:
+        hash: eede66311f2a9cb88c728ed42b0db40ac1979ea7
+        size: 58
+      /home/leigh/.local/share/Steam/userdata/252023632/730/remote/socache.dt:
+        hash: f133cdec27e58c7ac563c509d30cd3baf4977ad1
+        size: 56
+      /home/leigh/.local/share/Steam/userdata/252023632/730/remote/voice_ban.dt:
+        hash: 2c5c48655f74be0b6d83b0d5d9dfd1f44021e556
+        size: 10
+    registry:
+      hash: ~
+    children: []

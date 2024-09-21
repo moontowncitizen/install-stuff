@@ -1,0 +1,21 @@
+---
+name: Elden Ring
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-20T06:24:56.471904532Z"
+    os: linux
+    files:
+      /home/leigh/Games/elden-ring/drive_c/users/leigh/AppData/Roaming/EldenRing/76561197960271872/ER0000.sl2:
+        hash: 23cb33417487b7d55c2d352b372c3b9e1044792e
+        size: 28967888
+      /home/leigh/Games/elden-ring/drive_c/users/leigh/AppData/Roaming/EldenRing/76561197960271872/ER0000.sl2.bak:
+        hash: 23cb33417487b7d55c2d352b372c3b9e1044792e
+        size: 28967888
+      /home/leigh/Games/elden-ring/drive_c/users/leigh/AppData/Roaming/EldenRing/GraphicsConfig.xml:
+        hash: 1e244c57e4193ae210acab2a3e23470d50c47fb1
+        size: 2408
+    registry:
+      hash: ~
+    children: []

@@ -71,7 +71,7 @@
 		"citadel_hero_demo_no_troopers"		"false"
 		"citadel_hero_demo_persist_convars"		"false"
 		"citadel_hero_demo_unlock_flex_slots"		"false"
-		"citadel_hero_roster"		"8,7,1"
+		"citadel_hero_roster"		"50,13,11"
 		"citadel_invert_ping_type"		"false"
 		"citadel_item_used_text_height_offset"		"25.000000"
 		"citadel_new_player_flow_visible"		"true"

@@ -1,0 +1,99 @@
+---
+name: Psychonauts 2
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-17T21:53:38.033136601Z"
+    os: linux
+    files:
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/ApexDestruction.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Compat.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/DFSequencerSettings.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/DeviceProfiles.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/EditorScriptingUtilities.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Engine.ini:
+        hash: 5f1e66ed7bfc5ccfce3ad4c9a57b357fce24ebcf
+        size: 1691
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Game.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/GameUserSettings.ini:
+        hash: 04592c504c67da294fa06beade4cb4bb6227a2e5
+        size: 1186
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Hardware.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Input.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/MagicLeap.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/MagicLeapLightEstimation.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/MotoSynth.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Niagara.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/P2Attributes.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/P2GameStateVars.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/P2MapSettings.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Paper2D.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/PhysXVehicles.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Quests.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/RuntimeOptions.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Scalability.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/Synthesis.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/Config/WindowsNoEditor/VariantManagerContent.ini:
+        hash: ba8ab5a0280b953aa97435ff8946cbcbb2755a27
+        size: 2
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/SaveGames/P2ConfigSaveSlot.sav:
+        hash: b7d17f5420e6f119e63f1f3445bd491695466b16
+        size: 2989
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/SaveGames/Psychonauts2Save_0.bak:
+        hash: c64bd78ed77b8888afd3b38273e8807b55f9d9a4
+        size: 276328
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/SaveGames/Psychonauts2Save_0.sav:
+        hash: b3a83c449cdeab52bbc333db697b4ebb18411a21
+        size: 276328
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/SaveGames/Psychonauts2Save_A.bak:
+        hash: 5c7a9f7571f7513bbc78043734ebba4cba9293a2
+        size: 276328
+      /home/leigh/Games/psychonauts-2/drive_c/users/leigh/AppData/Local/Psychonauts2/Saved/SaveGames/Psychonauts2Save_A.sav:
+        hash: 8cc066efd5085bc2aefea03e23a7d7bbd9965d82
+        size: 276328
+    registry:
+      hash: ~
+    children: []

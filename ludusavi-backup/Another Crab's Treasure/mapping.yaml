@@ -1,0 +1,18 @@
+---
+name: "Another Crab's Treasure"
+drives:
+  drive-0: ""
+backups:
+  - name: "."
+    when: "2024-09-20T06:24:56.219326259Z"
+    os: linux
+    files:
+      /home/leigh/Games/another-crabs-treasure/drive_c/users/leigh/AppData/LocalLow/Aggro Crab/AnotherCrabsTreasure/Save1/Save1_SaveFile_0.CRAB:
+        hash: d78373099724645ccf86956ff1eacc66fdebf2cd
+        size: 71032
+      /home/leigh/Games/another-crabs-treasure/drive_c/users/leigh/AppData/LocalLow/Aggro Crab/AnotherCrabsTreasure/Save1/SaveFile_0.CRAB:
+        hash: d78373099724645ccf86956ff1eacc66fdebf2cd
+        size: 71032
+    registry:
+      hash: ~
+    children: []

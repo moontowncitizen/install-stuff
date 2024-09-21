@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Update system packages
+echo "Updating system packages..."
+sudo dnf distro-sync --refresh -y
+
 # Create a git folder
 mkdir git
 cd
@@ -13,25 +17,31 @@ mkdir partial
 mkdir torrents
 cd
 
-# Update system packages
-sudo dnf update -y
+# Set desktop background
+BACKGROUND_PATH="/home/leigh/install-stuff/Pictures/gruvbox/gruvbox_random.png"  # Replace with the full path to your image
+if [ -f "$BACKGROUND_PATH" ]; then
+    echo "Changing desktop background..."
+    xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_PATH"
+else
+    echo "Background image not found at $BACKGROUND_PATH."
+fi
 
 # Copy Config and Icons
 cp -rv /home/leigh/install-stuff/.config /home/leigh/
 cp -rv /home/leigh/install-stuff/.icons /home/leigh/
 cp -rv /home/leigh/install-stuff/ludusavi-backup /home/leigh/
+
 # Install cli pride flags
 cd git
 sudo dnf install nodejs -y
 npm i -g cli-pride-flags
 cd
 
-# Wallpaper
-WALLPAPER_PATH="/home/leigh/install-stuff/Pictures/gruvbox/gruvbox_random.png"
-gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER_PATH"
-
 # Install Kitty
 sudo dnf install kitty -y
+
+# Install kate
+sudo dnf install kate -y
 
 # Install Snapd
 sudo dnf install snapd -y
@@ -63,6 +73,31 @@ sudo flatpak install flathub com.spotify.Client -y
 
 # Install Bitwarden via Flatpak
 sudo flatpak install flathub com.bitwarden.desktop -y
+
+# Install Ulauncher
+if ! command_exists ulauncher; then
+    echo "Installing Ulauncher..."
+    sudo dnf install ulauncher -y
+else
+    echo "Ulauncher is already installed."
+fi
+
+# Install Plank dock
+if ! command_exists plank; then
+    echo "Installing Plank..."
+    sudo dnf install plank -y
+else
+    echo "Plank is already installed."
+fi
+
+# Install Atom text editor
+if ! command_exists atom; then
+    echo "Installing Atom..."
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/atom
+    sudo dnf install atom -y
+else
+    echo "Atom is already installed."
 
 # Install Icons
 cd git
@@ -106,12 +141,4 @@ chmod +x setup.sh
 cd
 
 # Notify user of completion
-echo "
- _          _          _          _       _      _     _   _             __               _                _
-| |        | |        | |        | |     | |    | |   | | | |           / _|             | |              (_)
-| |__   ___| |__   ___| |__   ___| |__   | | ___| |_  | |_| |__   ___  | |_ _   _ _ __   | |__   ___  __ _ _ _ __
-| '_ \ / _ \ '_ \ / _ \ '_ \ / _ \ '_ \  | |/ _ \ __| | __| '_ \ / _ \ |  _| | | | '_ \  | '_ \ / _ \/ _` | | '_ \
-| | | |  __/ | | |  __/ | | |  __/ | | | | |  __/ |_  | |_| | | |  __/ | | | |_| | | | | | |_) |  __/ (_| | | | | |
-|_| |_|\___|_| |_|\___|_| |_|\___|_| |_| |_|\___|\__|  \__|_| |_|\___| |_|  \__,_|_| |_| |_.__/ \___|\__, |_|_| |_|
-                                                                                                      __/ |
-                                                                                                     |___/         "
+echo " all done leigh!"

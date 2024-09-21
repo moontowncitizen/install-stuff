@@ -718,8 +718,7 @@ WINE REGISTRY Version 2
 "VidParticles_h2429768249"=dword:00000001
 "VidTFR_h3151569246"=dword:00000190
 "VidVSync_h382800143"=dword:00000001
-"vTY9ZwWyCq4cnoiD3hO4Sg==_h1710990873"=hex:63,4f,78,4a,4a,63,76,43,61,39,57,35,\
-  61,78,75,54,55,43,31,69,35,51,3d,3d,00
+"vTY9ZwWyCq4cnoiD3hO4S"=hex(0):
 
 [Software\\Wine\\AppDefaults\\ACMirage.exe\\DllOverrides] 1724780953
 #time=1daf8a96dc353e8
@@ -953,13 +952,13 @@ WINE REGISTRY Version 2
 #time=1dafe5488d96cb6
 "guid"=hex:81,f7,19,c5,c1,15,33,41,89,04,38,f6,eb,bc,33,56
 
-[Software\\Wine\\Fonts] 1725404194
-#time=1dafe5486671712
+[Software\\Wine\\Fonts] 1726638990
+#time=1db098f823d336a
 "Codepages"="1252,437"
 "LogPixels"=dword:00000060
 
-[Software\\Wine\\Fonts\\External Fonts] 1724847591
-#time=1daf94494cfe91a
+[Software\\Wine\\Fonts\\External Fonts] 1726638990
+#time=1db098f823f08b6
 "@Droid Sans Fallback (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansFallbackFull.ttf"
 "@Microsoft Yahei (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\msyh.ttf"
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-sans-cjk-vf-fonts\\NotoSansCJK-VF.ttc"
@@ -1001,6 +1000,8 @@ WINE REGISTRY Version 2
 "Comfortaa Regular (TrueType)"="Z:\\usr\\share\\fonts\\aajohan-comfortaa-fonts\\Comfortaa-Regular.otf"
 "Comfortaa SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\aajohan-comfortaa-fonts\\Comfortaa-SemiBold.otf"
 "Courier New (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\cour.ttf"
+"CozetteVector (TrueType)"="Z:\\home\\leigh\\.fonts\\c\\CozetteVector.ttf"
+"CozetteVectorBold (TrueType)"="Z:\\home\\leigh\\.fonts\\c\\CozetteVectorBold.ttf"
 "D050000L (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\D050000L.otf"
 "DejaVu Sans (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans.ttf"
 "DejaVu Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans-Bold.ttf"
@@ -1013,7 +1014,6 @@ WINE REGISTRY Version 2
 "DejaVu Sans Oblique (TrueType)"="Z:\\usr\\share\\fonts\\dejavu-sans-fonts\\DejaVuSans-Oblique.ttf"
 "Droid Arabic Kufi (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidKufi-Regular.ttf"
 "Droid Arabic Kufi Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidKufi-Bold.ttf"
-"Droid Sans (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSans.ttf"
 "Droid Sans Armenian (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansArmenian.ttf"
 "Droid Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSans-Bold.ttf"
 "Droid Sans Devanagari (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansDevanagari-Regular.ttf"
@@ -1027,6 +1027,60 @@ WINE REGISTRY Version 2
 "Droid Sans Tamil (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansTamil-Regular.ttf"
 "Droid Sans Tamil Bold (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansTamil-Bold.ttf"
 "Droid Sans Thai (TrueType)"="Z:\\usr\\share\\fonts\\google-droid-sans-fonts\\DroidSansThai.ttf"
+"Fantasque Sans Mono Regular (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\fantasque_sans_mono.ttf"
+"feather (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\feather.ttf"
+"Fira Mono (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Regular.otf"
+"Fira Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Bold.otf"
+"Fira Mono Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraMono-Medium.otf"
+"Fira Sans (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Regular.otf"
+"Fira Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Bold.otf"
+"Fira Sans Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-BoldItalic.otf"
+"Fira Sans Book (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Book.otf"
+"Fira Sans Book Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-BookItalic.otf"
+"Fira Sans Condensed Bold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Bold.otf"
+"Fira Sans Condensed Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-BoldItalic.otf"
+"Fira Sans Condensed Book Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-BookItalic.otf"
+"Fira Sans Condensed Eight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-EightItalic.otf"
+"Fira Sans Condensed ExtraBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraboldItalic.otf"
+"Fira Sans Condensed ExtraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraLightItalic.otf"
+"Fira Sans Condensed Four Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-FourItalic.otf"
+"Fira Sans Condensed Hair Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-HairItalic.otf"
+"Fira Sans Condensed Heavy Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-HeavyItalic.otf"
+"Fira Sans Condensed Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Italic.otf"
+"Fira Sans Condensed Light Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-LightItalic.otf"
+"Fira Sans Condensed Medium Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-MediumItalic.otf"
+"Fira Sans Condensed SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-SemiboldItalic.otf"
+"Fira Sans Condensed Thin Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ThinItalic.otf"
+"Fira Sans Condensed Two Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-TwoItalic.otf"
+"Fira Sans Condensed Ultra Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraItalic.otf"
+"Fira Sans Condensed UltraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraLightItalic.otf"
+"Fira Sans Eight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Eight.otf"
+"Fira Sans Eight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-EightItalic.otf"
+"Fira Sans ExtraBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraBold.otf"
+"Fira Sans ExtraBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraBoldItalic.otf"
+"Fira Sans ExtraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraLight.otf"
+"Fira Sans ExtraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ExtraLightItalic.otf"
+"Fira Sans Four (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Four.otf"
+"Fira Sans Four Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-FourItalic.otf"
+"Fira Sans Hair (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Hair.otf"
+"Fira Sans Hair Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-HairItalic.otf"
+"Fira Sans Heavy (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Heavy.otf"
+"Fira Sans Heavy Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-HeavyItalic.otf"
+"Fira Sans Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Italic.otf"
+"Fira Sans Light (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Light.otf"
+"Fira Sans Light Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-LightItalic.otf"
+"Fira Sans Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Medium.otf"
+"Fira Sans Medium Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-MediumItalic.otf"
+"Fira Sans SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-SemiBold.otf"
+"Fira Sans SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-SemiBoldItalic.otf"
+"Fira Sans Thin (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Thin.otf"
+"Fira Sans Thin Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-ThinItalic.otf"
+"Fira Sans Two (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Two.otf"
+"Fira Sans Two Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-TwoItalic.otf"
+"Fira Sans Ultra (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-Ultra.otf"
+"Fira Sans Ultra Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraItalic.otf"
+"Fira Sans UltraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraLight.otf"
+"Fira Sans UltraLight Italic (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSans-UltraLightItalic.otf"
 "FiraCode Nerd Font Bold (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Bold.ttf"
 "FiraCode Nerd Font Light (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Light.ttf"
 "FiraCode Nerd Font Med (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Medium.ttf"
@@ -1045,6 +1099,21 @@ WINE REGISTRY Version 2
 "FiraCode Nerd Font Reg (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Regular.ttf"
 "FiraCode Nerd Font Ret (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_Retina.ttf"
 "FiraCode Nerd Font SemBd (TrueType)"="Z:\\home\\leigh\\.fonts\\f\\FiraCodeNerdFont_SemiBold.ttf"
+"FiraSansCondensed-Book (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Book.otf"
+"FiraSansCondensed-Eight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Eight.otf"
+"FiraSansCondensed-ExtraBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraBold.otf"
+"FiraSansCondensed-ExtraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-ExtraLight.otf"
+"FiraSansCondensed-Four (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Four.otf"
+"FiraSansCondensed-Hair (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Hair.otf"
+"FiraSansCondensed-Heavy (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Heavy.otf"
+"FiraSansCondensed-Light (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Light.otf"
+"FiraSansCondensed-Medium (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Medium.otf"
+"FiraSansCondensed-Regular (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Regular.otf"
+"FiraSansCondensed-SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-SemiBold.otf"
+"FiraSansCondensed-Thin (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Thin.otf"
+"FiraSansCondensed-Two (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Two.otf"
+"FiraSansCondensed-Ultra (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-Ultra.otf"
+"FiraSansCondensed-UltraLight (TrueType)"="Z:\\usr\\share\\fonts\\mozilla-fira\\FiraSansCondensed-UltraLight.otf"
 "Gila (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gila.otf"
 "Gila Bold (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gila_Bold.otf"
 "Gothamono v0.2 Regular (TrueType)"="Z:\\home\\leigh\\.fonts\\g\\Gothamonov0.2_Regular.otf"
@@ -1066,6 +1135,8 @@ WINE REGISTRY Version 2
 "Hurmit Nerd Font Propo Italic (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_Italic.otf"
 "Hurmit Nerd Font Propo Light (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_Light.otf"
 "Hurmit Nerd Font Propo Light Italic (TrueType)"="Z:\\home\\leigh\\.fonts\\h\\HurmitNerdFontPropo_LightItalic.otf"
+"icomoon-feather (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\panels\\icomoon_feather.ttf"
+"Iosevka Nerd Font Complete (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\iosevka_nerd_font.ttf"
 "Jomolhari (TrueType)"="Z:\\usr\\share\\fonts\\jomolhari-fonts\\Jomolhari-alpha3c-0605331.ttf"
 "Liberation Mono (TrueType)"="Z:\\usr\\share\\fonts\\liberation-mono\\LiberationMono-Regular.ttf"
 "Liberation Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\liberation-mono\\LiberationMono-Bold.ttf"
@@ -1085,6 +1156,8 @@ WINE REGISTRY Version 2
 "Liberation Serif Italic (TrueType)"="Z:\\usr\\share\\fonts\\liberation-serif\\LiberationSerif-Italic.ttf"
 "Madan2 (TrueType)"="Z:\\usr\\share\\fonts\\madan-fonts\\madan.ttf"
 "Marlett (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\marlett.ttf"
+"Material (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\panels\\material.ttf"
+"Material-Design-Iconic-Font (TrueType)"="Z:\\home\\leigh\\.local\\share\\fonts\\material_design_iconic_font.ttf"
 "Microsoft Yahei (TrueType)"="Z:\\home\\leigh\\.local\\share\\lutris\\runners\\wine\\wine-ge-8-26-x86_64\\share\\wine\\fonts\\msyh.ttf"
 "Mingzat (TrueType)"="Z:\\usr\\share\\fonts\\sil-mingzat-fonts\\Mingzat-Regular.ttf"
 "MScore for scores (TrueType)"="Z:\\usr\\share\\fonts\\mscore-fonts\\mscore.ttf"
@@ -1104,7 +1177,6 @@ WINE REGISTRY Version 2
 "NimbusSansNarrow-BoldOblique (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-BoldOblique.otf"
 "NimbusSansNarrow-Oblique (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-Oblique.otf"
 "NimbusSansNarrow-Regular (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\NimbusSansNarrow-Regular.otf"
-"Noto Emoji Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-emoji-fonts\\NotoEmoji-Regular.ttf"
 "Noto Naskh Arabic Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoNaskhArabic[wght].ttf"
 "Noto Sans Arabic Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoSansArabic[wght].ttf"
 "Noto Sans Armenian Regular (TrueType)"="Z:\\usr\\share\\fonts\\google-noto-vf\\NotoSansArmenian[wght].ttf"
@@ -1355,6 +1427,8 @@ WINE REGISTRY Version 2
 "Open Sans Semibold (TrueType)"="Z:\\usr\\share\\fonts\\open-sans\\OpenSans-Semibold.ttf"
 "Open Sans Semibold Italic (TrueType)"="Z:\\usr\\share\\fonts\\open-sans\\OpenSans-SemiboldItalic.ttf"
 "OpenSymbol (TrueType)"="Z:\\usr\\share\\fonts\\opensymbol\\opens___.ttf"
+"OPTITimes-Roman (TrueType)"="Z:\\usr\\local\\share\\fonts\\o\\OPTITimes_Roman.otf"
+"OPTITimesRoman-Italic (TrueType)"="Z:\\usr\\local\\share\\fonts\\o\\OPTITimesRoman_Italic.otf"
 "P052-Bold (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-Bold.otf"
 "P052-BoldItalic (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-BoldItalic.otf"
 "P052-Italic (TrueType)"="Z:\\usr\\share\\fonts\\urw-base35\\P052-Italic.otf"

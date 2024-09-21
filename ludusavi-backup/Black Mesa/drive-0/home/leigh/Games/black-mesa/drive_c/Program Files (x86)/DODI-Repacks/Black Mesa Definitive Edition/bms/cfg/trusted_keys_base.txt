@@ -1,0 +1,19 @@
+"trusted_key_list"
+{
+	//
+	// This file lists public keys that are trusted by the server.
+	// It should usually only contain official Crowbar Collective public keys,
+	// so don't modify it.
+	//
+	// See trusted_key_example.txt for how you can add keys issues
+	// by third parties, in order to add their content to the list
+	// of trusted content.
+	//
+
+	// Official Black Mesa content.
+	public_key
+	{
+		type "rsa"
+		rsa_public_key "30819D300D06092A864886F70D010101050003818B0030818702818100C479FF8BE7AC6AB7B48591495083324A67D43F8F418725823B673C7EC2717F2F8B9EDC1D1A9FDC39A6D44996D779BE716D059586AD74FA8ABEF57CE17AB515B916DEC95046C74FF08F6E241DC18C2667A8B1922E23A31DACD92747A7A4F6928232232F465E58845D09E561FF033E090A2EE725CC90A1CBFDC303CC650A567C73020111"
+	}
+}

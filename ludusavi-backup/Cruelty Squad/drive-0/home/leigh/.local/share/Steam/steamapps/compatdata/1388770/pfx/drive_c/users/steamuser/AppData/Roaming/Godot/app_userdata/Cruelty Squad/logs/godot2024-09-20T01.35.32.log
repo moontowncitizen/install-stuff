@@ -1,0 +1,948 @@
+Godot Engine v3.5.2.stable.official.170ba337a - https://godotengine.org
+OpenGL ES 3.0 Renderer: AMD Radeon 660M (radeonsi, rembrandt, LLVM 18.1.6, DRM 3.58, 6.11.0-200.fsync.fc40.x86_64)
+Async. shader compilation: OFF
+ERROR: Unrecognized input string "fbe8" in mapping:
+030000005e040000ea02000001030000,Xbox One S Controller,a:b0,b:b1,x:b2,y:b3,back:b6,guide:b8,start:b7,leftstick:b9,rightstick:b10,leftshoulder:b4,rightshoulder:b5,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,leftx:a0,lefty:a1,rightx:a3,righty:a4,lefttrigger:a2,righttrigger:a5,crc:fbe8,
+   at: parse_mapping (main/input_default.cpp:1221) - Condition "true" is true. Continuing.
+ERROR: Unrecognized input string "92b7" in mapping:
+060000005e040000ea02000001030000,Xbox One S Controller,a:b0,b:b1,x:b2,y:b3,back:b6,guide:b8,start:b7,leftstick:b9,rightstick:b10,leftshoulder:b4,rightshoulder:b5,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,leftx:a0,lefty:a1,rightx:a3,righty:a4,lefttrigger:a2,righttrigger:a5,crc:92b7,
+   at: parse_mapping (main/input_default.cpp:1221) - Condition "true" is true. Continuing.
+ERROR: Unrecognized input string "dc18" in mapping:
+050000005e0400008e02000030110000,Xbox 360 Controller,a:b0,b:b1,x:b2,y:b3,back:b6,guide:b8,start:b7,leftstick:b9,rightstick:b10,leftshoulder:b4,rightshoulder:b5,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,leftx:a0,lefty:a1,rightx:a3,righty:a4,lefttrigger:a2,righttrigger:a5,crc:dc18,
+   at: parse_mapping (main/input_default.cpp:1221) - Condition "true" is true. Continuing.
+ 
+Save file loaded successfully.
+1
+2
+3
+73
+0
+1
+2
+3
+False
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+False
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+ERROR: Attempted to merge a navigation mesh triangle edge with another already-merged edge. This happens when the current `cell_size` is different from the one used to generate the navigation mesh. This will cause navigation problems.
+   at: sync (modules/navigation/nav_map.cpp:581) - Attempted to merge a navigation mesh triangle edge with another already-merged edge. This happens when the current `cell_size` is different from the one used to generate the navigation mesh. This will cause navigation problems.
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+ERROR: Node origin and target are in the same position, look_at() failed.
+   at: look_at_from_position (scene/3d/spatial.cpp:815) - Condition "p_pos == p_target" is true.
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+1
+ERROR: Node origin and target are in the same position, look_at() failed.
+   at: look_at_from_position (scene/3d/spatial.cpp:815) - Condition "p_pos == p_target" is true.
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+1
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+0
+armor1
+73
+1
+Chief
+2
+Cop_Narc
+1
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+0
+1
+2
+3
+4
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+4
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+4
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+False
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+5
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+ERROR: Collision exception only works between two CollisionObject.
+   at: add_collision_exception_with (scene/3d/physics_body.cpp:76) - Condition "!collision_object" is true.
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+False
+0
+armor0.88
+73
+1
+Nerd_2
+2
+Nerd_1
+3
+Nerd_3
+2
+1
+0
+1
+2
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+False
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+0
+0
+armor0.88
+73
+1
+entity_139_Obj_Executive1
+0
+1
+2
+3
+4
+5
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+5
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+False
+0
+armor0.88
+73
+1
+Cult_Leader
+0
+0
+armor0.88
+73
+1
+Cult_Leader
+0
+armor0.88
+73
+1
+Cult_Leader
+0
+1
+2
+3
+4
+5
+6
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+6
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+False
+0
+armor1.1
+73
+1
+Civilian3
+2
+Civilian
+3
+Civilian2
+0
+armor1.1
+73
+1
+Civilian3
+2
+Civilian
+3
+Civilian2
+0
+armor1.1
+73
+1
+Civilian3
+2
+Civilian
+3
+Civilian2
+0
+armor1.1
+73
+1
+Civilian3
+2
+Civilian
+3
+Civilian2
+0
+armor1.1
+73
+1
+Civilian3
+2
+Civilian
+3
+Civilian2
+0
+armor1.1
+73
+1
+Civilian3
+2
+Civilian
+3
+Civilian2
+0
+armor1.1
+73
+1
+Civilian3
+2
+Civilian
+3
+Civilian2
+0
+armor1.1
+73
+1
+Civilian3
+2
+Civilian
+3
+Civilian2
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object.cpp:2070) - ObjectDB instances leaked at exit (run with --verbose for details).
+ERROR: Resources still in use at exit (run with --verbose for details).
+   at: clear (core/resource.cpp:417) - Resources still in use at exit (run with --verbose for details).
+ERROR: There are still MemoryPool allocs in use at exit!
+   at: cleanup (core/pool_vector.cpp:63) - Condition "allocs_used > 0" is true.
