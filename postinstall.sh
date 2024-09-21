@@ -4,10 +4,6 @@
 echo "Updating system packages..."
 sudo dnf distro-sync --refresh -y
 
-# Create a git folder
-mkdir git
-cd
-
 # Create an overlord folder
 mkdir Desktop
 cd Desktop
@@ -18,7 +14,7 @@ mkdir torrents
 cd
 
 # Set desktop background
-BACKGROUND_PATH="/home/leigh/install-stuff/Pictures/gruvbox/gruvbox_random.png"  # Replace with the full path to your image
+BACKGROUND_PATH="/home/leigh/git/install-stuff/Pictures/gruvbox/gruvbox_random.png"  # Replace with the full path to your image
 if [ -f "$BACKGROUND_PATH" ]; then
     echo "Changing desktop background..."
     xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_PATH"
@@ -26,10 +22,10 @@ else
     echo "Background image not found at $BACKGROUND_PATH."
 fi
 
-# Copy Config and Icons
-cp -rv /home/leigh/install-stuff/.config /home/leigh/
-cp -rv /home/leigh/install-stuff/.icons /home/leigh/
-cp -rv /home/leigh/install-stuff/ludusavi-backup /home/leigh/
+# Copy Config and Icons and Pictures
+cp -rv /home/leigh/git/install-stuff/.config /home/leigh/
+cp -rv /home/leigh/git/install-stuff/.icons /home/leigh/
+cp -rv /home/leigh/git/install-stuff/Pictures/ /home/leigh/
 
 # Install cli pride flags
 cd git
@@ -40,19 +36,10 @@ cd
 # Install Kitty
 sudo dnf install kitty -y
 
-# Install kate
-sudo dnf install kate -y
-
 # Install Snapd
 sudo dnf install snapd -y
 sudo ln -s /var/lib/snapd/snap /snap
 sudo systemctl enable --now snapd.socket
-
-# Install Gnome Tweaks
-sudo dnf install gnome-tweaks -y
-
-# Install Gnome Calendar
-sudo dnf install gnome-calendar -y
 
 # Install qBittorrent
 sudo dnf install qbittorrent -y
@@ -90,14 +77,10 @@ else
     echo "Plank is already installed."
 fi
 
-# Install Atom text editor
-if ! command_exists atom; then
-    echo "Installing Atom..."
-    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/atom
-    sudo dnf install atom -y
-else
-    echo "Atom is already installed."
+# Install atom
+sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
+sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
+sudo dnf install atom
 
 # Install Icons
 cd git
@@ -121,8 +104,9 @@ gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Dark-B-LB"
 cd
 
 # Install Fonts
-FONT_SOURCE="/home/leigh/install-stuff/fonts/"
-FONT_DEST="$HOME/.local/share/fonts/"
+mkdir /home/leigh/.fonts/
+FONT_SOURCE="/home/leigh/git/install-stuff/fonts/"
+FONT_DEST="$HOME/.fonts/"
 mkdir -p "$FONT_DEST"
 echo "Copying fonts from $FONT_SOURCE to $FONT_DEST..."
 cp "$FONT_SOURCE"*.ttf "$FONT_DEST"
