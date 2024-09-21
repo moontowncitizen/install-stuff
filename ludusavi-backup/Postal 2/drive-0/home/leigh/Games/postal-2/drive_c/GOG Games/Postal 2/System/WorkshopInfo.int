@@ -1,4 +1,0 @@
-[Public]
-Object=(Name=GameTypes.GameSinglePlayer,Class=Class,MetaClass=Postal2Game.P2GameInfoSingle)
-Object=(Name=GameTypes.AWGameSPFinal,Class=Class,MetaClass=Postal2Game.P2GameInfoSingle)
-Object=(Name=GameTypes.AWPGameInfo,Class=Class,MetaClass=Postal2Game.P2GameInfoSingle)
