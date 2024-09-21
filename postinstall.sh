@@ -13,15 +13,6 @@ mkdir partial
 mkdir torrents
 cd
 
-# Set desktop background
-BACKGROUND_PATH="/home/leigh/git/install-stuff/Pictures/gruvbox/gruvbox_random.png"  # Replace with the full path to your image
-if [ -f "$BACKGROUND_PATH" ]; then
-    echo "Changing desktop background..."
-    xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_PATH"
-else
-    echo "Background image not found at $BACKGROUND_PATH."
-fi
-
 # Copy Config and Icons and Pictures and Fonts
 cp -rv /home/leigh/git/install-stuff/.config /home/leigh/
 cp -rv /home/leigh/git/install-stuff/.icons /home/leigh/
@@ -30,6 +21,7 @@ cp -rv /home/leigh/git/install-stuff/.fonts/ /home/leigh
 fc-cache -fv
 
 # Install cli pride flags
+cd
 cd git
 sudo dnf install nodejs -y
 npm i -g cli-pride-flags
@@ -43,8 +35,8 @@ sudo dnf install snapd -y
 sudo ln -s /var/lib/snapd/snap /snap
 sudo systemctl enable --now snapd.socket
 
-# Install qBittorrent
-sudo dnf install qbittorrent -y
+# Install fragments
+sudo dnf install fragments -y
 
 # Install LibreOffice
 sudo dnf install libreoffice -y
@@ -80,9 +72,7 @@ else
 fi
 
 # Install atom
-sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
-sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
-sudo dnf install atom
+sudo flatpak install atom
 
 # Install Icons
 cd git
@@ -114,4 +104,4 @@ chmod +x setup.sh
 cd
 
 # Notify user of completion
-echo " all done leigh!"
+echo "all done leigh!"
