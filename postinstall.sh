@@ -112,7 +112,7 @@ cd git
 git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git
 cd Gruvbox-GTK-Theme
 cd themes
-sudo ./install.sh --tweak moon mac outline float -t green -l
+sudo ./install.sh -l -t green -c dark --tweaks float outline
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --filesystem=$HOME/.icons
 flatpak override --user --filesystem=xdg-config/gtk-4.0
