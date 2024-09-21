@@ -22,10 +22,12 @@ else
     echo "Background image not found at $BACKGROUND_PATH."
 fi
 
-# Copy Config and Icons and Pictures
+# Copy Config and Icons and Pictures and Fonts
 cp -rv /home/leigh/git/install-stuff/.config /home/leigh/
 cp -rv /home/leigh/git/install-stuff/.icons /home/leigh/
 cp -rv /home/leigh/git/install-stuff/Pictures/ /home/leigh/
+cp -rv /home/leigh/git/install-stuff/.fonts/ /home/leigh
+fc-cache -fv
 
 # Install cli pride flags
 cd git
@@ -102,19 +104,6 @@ flatpak override --user --filesystem=xdg-config/gtk-4.0
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
 gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Dark-B-LB"
 cd
-
-# Install Fonts
-mkdir /home/leigh/.fonts/
-FONT_SOURCE="/home/leigh/git/install-stuff/fonts/"
-FONT_DEST="$HOME/.fonts/"
-mkdir -p "$FONT_DEST"
-echo "Copying fonts from $FONT_SOURCE to $FONT_DEST..."
-cp "$FONT_SOURCE"*.ttf "$FONT_DEST"
-cp "$FONT_SOURCE"*.otf "$FONT_DEST"
-echo "Updating font cache..."
-fc-cache -fv
-echo "Installed fonts:"
-fc-list | grep -i "Fira\|Hurmit\|Monofur\|Trap"
 
 # install chris titus script
 cd git
