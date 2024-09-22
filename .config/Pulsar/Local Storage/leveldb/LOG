@@ -1,0 +1,14 @@
+2024/09/22-10:56:30.415 1cb7 Reusing MANIFEST /home/leigh/.config/Pulsar/Local Storage/leveldb/MANIFEST-000001
+2024/09/22-10:56:30.417 1cb7 Recovering log #12
+2024/09/22-10:56:30.417 1cb7 Reusing old log /home/leigh/.config/Pulsar/Local Storage/leveldb/000012.log 
+2024/09/22-10:58:31.647 1ca4 Level-0 table #16: started
+2024/09/22-10:58:31.659 1ca4 Level-0 table #16: 93473 bytes OK
+2024/09/22-10:58:31.662 1ca4 Delete type=0 #12
+2024/09/22-10:58:31.663 1ca4 Compacting 4@0 + 0@1 files
+2024/09/22-10:58:31.674 1ca4 Generated table #17@0: 187 keys, 383016 bytes
+2024/09/22-10:58:31.674 1ca4 Compacted 4@0 + 0@1 files => 383016 bytes
+2024/09/22-10:58:31.676 1ca4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/09/22-10:58:31.676 1ca4 Delete type=2 #7
+2024/09/22-10:58:31.676 1ca4 Delete type=2 #11
+2024/09/22-10:58:31.677 1ca4 Delete type=2 #13
+2024/09/22-10:58:31.677 1ca4 Delete type=2 #16

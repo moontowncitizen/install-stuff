@@ -1,0 +1,32 @@
+{
+    "5710f412-71fc-4600-9843-579160ae3164": {
+        "id": "5710f412-71fc-4600-9843-579160ae3164",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1726973166.734738
+    },
+    "2d4aa4c7-53cf-484f-b753-6960f4cc211c": {
+        "id": "2d4aa4c7-53cf-484f-b753-6960f4cc211c",
+        "name": "Wikipedia",
+        "keyword": "wiki",
+        "cmd": "https://en.wikipedia.org/wiki/%s",
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1726973166.7348106
+    },
+    "3f651469-291f-4ee2-a9a9-aa7f92e2df66": {
+        "id": "3f651469-291f-4ee2-a9a9-aa7f92e2df66",
+        "name": "Canvas",
+        "keyword": "school",
+        "cmd": "https://coconino.instructure.com/?login_success=1",
+        "icon": "~/git/gruvbox-plus-icon-pack/Gruvbox-Plus-Dark/apps/32/app.rednotebook.RedNotebook.svg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1726981519.063245
+    }
+}
