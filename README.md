@@ -32,30 +32,31 @@ Follow the steps below to set up your environment using this script.
 
 ### Running the Script
 Clone this repository:
-```bash
+```sh
 git clone https://github.com/moontowncitizen/install-stuff.git
 ```
 
 Make the script executable:
-```bash
+```sh
 chmod +x setup.sh
 ```
 
 Run the script with the desired options:
-```bash
+```sh
 ./setup.sh [options]
 ```
 
-Command-Line Options
-Flag	Description
--c	Setup Chromebook Linux Audio.
--h	Display help message with usage information.
+|Command-Line Options                             | 
+|-------------------------------------------------|
+|Flag |Description                                |
+|-c	  |Setup Chromebook Linux Audio.              |
+|-h	  |Display help message with usage information|
 
 To run the standard setup with Chromebook audio:
-```bash
+```sh
 ./setup.sh -c
 ```
 To view the help message:
-```bash
+```sh
 ./setup.sh -h
 ```
