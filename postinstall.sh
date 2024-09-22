@@ -135,7 +135,7 @@ install_dnf_package "qbittorrent"
 install_dnf_package "libreoffice"
 
 # Install GTK Murine engine
-instaall_dnf_package "gtk-murrine-engine"
+install_dnf_package "gtk-murrine-engine"
 
 # Install Surfshark via Snap (Beta)
 install_snap_package "surfshark"
