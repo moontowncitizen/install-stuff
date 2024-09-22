@@ -204,10 +204,6 @@ sudo flatpak override --filesystem="$ICONS_DIR"
 flatpak override --user --filesystem="$HOME_DIR/.config/gtk-4.0"
 sudo flatpak override --filesystem="$HOME_DIR/.config/gtk-4.0"
 
-# Set GTK Theme using gsettings
-echo "Setting GTK theme..."
-gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Dark-B-LB"
-
 # Install Chris Titus Script
 echo "Installing Chris Titus Tech setup script..."
 CHRIS_TITUS_REPO="https://github.com/ChrisTitusTech/mybash.git"
