@@ -127,6 +127,7 @@ echo "Installing Snapd..."
 install_dnf_package "snapd"
 sudo ln -s /var/lib/snapd/snap /snap || true
 sudo systemctl enable --now snapd.socket
+sudo snap refresh
 
 # Install qBittorrent
 install_dnf_package "qbittorrent"
