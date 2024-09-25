@@ -6,7 +6,7 @@
 set -euo pipefail
 
 # Variables
-HOME_DIR="/home/leigh"
+HOME_DIR="/home/$USER"
 GIT_DIR="$HOME_DIR/git"
 INSTALL_STUFF_REPO="$GIT_DIR/install-stuff"
 DESKTOP_DIR="$HOME_DIR/Desktop"
@@ -15,9 +15,11 @@ DOWNLOADS_DIR="$HOME_DIR/Downloads"
 THEMES_DIR="$HOME_DIR/.local/share/themes"
 ICONS_DIR="$HOME_DIR/.local/share/icons"
 FLATPAK_REMOTE="https://flathub.org/repo/flathub.flatpakrepo"
+BACKGROUND_IMAGE="$HOME_DIR/Pictures/gruvbox/gruvbox_random.png"
 
 # Flags
-CHROMebook_AUDIO_SETUP=false
+CHROMEBOOK_AUDIO_SETUP=false
+DESKTOP_ENVIRONMENT=""
 
 # Function to display usage
 usage() {
@@ -25,10 +27,11 @@ usage() {
     echo ""
     echo "Options:"
     echo "  -c    Setup Chromebook Linux Audio"
+    echo "  -d [kde|gnome|xfce]    Specify desktop environment (default is auto-detected)"
     echo "  -h    Display this help message"
     echo ""
     echo "Example:"
-    echo "  $0 -c    Install all standard packages and set up Chromebook audio"
+    echo "  $0 -c -d xfce    Install all standard packages and set up Chromebook audio on XFCE"
     exit 1
 }
 
@@ -67,11 +70,43 @@ install_snap_package() {
     fi
 }
 
+# Function to detect the desktop environment
+detect_desktop_environment() {
+    if command_exists kwin_wayland; then
+        DESKTOP_ENVIRONMENT="kde"
+    elif command_exists gnome-shell; then
+        DESKTOP_ENVIRONMENT="gnome"
+    elif command_exists xfce4-session; then
+        DESKTOP_ENVIRONMENT="xfce"
+    else
+        echo "Unable to detect desktop environment. Please specify with the -d option."
+        usage
+    fi
+}
+
+# Function to set the desktop background
+set_desktop_background() {
+    case "$DESKTOP_ENVIRONMENT" in
+        kde)
+            kwriteconfig5 --file "$(kreadconfig5 --file kiwin --key SystemSettings)" --group "Wallpaper" --key "Image" "$BACKGROUND_IMAGE"
+            ;;
+        gnome)
+            gsettings set org.gnome.desktop.background picture-uri "file://$BACKGROUND_IMAGE"
+            ;;
+        xfce)
+            xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_IMAGE"
+            ;;
+    esac
+}
+
 # Parse command-line options
-while getopts ":ch" opt; do
+while getopts ":cd:h" opt; do
     case ${opt} in
         c )
-            CHROMebook_AUDIO_SETUP=true
+            CHROMEBOOK_AUDIO_SETUP=true
+            ;;
+        d )
+            DESKTOP_ENVIRONMENT="$OPTARG"
             ;;
         h )
             usage
@@ -83,6 +118,11 @@ while getopts ":ch" opt; do
     esac
 done
 shift $((OPTIND -1))
+
+# Detect desktop environment if not specified
+if [ -z "$DESKTOP_ENVIRONMENT" ]; then
+    detect_desktop_environment
+fi
 
 # Update system packages
 echo "Updating system packages..."
@@ -121,6 +161,10 @@ sudo npm install -g cli-pride-flags
 
 # Install Kitty Terminal
 install_dnf_package "kitty"
+
+# Install sassc and libsass
+install_dnf_package "sassc"
+install_dnf_package "libsass"
 
 # Install Snapd
 echo "Installing Snapd..."
@@ -224,26 +268,46 @@ chmod +x setup.sh
 cd "$HOME_DIR"
 
 # Chromebook Audio Setup (Flag: -c)
-if [ "$CHROMebook_AUDIO_SETUP" = true ]; then
+if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
     echo "Setting up Chromebook Linux Audio..."
-    CHROMebook_AUDIO_REPO="https://github.com/WeirdTreeThing/chromebook-linux-audio.git"
-    CHROMebook_AUDIO_DIR="$GIT_DIR/chromebook-linux-audio"
+    CHROMEBOOK_AUDIO_REPO="https://github.com/WeirdTreeThing/chromebook-linux-audio.git"
+    CHROMEBOOK_AUDIO_DIR="$GIT_DIR/chromebook-linux-audio"
 
-    if [ ! -d "$CHROMebook_AUDIO_DIR" ]; then
+    if [ ! -d "$CHROMEBOOK_AUDIO_DIR" ]; then
         echo "Cloning Chromebook Linux Audio repository..."
-        git clone "$CHROMebook_AUDIO_REPO" "$CHROMebook_AUDIO_DIR"
+        git clone "$CHROMEBOOK_AUDIO_REPO" "$CHROMEBOOK_AUDIO_DIR"
     else
         echo "Chromebook Linux Audio repository already exists. Pulling latest changes..."
-        cd "$CHROMebook_AUDIO_DIR"
+        cd "$CHROMEBOOK_AUDIO_DIR"
         git pull
     fi
 
     echo "Running setup-audio script..."
-    cd "$CHROMebook_AUDIO_DIR"
+    cd "$CHROMEBOOK_AUDIO_DIR"
     chmod +x setup-audio
     ./setup-audio
     cd "$HOME_DIR"
 fi
 
+# Desktop Environment-Specific Configurations
+set_desktop_background
+case "$DESKTOP_ENVIRONMENT" in
+    kde)
+        echo "Configuring for KDE Plasma..."
+        # Add KDE-specific configurations here
+        ;;
+    gnome)
+        echo "Configuring for GNOME..."
+        # Add GNOME-specific configurations here
+        ;;
+    xfce)
+        echo "Configuring for XFCE..."
+        # Add XFCE-specific configurations here
+        ;;
+    *)
+        echo "Unsupported desktop environment: $DESKTOP_ENVIRONMENT"
+        ;;
+esac
+
 # Completion Notification
-echo "All done, Leigh! Your system setup is complete."
+echo "All done, $(whoami)! Your Fedora Linux setup is complete."
