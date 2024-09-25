@@ -56,26 +56,6 @@ install_dnf_package() {
     fi
 }
 
-# Function to install a Flatpak package if not already installed
-install_flatpak_package() {
-    if ! flatpak list | grep -q "$1"; then
-        echo "Installing Flatpak package $1..."
-        sudo flatpak install flathub "$1" -y
-    else
-        echo "Flatpak package $1 is already installed."
-    fi
-}
-
-# Function to install a Snap package if not already installed
-install_snap_package() {
-    if ! snap list | grep -q "$1"; then
-        echo "Installing Snap package $1..."
-        sudo snap install "$1" --classic || true
-    else
-        echo "Snap package $1 is already installed."
-    fi
-}
-
 # Function to uninstall a package using DNF
 uninstall_dnf_package() {
     if dnf list installed "$1" &>/dev/null; then
@@ -83,26 +63,6 @@ uninstall_dnf_package() {
         sudo dnf remove "$1" -y
     else
         echo "$1 is not installed."
-    fi
-}
-
-# Function to uninstall a Flatpak package
-uninstall_flatpak_package() {
-    if flatpak list | grep -q "$1"; then
-        echo "Uninstalling Flatpak package $1..."
-        sudo flatpak uninstall -y "$1"
-    else
-        echo "Flatpak package $1 is not installed."
-    fi
-}
-
-# Function to uninstall a Snap package
-uninstall_snap_package() {
-    if snap list | grep -q "$1"; then
-        echo "Uninstalling Snap package $1..."
-        sudo snap remove "$1" || true
-    else
-        echo "Snap package $1 is not installed."
     fi
 }
 
@@ -121,13 +81,7 @@ perform_uninstall() {
     uninstall_dnf_package "gtk-murrine-engine"
     uninstall_dnf_package "xfce4-dockbarx-plugin"
     uninstall_dnf_package "ulauncher"
-
-    # Uninstall Flatpak packages
-    uninstall_flatpak_package "com.spotify.Client"
-    uninstall_flatpak_package "com.bitwarden.desktop"
-
-    # Uninstall Snap packages
-    uninstall_snap_package "surfshark"
+    uninstall_dnf_package "xfce4-docklike-plugin"  # Remove xfce4-docklike-plugin
 
     # Remove the cloned repositories and configuration files
     echo "Removing configuration and theme files..."
@@ -151,65 +105,24 @@ detect_desktop_environment() {
     fi
 }
 
-# Function to check and ensure the XFCE panel is running
-check_xfce_panel() {
-    if [ "$DESKTOP_ENVIRONMENT" = "xfce" ]; then
-        if ! pgrep -x "xfce4-panel" > /dev/null; then
-            echo "Starting XFCE panel..."
-            xfce4-panel &
-            sleep 2  # Wait for the panel to start
-        fi
+# Function to install the Docklike plugin from source
+install_docklike_plugin() {
+    echo "Installing xfce4-docklike-plugin from source..."
 
-        # Check if the panel service is accessible
-        if ! dbus-send --print-reply --dest=org.xfce.Panel /org/xfce/Panel org.freedesktop.DBus.Properties.Get string:"org.xfce.Panel" string:"Version" >/dev/null; then
-            echo "Error: XFCE panel service is not available. Please make sure the panel is running."
-            exit 1
-        fi
-    fi
-}
+    # Install dependencies
+    install_dnf_package "xfce4-dev-tools"
+    install_dnf_package "cmake"
 
-# Function to set the desktop background
-set_desktop_background() {
-    case "$DESKTOP_ENVIRONMENT" in
-        kde)
-            kwriteconfig5 --file "$(kreadconfig5 --file kiwin --key SystemSettings)" --group "Wallpaper" --key "Image" "$BACKGROUND_IMAGE"
-            ;;
-        gnome)
-            gsettings set org.gnome.desktop.background picture-uri "file://$BACKGROUND_IMAGE"
-            ;;
-        xfce)
-            xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_IMAGE"
-            ;;
-    esac
-}
+    # Clone the repository
+    git clone https://github.com/nsz32/docklike-plugin "$GIT_DIR/docklike-plugin"
+    cd "$GIT_DIR/docklike-plugin"
 
-# Function to install Starship
-install_starship() {
-    if ! command_exists starship; then
-        echo "Installing Starship..."
-        curl -sS https://starship.rs/install.sh | sh
-        echo 'eval "$(starship init bash)"' >> "$HOME_DIR/.bashrc"
-        echo "Starship installed successfully."
-    else
-        echo "Starship is already installed."
-    fi
-}
+    # Build and install
+    ./autogen.sh
+    make
+    sudo make install
 
-# Function to install MyBash
-install_mybash() {
-    echo "Installing MyBash from Chris Titus Tech..."
-    git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git "$GIT_DIR/mybash"
-    cd "$GIT_DIR/mybash"
-    chmod +x setup.sh
-    ./setup.sh
-    echo "MyBash installation completed."
-}
-
-# Function to install CLI Pride Flags
-install_cli_pride_flags() {
-    echo "Installing Node.js and CLI Pride Flags..."
-    install_dnf_package "nodejs"
-    sudo npm install -g cli-pride-flags
+    echo "xfce4-docklike-plugin installed successfully."
 }
 
 # Parse command-line options
@@ -252,21 +165,9 @@ fi
 echo "Updating system packages..."
 sudo dnf distro-sync --refresh -y
 
-# Create necessary directories
-echo "Setting up directories..."
-mkdir -p "$OVERLORD_DIR/partial" "$OVERLORD_DIR/torrents"
-
 # Ensure GIT_DIR exists
 echo "Ensuring Git directory exists at $GIT_DIR..."
 mkdir -p "$GIT_DIR"
-
-# Copy Configurations, Themes, Pictures, and Fonts
-echo "Copying configuration files..."
-cp -rv "$INSTALL_STUFF_REPO/.config" "$HOME_DIR/"
-cp -rv "$INSTALL_STUFF_REPO/Pictures/" "$HOME_DIR/"
-cp -rv "$INSTALL_STUFF_REPO/.fonts/" "$HOME_DIR/.fonts/"
-cp -rv "$INSTALL_STUFF_REPO/Themes/" "$THEMES_DIR"
-cp -rv "$INSTALL_STUFF_REPO/Icons/" "$ICONS_DIR"
 
 # Install essential applications
 install_dnf_package "kitty"
@@ -276,41 +177,10 @@ install_dnf_package "snapd"
 install_dnf_package "qbittorrent"
 install_dnf_package "libreoffice"
 install_dnf_package "gtk-murrine-engine"
-install_dnf_package "xfce4-dockbarx-plugin"
 install_dnf_package "ulauncher"
 
-# Add Flatpak repository and install applications
-echo "Adding Flatpak repository..."
-sudo flatpak remote-add --if-not-exists flathub "$FLATPAK_REMOTE"
-
-install_flatpak_package "com.spotify.Client"
-install_flatpak_package "com.bitwarden.desktop"
-
-# Install Snap packages
-install_snap_package "surfshark"
-
-# Set the desktop background
-set_desktop_background
-
-# Install Starship
-install_starship
-
-# Install MyBash if flag is set
-if [ "$INSTALL_MYBASH" = true ]; then
-    install_mybash
-fi
-
-# Install CLI Pride Flags
-install_cli_pride_flags
-
-# Check for Chromebook Audio Setup
-if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
-    echo "Setting up Chromebook Linux Audio..."
-    git clone --depth=1 https://github.com/ChrisTitusTech/chromebook-linux-audio.git "$GIT_DIR/chromebook-linux-audio"
-    cd "$GIT_DIR/chromebook-linux-audio"
-    chmod +x setup.sh
-    ./setup.sh
-fi
+# Install the Docklike plugin
+install_docklike_plugin
 
 # Completion Notification
 echo "All done, $(whoami)! Your Fedora Linux setup is complete. Yippee!"
