@@ -20,6 +20,7 @@ BACKGROUND_IMAGE="$HOME_DIR/Pictures/gruvbox/gruvbox_random.png"
 # Flags
 CHROMEBOOK_AUDIO_SETUP=false
 DESKTOP_ENVIRONMENT=""
+INSTALL_MYBASH=false
 
 # Function to display usage
 usage() {
@@ -28,10 +29,12 @@ usage() {
     echo "Options:"
     echo "  -c    Setup Chromebook Linux Audio"
     echo "  -d [kde|gnome|xfce]    Specify desktop environment (default is auto-detected)"
+    echo "  -t    Install MyBash from Chris Titus Tech"
     echo "  -h    Display this help message"
     echo ""
     echo "Example:"
     echo "  $0 -c -d xfce    Install all standard packages and set up Chromebook audio on XFCE"
+    echo "  $0 -t           Install MyBash"
     exit 1
 }
 
@@ -118,14 +121,39 @@ set_desktop_background() {
     esac
 }
 
+# Function to install Starship
+install_starship() {
+    if ! command_exists starship; then
+        echo "Installing Starship..."
+        curl -sS https://starship.rs/install.sh | sh
+        echo 'eval "$(starship init bash)"' >> "$HOME_DIR/.bashrc"
+        echo "Starship installed successfully."
+    else
+        echo "Starship is already installed."
+    fi
+}
+
+# Function to install MyBash
+install_mybash() {
+    echo "Installing MyBash from Chris Titus Tech..."
+    git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git "$GIT_DIR/mybash"
+    cd "$GIT_DIR/mybash"
+    chmod +x setup.sh
+    ./setup.sh
+    echo "MyBash installation completed."
+}
+
 # Parse command-line options
-while getopts ":cd:h" opt; do
+while getopts ":cd:th" opt; do
     case ${opt} in
         c )
             CHROMEBOOK_AUDIO_SETUP=true
             ;;
         d )
             DESKTOP_ENVIRONMENT="$OPTARG"
+            ;;
+        t )
+            INSTALL_MYBASH=true
             ;;
         h )
             usage
@@ -154,16 +182,6 @@ mkdir -p "$OVERLORD_DIR/partial" "$OVERLORD_DIR/torrents"
 # Ensure GIT_DIR exists
 echo "Ensuring Git directory exists at $GIT_DIR..."
 mkdir -p "$GIT_DIR"
-
-# Clone or update the install-stuff repository
-if [ ! -d "$INSTALL_STUFF_REPO" ]; then
-    echo "Cloning install-stuff repository..."
-    git clone https://github.com/yourusername/install-stuff.git "$INSTALL_STUFF_REPO"
-else
-    echo "install-stuff repository already exists. Pulling latest changes..."
-    cd "$INSTALL_STUFF_REPO"
-    git pull
-fi
 
 # Copy Configurations, Icons, Pictures, and Fonts
 echo "Copying configuration files..."
@@ -232,8 +250,8 @@ rm -f "$PULSAR_RPM_FILE"
 
 # Install Gruvbox Plus Icon Pack
 echo "Installing Gruvbox Plus Icon Pack..."
-GRUVBOX_ICONS_REPO="https://github.com/SylEleuth/gruvbox-plus-icon-pack.git"
-GRUVBOX_ICONS_DIR="$GIT_DIR/gruvbox-plus-icon-pack"
+GRUVBOX_ICONS_REPO="https://github.com/SylEleuth/gruvbox-plus-icons"
+GRUVBOX_ICONS_DIR="$GIT_DIR/gruvbox-plus-icons"
 
 if [ ! -d "$GRUVBOX_ICONS_DIR" ]; then
     git clone "$GRUVBOX_ICONS_REPO" "$GRUVBOX_ICONS_DIR"
@@ -243,12 +261,15 @@ else
     git pull
 fi
 
-cp -rv "$GRUVBOX_ICONS_DIR/Gruvbox-Plus-Dark" "$ICONS_DIR"
+# Copy the icons to the local share directory
+mkdir -p "$ICONS_DIR"
+cp -rv "$GRUVBOX_ICONS_DIR/icons/"* "$ICONS_DIR/"
+echo "Gruvbox Plus Icon Pack installation completed."
 
-# Install GTK Theme
+# Install GTK theme
 echo "Installing GTK theme..."
 GTK_THEME_REPO="https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git"
-GTK_THEME_DIR="$GIT_DIR/Gruvbox-GTK-Theme/theme"
+GTK_THEME_DIR="$GIT_DIR/Gruvbox-GTK-Theme"
 
 if [ ! -d "$GTK_THEME_DIR" ]; then
     git clone "$GTK_THEME_REPO" "$GTK_THEME_DIR"
@@ -258,7 +279,9 @@ else
     git pull
 fi
 
-cp -rv "$GTK_THEME_DIR/gruvbox" "$THEMES_DIR"
+# Install the theme with specific tweaks
+cd "$GTK_THEME_DIR"
+./install.sh --tweaks outline float -t green -l -c dark
 
 # Set the desktop background
 set_desktop_background
@@ -269,14 +292,48 @@ check_xfce_panel
 # Install DockBarX for XFCE
 install_dnf_package "xfce4-dockbarx-plugin"
 
+# Install Starship
+install_starship
+
+# Install MyBash if the flag is set
+if [ "$INSTALL_MYBASH" = true ]; then
+    install_mybash
+fi
+
 # Install any other packages and settings based on flags
 if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
     echo "Setting up Chromebook Linux audio..."
-    # Add Chromebook audio setup commands here
+
+    # Clone the Chromebook Linux Audio repository
+    CHROMEBOOK_AUDIO_REPO="https://github.com/WeirdTreeThing/chromebook-linux-audio"
+    CHROMEBOOK_AUDIO_DIR="$GIT_DIR/chromebook-linux-audio"
+
+    if [ ! -d "$CHROMEBOOK_AUDIO_DIR" ]; then
+        git clone "$CHROMEBOOK_AUDIO_REPO" "$CHROMEBOOK_AUDIO_DIR"
+    else
+        echo "Chromebook Linux audio repository already exists. Pulling latest changes..."
+        cd "$CHROMEBOOK_AUDIO_DIR"
+        git pull
+    fi
+
+    # Change to the cloned directory
+    cd "$CHROMEBOOK_AUDIO_DIR"
+
+    # Run the setup.sh script if it exists
+    if [ -f "setup.sh" ]; then
+        echo "Running the Chromebook Linux audio setup script..."
+        chmod +x setup.sh  # Ensure the script is executable
+        sudo ./setup.sh
+    else
+        echo "Error: setup.sh script not found in the Chromebook Linux audio repository."
+        exit 1
+    fi
+
+    echo "Chromebook audio setup completed."
 fi
 
 # Set desktop background
 set_desktop_background
 
 # Completion Notification
-echo "All done, $(whoami)! Your Fedora Linux setup is complete.Yipeee!"
+echo "All done, $(whoami)! Your Fedora Linux setup is complete. Yippee!"
