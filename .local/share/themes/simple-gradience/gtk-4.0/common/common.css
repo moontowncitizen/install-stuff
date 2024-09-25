@@ -1,0 +1,1339 @@
+/* hopefully to disable libadwaita's styles: */
+
+* {
+    border-style: none;
+    outline-style: none;
+    box-shadow: none;
+    background-image: none;
+}
+
+/* Based on adw-gtk version 4.7 and 4.9 */
+
+@define-color disabled_fg_color mix(mix(@window_fg_color, @window_bg_color, 0.5), @error_color, 0.15);
+@define-color info_fg_color @popover_fg_color;
+@define-color info_bg_color @popover_bg_color;
+
+.background { color: @window_fg_color; background-color: @window_bg_color; }
+
+dnd { color: @window_fg_color; }
+button, tab, switch, scale, slider {
+    outline-style: none;
+}
+
+
+*:disabled, *:dir(rtl):disabled, *:dir(ltr):disabled, /* specificity bump hopefully */
+button:disabled, button.flat:disabled, .button:disabled, .view:disabled, tab:disabled, entry:disabled, row:disabled, menuitem:disabled, label:disabled,
+check:disabled, radio:disabled,
+check:disabled:hover, radio:disabled:hover,
+check:disabled:selected, radio:disabled:selected,
+check:disabled:active, radio:disabled:active,
+.view:disabled:selected, .view:disabled:active, .view:disabled:hover,
+slider:disabled
+ { 
+    color: @disabled_fg_color;
+    opacity: 1; /*hopefully overwriting some libadwaita tendencies */
+	}
+button:disabled, button.flat:disabled, .button:disabled, tab:disabled, entry:disabled, row:disabled, menuitem:disabled, modelbutton:disabled, modelbutton.flat:disabled
+check:disabled, radio:disabled,
+slider:disabled
+{
+    background-image: linear-gradient(45deg, 
+        alpha(currentColor, 0.3) 10%, 
+        alpha(currentColor, 0.0) 10%, 
+        alpha(currentColor, 0.0) 50%, 
+        alpha(currentColor, 0.3) 50%, 
+        alpha(currentColor, 0.3) 60%, 
+        alpha(currentColor, 0.0) 60% );
+    background-size: 0.6em 0.6em;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+
+
+label {
+    padding: 0 0.5em;
+}
+
+#NautilusPathBar label {
+    padding: 0;
+}
+
+/* selections */
+
+selection,
+.view:selected:focus, .view:selected, iconview:selected, calendar:selected,
+.nautilus-window notebook:selected, .nautilus-window notebook > stack:selected:not(:only-child),
+.nautilus-window notebook > stack:not(:only-child) searchbar:selected,
+.view text:selected, iconview text:selected, textview text:selected, row:selected, row.has-open-popup, row.activatable:focus
+.view > :selected /*this is weirdly needed for nemo when renaming files, there's probably a better solution */
+
+ { background-color: alpha(@accent_bg_color,0.7); color: @accent_fg_color; }
+
+selection:focus-within { background-color: alpha(@accent_bg_color,1); }
+
+
+/* view, treeview, columnview, iconview, listview, row, row.activatable, row > box.header */
+
+.view, list {
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+}
+
+
+list > row, listview > row {
+    padding: 0.3em;
+}
+
+scrolledwindow > viewport > list > row:dir(ltr) { /* these two are to avoid content under the damn overlay scrollbars */
+    padding-right: 1em;
+}
+scrolledwindow > viewport > list > row:dir(rtl) {
+    padding-left: 1em;
+}
+
+
+list.rich-list > row, stacksidebar row {
+    min-height: 2em;
+} 
+
+list > row.activatable:hover,
+listview > row.activatable:hover   {
+    background-color: alpha(@accent_bg_color, 0.2);
+}
+
+list > row.activatable:hover:selected, list > row.activatable:hover:selected:active,
+listview > row.activatable:hover:selected, listview > row.activatable:hover:selected:active {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+list > row.activatable:active,
+listview > row.activatable:active {
+    background-color: alpha(@accent_bg_color, 0.5);
+    color: @accent_fg_color;
+}
+
+list > row.activatable:active:hover,
+listview > row.activatable:active:hover {
+    background-color: alpha(@accent_bg_color, 0.7);
+}
+
+list.separators > row:not(:last-child) {
+    border-bottom: 1px solid alpha(currentColor, 0.15);
+}
+
+header button {
+    padding: 0.1em 0.3em;
+}
+
+
+
+/* row at different places, need to reshape? */
+
+/* placesview, filechooser */
+
+/* popover, &.menu , &.emoji-picker, &.emoji-completion-row, emoji-completion */
+
+/* button, splitbutton, buttoncontent... and what about flat buttons?! , arrow */
+button, arrow, tab, .button, slider {
+    min-height: 1.2em; 
+    min-width: 1.2em; 
+    padding: 0.3em 0.3em; 
+    border: 1px solid; 
+    border-color: alpha(currentColor,0.2);
+    border-radius: 0.5em;
+    color: @window_fg_color; 
+    background-color: alpha(currentColor,0.1);
+    outline-color: mix(currentColor,mix(currentColor,@window_bg_color,0.9),0.7); 
+    margin: 1px; /* with margin, libreoffice shows undershoot at many places... */
+    background-clip: border-box;
+     
+}
+
+
+
+toolbar button, arrow, button.combo {
+    padding: 0.2em;
+}
+
+scrollbar button, calendar button {
+    min-height: 0.6em;
+    min-width: 0.6em;
+    padding: 2px;
+}
+
+
+
+
+arrow {
+    min-height: 7px; 
+    min-width: 7px;
+    padding: 0.3em;
+}
+
+button arrow {
+
+    padding: 0;
+    background-color: transparent;
+    border-style: none;
+    min-height: 0.5em;
+    min-width: 0.5em;
+    
+    -gtk-icon-source: -gtk-icontheme("arrow-down");
+}
+
+
+radiobutton, radio {
+    border-radius: 9999px;
+}
+
+button:hover, arrow:hover, tab:hover, .button:hover,
+button:focus, .button:focus,
+slider:hover, slider:focus
+    {
+    box-shadow: inset 0 0 0 .1em @accent_color;
+}
+
+button:hover:checked, arrow:hover:checked, tab:hover:checked, tab:selected:hover, .button:hover:checked,
+button:focus:checked, .button:focus:checked
+    {
+    box-shadow: inset 0 -.3em 0 0 @accent_color,
+    			inset 0 0 0 .1em @accent_color;
+}
+button:checked, arrow:checked, .button:checked, tab:checked, tab:selected
+    {
+    box-shadow: inset 0 -.3em 0 0 alpha(@accent_color, 1);
+	}
+
+button:active, arrow:active, .button:active, slider:active, tab:active {
+	box-shadow: inset 0 0 0 .2em @accent_color;
+}
+
+button:active:checked, arrow:active:checked, tab:active:checked, tab:selected:active, .button:active:checked {
+	box-shadow: inset 0 0 0 .2em @accent_color,
+				inset 0 -.3em 0 0 alpha(@accent_color, 1);
+}
+
+button:checked:disabled, arrow:checked:disabled, tab:checked:disabled, tab:selected:disabled, .button:checked:disabled {
+     box-shadow: inset 0 -.3em 0 0 currentColor;
+}
+
+button.star { /* in Nautilus, at least */
+    min-height: 1em;
+    min-width: 1em;
+    padding: 0.2em;
+}
+
+scrollbar.vertical button.up {
+    -gtk-icon-source: -gtk-icontheme("arrow-up");
+}
+scrollbar.vertical button.down {
+    -gtk-icon-source: -gtk-icontheme("arrow-down");
+}
+
+scrollbar.horizontal button.up:dir(ltr),
+scrollbar.horizontal button.down:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("arrow-left");
+}
+scrollbar.horizontal button.down:dir(ltr),
+scrollbar.horizontal button.up:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("arrow-right");
+}
+
+
+
+
+/* entry, row.netry, spinbutton */
+entry, .entry, spinbutton text, entry.search {
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+    min-height: 1.7em;
+    border-width: 0px;
+    border-bottom-width: 2px;
+    border-bottom-style: dashed;
+    border-bottom-color: alpha(@view_fg_color, 0.5);
+    border-radius: 0;
+}
+
+.view entry, list entry, list spinbutton text {
+	background-color: mix(@view_bg_color, @window_bg_color, 0.5);
+}
+
+entry:active, .entry:active, text:active, entry:focus, text:focus, entry:focus-within, text:focus-within  {
+    border-bottom-color: @accent_color;
+}
+
+entry:disabled {
+    border-color: @disabled_fg_color;
+}
+
+placeholder {
+    color: alpha(currentColor, 0.4);
+}
+
+spinbutton {
+    background-color: @view_bg_color;
+    padding: 1px;
+    margin: 0;
+    border-radius: 0.5em;
+}
+
+spinbutton.horizontal:dir(ltr) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+spinbutton.horizontal:dir(rtl) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+spinbutton button {
+    min-width: 1em;
+    min-height: 1em;
+    padding: 0.2em;
+
+}
+
+/* dropdown */
+
+/* checks, radios */
+
+check, radio {
+    border: 2px solid alpha(currentColor, 0.6);
+    min-width: 1em;
+    min-height: 1em;
+    -gtk-icon-source: none;
+    margin: 0.2em 0.3em;
+    background-clip: padding-box;
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+}
+
+popover check, popover radio, menu check, menu radio {
+    color: @popover_fg_color;
+}
+
+check:hover, check:focus, 
+radio:hover, radio:focus {
+    border-color: alpha(currentColor, 1);
+}
+
+check:hover:active, radio:hover:active,
+check:focus:active, radio:focus:active {
+    border-color: mix(@accent_fg_color, @window_fg_color, 0.5);
+}
+checkbutton {
+    border-bottom: 1px solid transparent;
+}
+checkbutton:focus-visible {
+    border-color: alpha(@accent_color, 0.5);
+}
+
+check:checked, radio:checked,
+check:checked:selected, radio:checked:selected,
+check:checked:focus, radio:checked:focus,
+check:checked:focus:selected, radio:checked:focus:selected /* goddammit! */
+{
+    /*color: @accent_fg_color;
+    border-color: alpha(currentColor, 0.6);*/
+    background-color: @accent_fg_color;/*currentColor;*/
+    box-shadow: inset 0 0 0 3px @accent_bg_color;
+}
+
+check:checked:disabled, radio:checked:disabled
+ {
+    background-color: @disabled_fg_color;
+    box-shadow: inset 0 0 0 3px @window_bg_color;
+}
+
+
+check:indeterminate, radio:indeterminate {
+border-style: dashed;
+}
+
+/* .destructive-action, .suggested-action, default button */
+
+.destructive-action:not(:disabled), .destructive:not(:disabled) {
+    background-color: @destructive_bg_color;
+    color: @destructive_fg_color;
+}
+
+.suggested-action:not(:disabled), .suggested:not(:disabled) {
+    background-color: @success_bg_color;
+    color: @success_fg_color;
+}
+
+
+.default > label {
+    text-decoration: underline;
+}
+
+/* scale, slider, switch */
+
+scale.horizontal {
+    margin: 0.5em 0;
+
+}
+scale.vertical {
+    margin: 0 0.5em;
+
+}
+
+mark, mark > indicator {
+    background-color: alpha(@window_fg_color,0.15);
+}
+
+
+
+scale.horizontal mark, scale.horizontal mark > indicator {
+    min-width: 1px;
+    min-height: 0.5em;
+}
+
+scale.vertical mark, scale.vertical mark > indicator {
+    min-width: 0.5em;
+    min-height: 1px;
+}
+
+
+
+slider { /* overwrites some things defined in button, which needs to be above */
+    min-width: 1.2em;
+    min-height: 1.2em;
+    padding: 0;
+    border-radius: 9999px;
+    background-color: mix(@window_fg_color,@window_bg_color, 0.8);
+    /*border: 3px double mix(@window_fg_color,@window_bg_color, 0.5);*/
+    margin: 0;
+}
+
+scrollbar.horizontal slider {
+    min-height: 0.6em;
+    min-width: 2em;
+}
+scrollbar.vertical slider {
+    min-height: 2em;
+    min-width: 0.6em;
+}
+
+/* draggable elements */
+
+slider, tab.reorderable-page, tabbox > tabboxchild > tab, paned > separator {
+	background-image: radial-gradient(circle, alpha(currentColor, 0.2), alpha(currentColor, 0.2) 30%, alpha(currentColor, 0) 35%);
+	background-size: 5px 5px;
+	background-position: center;
+	background-repeat: repeat;
+}
+tab.reorderable-page > *, tab.reorderable-page label, tab.reorderable-page button,
+tabbox > tabboxchild > tab > *, tabbox > tabboxchild > tab label {
+	background-color: mix(@window_bg_color, @window_fg_color, 0.1);
+	padding: 0 0.3em;
+	border-radius: 9999px;
+}
+
+.fine-tune slider:active, .fine-tune slider:active:hover {
+    /*box-shadow: inset 0 0 0 0.1em @warning_bg_color;*/
+    
+    background-color: @warning_bg_color;
+    /*border-style: solid;*/
+}
+
+switch {
+    border: 1px solid alpha(currentColor, 0.5);
+    border-radius: 9999px;
+    background-color: mix(@window_bg_color, @view_bg_color, 0.5);
+}
+
+
+switch slider {
+    min-width: 1.2em;
+    min-height: 1.2em;
+    color: @window_fg_color;
+    margin: 0.1em;
+}
+
+switch:checked {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+switch:checked:disabled {
+    background-color: mix(@window_bg_color, @window_fg_color, 0.5);
+    color: mix(@window_bg_color, @window_fg_color, 0.25);
+}
+
+slider:disabled {
+    background-color: mix(@window_fg_color,@window_bg_color, 0.85);
+    border-color:mix(@window_fg_color,@window_bg_color, 0.8);
+}
+
+scale slider {
+    margin: -0.3em;
+}
+/* progressbar and levelbar */
+
+progressbar.horizontal, levebar.horizontal {
+min-height: 0.5em;
+}
+progressbar.vertical, levebar.vertical {
+min-width: 0.5em;
+}
+
+
+/* scrollbar */
+
+scrollbar {
+    /* sometimes transient scrollbars appear on top of content! Therefore we need to let it at least be visible
+       (controls under scrollbars are still a problem, though!)
+       */
+    opacity: 0.5;
+}
+
+
+
+trough {
+    background-color: alpha(@window_fg_color, 0.1);
+    /*border: 1px solid alpha(@window_fg_color, 0.2);*/
+    border-radius: 9999px;
+    margin: 0;
+}
+
+scale.vertical > trough, progressbar.vertical > trough, levelbar.vertical > trough, progressbar.vertical > trough > progress{
+    min-width: 0.5em;
+}
+scale.horizontal > trough, progressbar.horizontal > trough, levelbar.horizontal > trough, progressbar.horizontal > trough > progress {
+    min-height: 0.5em;
+}
+
+progress, highlight, block.filled {
+    background-color: @accent_color;
+    border-radius: 9999px;
+}
+progress:disabled, highlight:disabled, 
+block.filled:disabled, block.filled.high:disabled, block.filled.low:disabled {
+    background-color: @disabled_fg_color;
+}
+
+block.filled.high {
+    background-color: @success_color;
+}
+block.filled.low {
+    background-color: @warning_color;
+}
+
+/* entry progress in each gtk file because they conflict */
+
+
+
+/* notebook, tabbar */
+/* see buttons too */
+
+notebook {
+	background-color: @window_bg_color;
+}
+notebook:focus > header {
+    box-shadow: inset 0 0 0 2px alpha(@accent_color, 0.2);
+}
+notebook > header {
+    border-radius:1em; 
+} 
+
+
+tab, button.radio, stackswitcher > button, .circular, .pill {
+    border-radius: 9999px;
+    margin: 1px;
+}
+
+/*tab.reorderable-page, tabbox > tabboxchild > tab {
+    border-style: double;
+    border-width: 3px;
+    min-width: 1em;
+    min-height: 1em;
+    padding: 0.1em 0.3em;
+}*/
+ /* see slider for active reorderable tab */
+
+
+
+stackswitcher > button {
+    min-height: 1.6em;
+    min-width: 1.6em;
+}
+
+stackswitcher {
+margin: 0.3em;
+}
+headerbar stackswitcher {
+margin: 0 0.3em;
+}
+
+tab button {
+    padding: 1px;
+    min-width: 0.7em;
+    min-height: 0.7em;
+}
+
+
+
+/* headerbar, .titlebar, windowcontrols... window.devel headerbar > windowhandle */
+
+.titlebar:not(headerbar), headerbar, .top-bar { 
+    border: none;
+    border-radius: 0; 
+    background: @headerbar_bg_color; 
+    color: @headerbar_fg_color;
+    margin: 0;
+    }
+headerbar {
+    min-height: 2em;
+    padding: 0.3em;
+}
+.nautilus-window headerbar {
+    min-height: 2.7em;
+}
+
+.top-bar {
+    padding: 0;
+}
+.titlebar > button, .titlebar > entry, .titlebar > box {
+margin-top: 0.3em; margin-bottom: 0.3em;
+}
+
+.titlebar:not(headerbar):backdrop, headerbar:backdrop, .top-bar:backdrop 
+    { background: @headerbar_backdrop_color; }
+
+.titlebar:not(headerbar) button:not(:disabled):not(.close):not(.maximize):not(.minimize) {
+    color: @headerbar_fg_color;
+}
+
+windowhandle > box { /* this is to fix Nautilus against libadwaita */
+padding: 0;
+}
+
+
+/* toolbar */
+
+toolbar, .toolbar {
+padding: 1px;
+}
+
+/* menus (popover.menu, modelbutton, menubar, menubar > item */ 
+menuitem, menubar > item, modelbutton, modelbutton.flat {
+    padding: 0.2em 0.5em;
+    min-height: 1.5em;
+}
+
+menuitem:hover, menubar > item:hover, modelbutton:hover,
+menuitem:focus, menubar > item:focus, modelbutton:focus {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+
+
+accelerator{
+    color: alpha(currentColor, 0.5);
+    padding: 0 0.2em;
+}
+accelerator:dir(ltr) {
+    margin-left: 1em;
+}
+accelerator:dir(rtl) {
+    margin-right: 1em;
+}
+
+
+
+/* sidebars */
+
+.sidebar-pane {
+color: @view_fg_color;
+background-color: mix(@window_bg_color, @view_bg_color, 0.7);
+}
+
+/* icons */
+
+/* actionbar */ 
+
+/* searchbar */
+
+/* infobar */
+infobar { 
+    background-color: mix(@info_bg_color, @window_bg_color, 0.5);
+    padding: 0.5em;
+    }
+    
+infobar label { color: mix(@info_fg_color, @window_fg_color, 0.5);}
+
+infobar button {margin: 1px 0.4em;}
+
+infobar.info, infobar.question { background-color: @info_bg_color;}
+infobar.info label, infobar.question label { color: @info_fg_color;}
+
+infobar.warning { background-color: @warning_bg_color;}
+infobar.warning label {color: @warning_fg_color;}
+
+infobar.error { background-color: @error_bg_color; }
+infobar.error label {color: @error_fg_color;}
+
+
+
+/* statusbar */
+
+statusbar {
+    border-radius: 9999px;
+    border: 1px solid alpha(currentColor, 0.1);
+}
+
+statusbar > frame > border {
+    border-style: none;
+}
+
+statusbar label {
+    font-style: italic;
+    font-family: monospace;
+}
+
+/* color swatch */
+
+colorswatch.light:hover > overlay, colorswatch.light:focus > overlay {
+box-shadow: inset 0 0 0 1px alpha(black, 0.5);
+}
+colorswatch.dark:hover > overlay, colorswatch.dark:focus > overlay {
+box-shadow: inset 0 0 0 1px alpha(white, 0.5);
+}
+colorswatch:not(.dark):not(.light):hover > overlay, colorswatch:not(.dark):not(.light):focus > overlay {
+box-shadow: inset 0 0 0 1px alpha(@accent_color, 0.5);
+}
+
+
+/* arrow */
+arrow.right {
+    -gtk-icon-source: -gtk-icontheme("arrow-right");
+}
+arrow.left {
+    -gtk-icon-source: -gtk-icontheme("arrow-left");
+}
+arrow.down{
+    -gtk-icon-source: -gtk-icontheme("arrow-down");
+}
+arrow.up{
+    -gtk-icon-source: -gtk-icontheme("arrow-up");
+}
+
+/* revealer */
+ 
+
+
+/* expander, expander-widget */ 
+
+expander, expander > title arrow, expander > arrow {
+    -gtk-icon-source: -gtk-icontheme("arrow-right");
+    min-width: 1em; min-height: 1em;
+}
+expander:dir(rtl), expander:dir(rtl) > title arrow, expander:dir(rtl) > arrow { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl"); }
+
+expander:checked, expander > title arrow:checked, expander > arrow:checked {
+    -gtk-icon-source: -gtk-icontheme("arrow-down");
+}
+
+treeview.view.expander, window.print treeview.expander.dialog-action-box { min-width: 16px; min-height: 16px; -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); color: alpha(currentColor,0.7); }
+treeview.view.expander:hover, window.print treeview.expander.dialog-action-box:hover, treeview.view.expander:active, window.print treeview.expander.dialog-action-box:active { color: currentColor; }
+
+treeview.view.expander:checked, window.print treeview.expander.dialog-action-box:checked { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+
+treeview.view.expander:disabled, window.print treeview.expander.dialog-action-box:disabled { color: alpha(currentColor,0.5); }
+
+
+/* separator, paned > separator */
+
+separator, paned > separator {
+    background-color: alpha(@window_fg_color,0.1);
+}
+
+separator {
+    min-width: 1px;
+    min-height: 1px;
+    margin: 0.4em;
+}
+
+paned > separator, paned.horizontal > separator, paned.vertical > separator {
+    min-width: 0.25em;
+    min-height: 0.25em;
+    -gtk-icon-source: none;
+    margin: 0.2em;
+}
+
+button separator {
+    margin: 0.2em;
+}
+
+.horizontal > separator {
+margin-right: 0.5em;
+margin-left: 0.5em;
+}
+
+.vertical > separator {
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+}
+
+/* .needs-attention */
+
+@keyframes needs_attention { from { background-image: radial-gradient(farthest-side, @accent_color 0%, transparent 0%); }
+  to { background-image: radial-gradient(farthest-side, @accent_color 95%, transparent); } }
+  
+stacksidebar row.needs-attention > label, stackswitcher > button.needs-attention > label, stackswitcher > button.needs-attention > image { animation: needs_attention 150ms ease-in; background-image: radial-gradient(farthest-side, @accent_color 96%, transparent); background-size: 6px 6px; background-repeat: no-repeat; background-position: right 3px; }
+
+stacksidebar row.needs-attention > label:dir(rtl), stackswitcher > button.needs-attention > label:dir(rtl), stackswitcher > button.needs-attention > image:dir(rtl) { background-position: left 3px; }
+
+/* :drop.... */
+
+:not(window):drop(active):focus, :not(window):drop(active) { border-color: @accent_bg_color; box-shadow: inset 0 0 0 1px @accent_bg_color; caret-color: @accent_bg_color; }
+
+/* calendar */
+/* see scrollbar buttons */
+/* calendar moved to the separate gtk.css because they're too different*/
+
+calendar label {
+    padding: 0.1em;
+}
+
+
+/* plane */
+
+
+/* general typography, .accent, .success, .warning, .error */
+
+.large-title {
+   font-weight: 300;
+   font-size: 24pt;
+}
+.title-1 {
+   font-weight: 800;
+   font-size: 20pt;
+}
+.title-2 {
+   font-weight: 800;
+   font-size: 15pt;
+}
+.title-3 {
+   font-weight: 700;
+   font-size: 15pt;
+}
+.title-4 {
+   font-weight: 700;
+   font-size: 13pt;
+}
+.heading {
+   font-weight: 700;
+   font-size: 11pt;
+}
+.body {
+   font-weight: 400;
+   font-size: 11pt;
+}
+.caption-heading {
+   font-weight: 700;
+   font-size: 9pt;
+}
+.caption {
+   font-weight: 400;
+   font-size: 9pt;
+}
+
+.title {
+    font-weight: 700;
+    font-feature-settings: "zero"; /* in titles, it can be interesting to differentiate clearly between 0 and O, if the OTF font allows it */
+}
+.subtitle {
+    font-style: italic;
+    font-size: 90%;
+    font-feature-settings: "zero";
+}
+.mono, .monospace { /* blind shot */
+    font-family: monospace;
+}
+
+.accent {color: @accent_color;}
+.success {color: @success_color;}
+.warning {color: @warning_color;}
+.error {color: @error_color;}
+
+
+/* .linked: we shall avoid */ /* or not...*/ 
+
+.linked > button:first-child:not(:only-child),
+.linked > combobox:first-child:not(:only-child) button.combo {
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+}
+
+.linked > button:last-child:not(:only-child),
+.linked > combobox:last-child:not(:only-child) button.combo {
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
+}
+
+.linked > button:not(:first-child):not(:last-child),
+.linked > combobox:not(:first-child):not(:last-child) button.combo {
+border-radius: 0;
+}
+
+.linked > button:not(:only-child),
+.linked > combobox:not(:only-child) button.combo {
+margin: 0;
+}
+
+.linked.vertical > button:first-child:not(:only-child),
+.linked.vertical > combobox:first-child:not(:only-child) button.combo {
+    border-radius: 0.5em;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.linked.vertical > button:last-child:not(:only-child),
+.linked.vertical > combobox:last-child:not(:only-child) button.combo {
+    border-radius: 0.5em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* link */
+
+.link > label, link {
+    text-decoration: underline;
+}
+
+/* window...  &.csd, &.csd:backdrop, what about .tiled, what about &.solid-csd, &.ssd,  &.messagedialog .message-area, .response-area, .about */
+/* part of this needs to be adressed separately between gtk3 and gtk4 */
+
+.dialog-action-box, .dialog-vbox {
+padding: 0.3em;
+}
+
+.response-area {
+	padding: 0.5em;
+}
+.response-area > button {
+	min-height: 2em;
+}
+
+
+
+
+
+/*.background.csd,*/
+window.background.csd.popup {
+    box-shadow: 0 0.25em 0.5em 0 alpha(black, 0.5),
+				0 0 0 1px currentColor;
+    /*background-clip: padding-box;*/
+}
+
+
+/* popovers defined in each gtk-3.0 or gtk-4.0 because they conflict each other */
+
+popover button, popover arrow {
+    color: @popover_fg_color;
+}
+popover .view {
+    background-color: transparent;
+    color: @popover_fg_color;
+}
+
+
+
+
+/* window controls */
+
+button.close:not(:backdrop),
+button.close:hover, button.close:backdrop:hover {
+    color: @destructive_color;
+    border-color: currentColor;
+}
+
+
+button.maximize:not(:backdrop),
+button.maximize:hover, button.maximize:backdrop:hover {
+    color: @success_color;
+    border-color: currentColor;
+}
+
+button.minimize:not(:backdrop),
+button.minimize:hover, button.minimize:backdrop:hover {
+    color: @warning_color;
+    border-color: currentColor;
+}
+
+button.close:hover, button.close:backdrop:hover,
+button.minimize:hover, button.minimize:backdrop:hover,
+button.maximize:hover, button.maximize:backdrop:hover {
+    box-shadow: inset 0 0 0 .1em currentColor;
+}
+
+button.close:active, button.close:backdrop:active,
+button.minimize:active, button.minimize:backdrop:active,
+button.maximize:active, button.maximize:backdrop:active {
+    box-shadow: inset 0 0 0 .2em currentColor;
+}
+
+
+windowcontrols > button {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+windowcontrols > button:dir(ltr) {margin-left: 0.4em; margin-right: 0;}
+windowcontrols > button:dir(rtl) {margin-right: 0.4em; margin-left: 0;}
+
+windowcontrols > button > image {
+    background-color: transparent; /* against libadwaita's */
+}
+
+windowcontrols.end {margin-left: 1em;}
+windowcontrols.start {margin-right: 1em;}
+
+
+/* osd * .osd, toast, .app-notification */ 
+
+.osd, toast, .gedit-search-slider, .app-notification, .floating-bar {
+    background-color: alpha(mix(@window_bg_color, @view_bg_color, 0.5), 0.75);
+    border: 1px dashed alpha(@view_fg_color, 0.3);
+    background-clip: border-box;
+    border-radius: 5px;
+}
+
+toast, toast label { /* override libadwaita */
+	color: @window_fg_color;
+}
+
+.app-notification, toast {
+    border-radius: 9999px;
+    padding: 0.2em 0.5em;
+}
+.app-notification > border {
+    border: none;
+}
+
+/* frame */
+
+.frame, border, notebook { border: 1px solid alpha(currentColor,0.15); }
+frame > border, .frame {padding: 0px;} /*for libreoffice to avoid undershoots in many places */
+
+/* no double frames for libreoffice, nor undershoots in many places */
+scrolledwindow viewport.frame {
+	border-style: none;
+}
+
+frame { border-radius: 0px; }
+
+frame > label { margin: 4px; }
+
+.border-outset border {
+    border-width: 2px;
+    border-style: outset;
+    border-color: mix(@window_bg_color, @window_fg_color, 0.1);
+}
+.border-inset border {
+    border-width: 2px;
+    border-style: inset;
+    border-color: mix(@window_bg_color, @window_fg_color, 0.1);
+}
+.border-groove border {
+    border-width: 4px;
+    border-style: groove;
+    border-color: mix(@window_bg_color, @window_fg_color, 0.1);
+}
+.border-ridge border {
+    border-width: 4px;
+    border-style: ridge;
+    border-color: mix(@window_bg_color, @window_fg_color, 0.1);
+}
+
+
+
+
+/* toast */ /* see also .osd */
+
+toast {
+    border-radius: 9999px;
+}
+
+/* statuspage, &.compact */
+
+/* cards */
+
+card, .card {
+background-color: @card_bg_color;
+color: @card_fg_color;
+}
+
+/* shortcut, shortcuts-section, shortcuts-search-results */
+
+label.keycap {
+    padding: 0.3em;
+}
+
+label.keycap, accelerator {
+border-radius: 0.3em;
+background-color: alpha(currentColor, 0.15);
+}
+
+shortcuts-section {
+padding: 1em;
+}
+
+/* stacksidebar, navigation-sidebar */
+
+/* spinner */ /* animation definition moved to each gtk file because of contradiction */ 
+
+
+spinner {
+	-gtk-icon-source: -gtk-icontheme('process-working-symbolic');
+	animation: spin-no-spin 0.5s alternate infinite;
+	animation-timing-function: steps(5, start);
+}
+spinner:checked {animation: spin 1s linear infinite;}
+
+/* tooltip */
+
+tooltip, tooltip.background {
+    background-color: alpha(@info_bg_color, 0.8);
+    color: @info_fg_color;
+    border: 1px dashed alpha(@info_fg_color, 0.5);
+    padding: 0.5em;
+    border-radius: 1.5em;
+    /*background-clip: border-box;*/
+}
+
+/* gridview, flowbox */
+
+flowboxchild, flowbox > child {
+    padding: 1px;
+}
+
+flowboxchild:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+gridview > child {
+    padding: 0.3em;
+    
+}
+
+/* leaflet */
+
+leaflet > separator {
+    margin: 0;
+    padding: 0;
+}
+
+/* banner */
+
+/* flap */
+
+/* rubberband */
+
+.rubberband, rubberband, XfdesktopIconView.view .rubberband, .content-view rubberband, .content-view .rubberband, treeview.view rubberband, flowbox rubberband { border: 1px solid @accent_color; background-color: alpha(@accent_bg_color,0.2); }
+
+/* indicatorbin */
+
+/*  avatar */ 
+
+avatar { border-radius: 9999px; font-weight: bold; }
+
+avatar.color1 { background-image: linear-gradient(#83b6ec, #337fdc); color: #cfe1f5; }
+
+avatar.color2 { background-image: linear-gradient(#7ad9f1, #0f9ac8); color: #caeaf2; }
+
+avatar.color3 { background-image: linear-gradient(#8de6b1, #29ae74); color: #cef8d8; }
+
+avatar.color4 { background-image: linear-gradient(#b5e98a, #6ab85b); color: #e6f9d7; }
+
+avatar.color5 { background-image: linear-gradient(#f8e359, #d29d09); color: #f9f4e1; }
+
+avatar.color6 { background-image: linear-gradient(#ffcb62, #d68400); color: #ffead1; }
+
+avatar.color7 { background-image: linear-gradient(#ffa95a, #ed5b00); color: #ffe5c5; }
+
+avatar.color8 { background-image: linear-gradient(#f78773, #e62d42); color: #f8d2ce; }
+
+avatar.color9 { background-image: linear-gradient(#e973ab, #e33b6a); color: #fac7de; }
+
+avatar.color10 { background-image: linear-gradient(#cb78d4, #9945b5); color: #e7c2e8; }
+
+avatar.color11 { background-image: linear-gradient(#9e91e8, #7a59ca); color: #d5d2f5; }
+
+avatar.color12 { background-image: linear-gradient(#e3cf9c, #b08952); color: #f2eade; }
+
+avatar.color13 { background-image: linear-gradient(#be916d, #785336); color: #e5d6ca; }
+
+avatar.color14 { background-image: linear-gradient(#c0bfbc, #6e6d71); color: #d8d7d3; }
+
+avatar.contrasted { color: white; }
+
+avatar.image { background: none; }
+
+
+/* undershoot, overshoot */
+
+undershoot {
+background-image: image(alpha(@success_bg_color, 0.3));
+background-repeat: no-repeat;
+}
+
+undershoot.top {
+		background-size: 100% 0.5rem;
+		background-position: top;
+	}
+undershoot.bottom {
+		background-size: 100% 0.5rem;
+		background-position: bottom;
+	}
+undershoot.left {
+		background-size: 0.5rem 100%;
+		background-position: left;	
+	}
+undershoot.right {
+		background-size: 0.5rem 100%;
+		background-position: right;	
+	}
+
+overshoot {
+    background-image: image(alpha(@warning_bg_color, 0.3));
+    background-repeat: no-repeat;
+}
+overshoot.top {
+    background-size: 100% 50%;
+    background-position: top;
+}
+overshoot.bottom {
+    background-size: 100% 50%;
+    background-position: bottom;
+}
+overshoot.left {
+    background-size: 50% 100%;
+    background-position: left;
+}
+overshoot.right {
+    background-size: 50% 100%;
+    background-position: right;
+}
+
+
+
+/* GTK NAMED COLORS
+   ----------------
+   use responsibly! */
+   
+/*
+widget text/foreground color */
+@define-color theme_fg_color @window_fg_color;
+
+/*
+text color for entries, views and content in general */
+@define-color theme_text_color @view_fg_color;
+
+/*
+widget base background color */
+@define-color theme_bg_color @window_bg_color;
+
+/*
+text widgets and the like base background color */
+@define-color theme_base_color @view_fg_color;
+
+/*
+base background color of selections */
+@define-color theme_selected_bg_color @accent_bg_color;
+
+/*
+text/foreground color of selections */
+@define-color theme_selected_fg_color @accent_fg_color;
+
+/*
+base background color of insensitive widgets */
+@define-color insensitive_bg_color mix(@disabled_fg_color, @window_bg_color, 0.2);
+
+/*
+text foreground color of insensitive widgets */
+@define-color insensitive_fg_color @disabled_fg_color;
+
+/*
+insensitive text widgets and the like base background color */
+@define-color insensitive_base_color mix(@disabled_fg_color, @view_bg_color, 0.2);
+
+/*
+widget text/foreground color on backdrop windows */
+@define-color theme_unfocused_fg_color @theme_fg_color;
+
+/*
+text color for entries, views and content in general on backdrop windows */
+@define-color theme_unfocused_text_color @theme_text_color;
+
+/*
+widget base background color on backdrop windows */
+@define-color theme_unfocused_bg_color @theme_bg_color;
+
+/*
+text widgets and the like base background color on backdrop windows */
+@define-color theme_unfocused_base_color @theme_base_color;
+
+/*
+base background color of selections on backdrop windows */
+@define-color theme_unfocused_selected_bg_color @theme_selected_bg_color;
+
+/*
+text/foreground color of selections on backdrop windows */
+@define-color theme_unfocused_selected_fg_color @theme_selected_fg_color;
+
+/*
+insensitive color on backdrop windows*/
+@define-color unfocused_insensitive_color @insensitive_bg_color;
+
+/*
+widgets main borders color */
+@define-color borders alpha(currentColor, 0.3);
+
+/*
+widgets main borders color on backdrop windows */
+@define-color unfocused_borders @borders;
+
+/*
+these are pretty self explicative */ /* They are already defined */
+/*@define-color warning_color #{"" +$warning_color};
+@define-color error_color #{"" +$error_color};
+@define-color success_color #{"" +$success_color};
+//@define-color destructive_color #{$destructive_color}*/
+
+/*WM*/
+
+
+/*
+these colors are exported for the window manager and shouldn't be used in applications,
+read if you used those and something break with a version upgrade you're on your own... */
+@define-color wm_title @selected_fg_color;
+@define-color wm_unfocused_title @window_fg_color;
+@define-color wm_highlight alpha(white, 0.3);
+@define-color wm_borders_edge @borders;
+
+@define-color wm_bg_a mix(@window_bg_color, @window_fg_color, 0.2);
+@define-color wm_bg_b @window_bg_color;
+
+@define-color wm_shadow alpha(black, 0.35);
+@define-color wm_border alpha(black, 0.18);
+
+@define-color wm_button_hover_color_a shade(@window_bg_color, 1.3);
+@define-color wm_button_hover_color_b @window_bg_color;
+@define-color wm_button_active_color_a shade(@window_bg_color, 0.85);
+@define-color wm_button_active_color_b shade(@window_bg_color, 0.89);
+@define-color wm_button_active_color_c shade(@window_bg_color, 0.9);
+
+/*FIXME this is really an API*/
+
+/* content view background such as thumbnails view in Photos or Boxes */
+@define-color content_view_bg @view_bg_color;
+
+/* Very contrasty background for text views (@theme_text_color foreground) */
+@define-color text_view_bg @view_bg_color;
