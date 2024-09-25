@@ -67,9 +67,7 @@ install_flatpak_package() {
 install_snap_package() {
     if ! snap list | grep -q "$1"; then
         echo "Installing Snap package $1..."
-        sudo snap install "$1" --beta
-        sudo systemctl enable --now snapd.socket
-        sudo snap refresh
+        sudo snap install "$1" --classic || true  # Use --classic if needed
     else
         echo "Snap package $1 is already installed."
     fi
@@ -208,7 +206,6 @@ echo "Installing Snapd..."
 install_dnf_package "snapd"
 sudo ln -s /var/lib/snapd/snap /snap || true
 sudo systemctl enable --now snapd.socket
-sudo snap refresh
 
 # Install qBittorrent
 install_dnf_package "qbittorrent"
@@ -220,6 +217,8 @@ install_dnf_package "libreoffice"
 install_dnf_package "gtk-murrine-engine"
 
 # Install Surfshark via Snap (Beta)
+sudo dnf distro-sync --refresh
+sudo snap refresh
 install_snap_package "surfshark"
 
 # Install Flatpak and add Flathub repository
@@ -253,13 +252,7 @@ echo "Installing Gruvbox Plus Icon Pack..."
 GRUVBOX_ICONS_REPO="https://github.com/SylEleuth/gruvbox-plus-icons"
 GRUVBOX_ICONS_DIR="$GIT_DIR/gruvbox-plus-icons"
 
-if [ ! -d "$GRUVBOX_ICONS_DIR" ]; then
-    git clone "$GRUVBOX_ICONS_REPO" "$GRUVBOX_ICONS_DIR"
-else
-    echo "Gruvbox Plus Icon Pack repository already exists. Pulling latest changes..."
-    cd "$GRUVBOX_ICONS_DIR"
-    git pull
-fi
+git clone --depth=1 "$GRUVBOX_ICONS_REPO" "$GRUVBOX_ICONS_DIR"
 
 # Copy the icons to the local share directory
 mkdir -p "$ICONS_DIR"
@@ -271,13 +264,7 @@ echo "Installing GTK theme..."
 GTK_THEME_REPO="https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git"
 GTK_THEME_DIR="$GIT_DIR/Gruvbox-GTK-Theme"
 
-if [ ! -d "$GTK_THEME_DIR" ]; then
-    git clone "$GTK_THEME_REPO" "$GTK_THEME_DIR"
-else
-    echo "GTK Theme repository already exists. Pulling latest changes..."
-    cd "$GTK_THEME_DIR"
-    git pull
-fi
+git clone --depth=1 "$GTK_THEME_REPO" "$GTK_THEME_DIR"
 
 # Install the theme with specific tweaks
 cd "$GTK_THEME_DIR"
@@ -308,13 +295,7 @@ if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
     CHROMEBOOK_AUDIO_REPO="https://github.com/WeirdTreeThing/chromebook-linux-audio"
     CHROMEBOOK_AUDIO_DIR="$GIT_DIR/chromebook-linux-audio"
 
-    if [ ! -d "$CHROMEBOOK_AUDIO_DIR" ]; then
-        git clone "$CHROMEBOOK_AUDIO_REPO" "$CHROMEBOOK_AUDIO_DIR"
-    else
-        echo "Chromebook Linux audio repository already exists. Pulling latest changes..."
-        cd "$CHROMEBOOK_AUDIO_DIR"
-        git pull
-    fi
+    git clone --depth=1 "$CHROMEBOOK_AUDIO_REPO" "$CHROMEBOOK_AUDIO_DIR"
 
     # Change to the cloned directory
     cd "$CHROMEBOOK_AUDIO_DIR"
