@@ -181,12 +181,12 @@ mkdir -p "$OVERLORD_DIR/partial" "$OVERLORD_DIR/torrents"
 echo "Ensuring Git directory exists at $GIT_DIR..."
 mkdir -p "$GIT_DIR"
 
-# Copy Configurations, Icons, Pictures, and Fonts
+# Copy Configurations, Themes, Pictures, and Fonts
 echo "Copying configuration files..."
 cp -rv "$INSTALL_STUFF_REPO/.config" "$HOME_DIR/"
-cp -rv "$INSTALL_STUFF_REPO/.icons" "$HOME_DIR/"
 cp -rv "$INSTALL_STUFF_REPO/Pictures/" "$HOME_DIR/"
 cp -rv "$INSTALL_STUFF_REPO/.fonts/" "$HOME_DIR/"
+cp -rv "$INSTALL_STUFF_REPO/.local" "$HOME_DIR"
 fc-cache -fv
 
 # Install CLI Pride Flags
@@ -217,8 +217,8 @@ install_dnf_package "libreoffice"
 install_dnf_package "gtk-murrine-engine"
 
 # Install Surfshark via Snap (Beta)
-sudo dnf distro-sync --refresh
 sudo snap refresh
+sudo dnf distro-sync --refresh
 install_snap_package "surfshark"
 
 # Install Flatpak and add Flathub repository
@@ -246,18 +246,6 @@ PULSAR_RPM_FILE="$DOWNLOADS_DIR/pulsar.rpm"
 wget -O "$PULSAR_RPM_FILE" "$PULSAR_RPM_URL"
 sudo rpm -i "$PULSAR_RPM_FILE" || sudo dnf install -y "$PULSAR_RPM_FILE"
 rm -f "$PULSAR_RPM_FILE"
-
-# Install Gruvbox Plus Icon Pack
-echo "Installing Gruvbox Plus Icon Pack..."
-GRUVBOX_ICONS_REPO="https://github.com/SylEleuth/gruvbox-plus-icons"
-GRUVBOX_ICONS_DIR="$GIT_DIR/gruvbox-plus-icons"
-
-git clone --depth=1 "$GRUVBOX_ICONS_REPO" "$GRUVBOX_ICONS_DIR"
-
-# Copy the icons to the local share directory
-mkdir -p "$ICONS_DIR"
-cp -rv "$GRUVBOX_ICONS_DIR/icons/"* "$ICONS_DIR/"
-echo "Gruvbox Plus Icon Pack installation completed."
 
 # Install GTK theme
 echo "Installing GTK theme..."
