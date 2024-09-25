@@ -21,6 +21,7 @@ BACKGROUND_IMAGE="$HOME_DIR/Pictures/gruvbox/gruvbox_random.png"
 CHROMEBOOK_AUDIO_SETUP=false
 DESKTOP_ENVIRONMENT=""
 INSTALL_MYBASH=false
+UNINSTALL=false
 
 # Function to display usage
 usage() {
@@ -30,119 +31,79 @@ usage() {
     echo "  -c    Setup Chromebook Linux Audio"
     echo "  -d [kde|gnome|xfce]    Specify desktop environment (default is auto-detected)"
     echo "  -t    Install MyBash from Chris Titus Tech"
+    echo "  -u    Uninstall all installed packages and settings"
     echo "  -h    Display this help message"
     echo ""
     echo "Example:"
     echo "  $0 -c -d xfce    Install all standard packages and set up Chromebook audio on XFCE"
     echo "  $0 -t           Install MyBash"
+    echo "  $0 -u           Uninstall everything"
     exit 1
 }
 
-# Function to check if a command exists
-command_exists() {
-    command -v "$1" >/dev/null 2>&1
-}
-
-# Function to install a package using DNF if not already installed
-install_dnf_package() {
-    if ! dnf list installed "$1" &>/dev/null; then
-        echo "Installing $1..."
-        sudo dnf install "$1" -y
+# Function to uninstall a package using DNF
+uninstall_dnf_package() {
+    if dnf list installed "$1" &>/dev/null; then
+        echo "Uninstalling $1..."
+        sudo dnf remove "$1" -y
     else
-        echo "$1 is already installed."
+        echo "$1 is not installed."
     fi
 }
 
-# Function to install a Flatpak package if not already installed
-install_flatpak_package() {
-    if ! flatpak list | grep -q "$1"; then
-        echo "Installing Flatpak package $1..."
-        sudo flatpak install flathub "$1" -y
+# Function to uninstall a Flatpak package
+uninstall_flatpak_package() {
+    if flatpak list | grep -q "$1"; then
+        echo "Uninstalling Flatpak package $1..."
+        sudo flatpak uninstall -y "$1"
     else
-        echo "Flatpak package $1 is already installed."
+        echo "Flatpak package $1 is not installed."
     fi
 }
 
-# Function to install a Snap package if not already installed
-install_snap_package() {
-    if ! snap list | grep -q "$1"; then
-        echo "Installing Snap package $1..."
-        sudo snap install "$1" --classic || true  # Use --classic if needed
+# Function to uninstall a Snap package
+uninstall_snap_package() {
+    if snap list | grep -q "$1"; then
+        echo "Uninstalling Snap package $1..."
+        sudo snap remove "$1" || true
     else
-        echo "Snap package $1 is already installed."
+        echo "Snap package $1 is not installed."
     fi
 }
 
-# Function to detect the desktop environment
-detect_desktop_environment() {
-    if command_exists kwin_wayland; then
-        DESKTOP_ENVIRONMENT="kde"
-    elif command_exists gnome-shell; then
-        DESKTOP_ENVIRONMENT="gnome"
-    elif command_exists xfce4-session; then
-        DESKTOP_ENVIRONMENT="xfce"
-    else
-        echo "Unable to detect desktop environment. Please specify with the -d option."
-        usage
-    fi
-}
+# Function to perform uninstallation
+perform_uninstall() {
+    echo "Starting uninstallation process..."
 
-# Function to check and ensure the XFCE panel is running
-check_xfce_panel() {
-    if [ "$DESKTOP_ENVIRONMENT" = "xfce" ]; then
-        if ! pgrep -x "xfce4-panel" > /dev/null; then
-            echo "Starting XFCE panel..."
-            xfce4-panel &
-            sleep 2  # Wait for the panel to start
-        fi
+    # Uninstall packages
+    uninstall_dnf_package "nodejs"
+    uninstall_dnf_package "kitty"
+    uninstall_dnf_package "sassc"
+    uninstall_dnf_package "libsass"
+    uninstall_dnf_package "snapd"
+    uninstall_dnf_package "qbittorrent"
+    uninstall_dnf_package "libreoffice"
+    uninstall_dnf_package "gtk-murrine-engine"
+    uninstall_dnf_package "xfce4-dockbarx-plugin"
+    uninstall_dnf_package "ulauncher"
 
-        # Check if the panel service is accessible
-        if ! dbus-send --print-reply --dest=org.xfce.Panel /org/xfce/Panel org.freedesktop.DBus.Properties.Get string:"org.xfce.Panel" string:"Version" >/dev/null; then
-            echo "Error: XFCE panel service is not available. Please make sure the panel is running."
-            exit 1
-        fi
-    fi
-}
+    # Uninstall Flatpak packages
+    uninstall_flatpak_package "com.spotify.Client"
+    uninstall_flatpak_package "com.bitwarden.desktop"
 
-# Function to set the desktop background
-set_desktop_background() {
-    case "$DESKTOP_ENVIRONMENT" in
-        kde)
-            kwriteconfig5 --file "$(kreadconfig5 --file kiwin --key SystemSettings)" --group "Wallpaper" --key "Image" "$BACKGROUND_IMAGE"
-            ;;
-        gnome)
-            gsettings set org.gnome.desktop.background picture-uri "file://$BACKGROUND_IMAGE"
-            ;;
-        xfce)
-            xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_IMAGE"
-            ;;
-    esac
-}
+    # Uninstall Snap packages
+    uninstall_snap_package "surfshark"
 
-# Function to install Starship
-install_starship() {
-    if ! command_exists starship; then
-        echo "Installing Starship..."
-        curl -sS https://starship.rs/install.sh | sh
-        echo 'eval "$(starship init bash)"' >> "$HOME_DIR/.bashrc"
-        echo "Starship installed successfully."
-    else
-        echo "Starship is already installed."
-    fi
-}
+    # Remove the cloned repositories and configuration files
+    echo "Removing configuration and theme files..."
+    rm -rf "$GIT_DIR/mybash" "$GIT_DIR/chromebook-linux-audio" "$THEMES_DIR" "$ICONS_DIR"
 
-# Function to install MyBash
-install_mybash() {
-    echo "Installing MyBash from Chris Titus Tech..."
-    git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git "$GIT_DIR/mybash"
-    cd "$GIT_DIR/mybash"
-    chmod +x setup.sh
-    ./setup.sh
-    echo "MyBash installation completed."
+    echo "Uninstallation completed!"
+    exit 0
 }
 
 # Parse command-line options
-while getopts ":cd:th" opt; do
+while getopts ":cd:thu" opt; do
     case ${opt} in
         c )
             CHROMEBOOK_AUDIO_SETUP=true
@@ -152,6 +113,9 @@ while getopts ":cd:th" opt; do
             ;;
         t )
             INSTALL_MYBASH=true
+            ;;
+        u )
+            UNINSTALL=true
             ;;
         h )
             usage
@@ -163,6 +127,11 @@ while getopts ":cd:th" opt; do
     esac
 done
 shift $((OPTIND -1))
+
+# If uninstall flag is set, perform uninstallation
+if [ "$UNINSTALL" = true ]; then
+    perform_uninstall
+fi
 
 # Detect desktop environment if not specified
 if [ -z "$DESKTOP_ENVIRONMENT" ]; then
@@ -255,7 +224,11 @@ GTK_THEME_DIR="$GIT_DIR/Gruvbox-GTK-Theme"
 git clone --depth=1 "$GTK_THEME_REPO" "$GTK_THEME_DIR"
 
 # Install the theme with specific tweaks
-cd "$GTK_THEME_DIR"
+cd
+cd git
+cd  Gruvbox-GTK-Theme
+cd themes
+sudo chmod +x install.sh
 ./install.sh --tweaks outline float -t green -l -c dark
 
 # Set the desktop background
