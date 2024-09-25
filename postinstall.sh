@@ -16,12 +16,18 @@ THEMES_DIR="$HOME_DIR/.local/share/themes"
 ICONS_DIR="$HOME_DIR/.local/share/icons"
 FLATPAK_REMOTE="https://flathub.org/repo/flathub.flatpakrepo"
 BACKGROUND_IMAGE="$HOME_DIR/Pictures/gruvbox/gruvbox_random.png"
+LOG_FILE="/tmp/fedora_setup_$(date +%Y%m%d_%H%M%S).log"
 
 # Flags
 CHROMEBOOK_AUDIO_SETUP=false
 DESKTOP_ENVIRONMENT=""
 INSTALL_MYBASH=false
 UNINSTALL=false
+
+# Function to log messages
+log_message() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a "$LOG_FILE"
+}
 
 # Function to display usage
 usage() {
@@ -49,26 +55,26 @@ command_exists() {
 # Function to install a package using DNF if not already installed
 install_dnf_package() {
     if ! dnf list installed "$1" &>/dev/null; then
-        echo "Installing $1..."
+        log_message "Installing $1..."
         sudo dnf install "$1" -y
     else
-        echo "$1 is already installed."
+        log_message "$1 is already installed."
     fi
 }
 
 # Function to uninstall a package using DNF
 uninstall_dnf_package() {
     if dnf list installed "$1" &>/dev/null; then
-        echo "Uninstalling $1..."
+        log_message "Uninstalling $1..."
         sudo dnf remove "$1" -y
     else
-        echo "$1 is not installed."
+        log_message "$1 is not installed."
     fi
 }
 
 # Function to perform uninstallation
 perform_uninstall() {
-    echo "Starting uninstallation process..."
+    log_message "Starting uninstallation process..."
 
     # Uninstall packages
     uninstall_dnf_package "nodejs"
@@ -81,13 +87,13 @@ perform_uninstall() {
     uninstall_dnf_package "gtk-murrine-engine"
     uninstall_dnf_package "xfce4-dockbarx-plugin"
     uninstall_dnf_package "ulauncher"
-    uninstall_dnf_package "xfce4-docklike-plugin"  # Remove xfce4-docklike-plugin
+    uninstall_dnf_package "xfce4-docklike-plugin"
 
     # Remove the cloned repositories and configuration files
-    echo "Removing configuration and theme files..."
+    log_message "Removing configuration and theme files..."
     rm -rf "$GIT_DIR/mybash" "$GIT_DIR/chromebook-linux-audio" "$THEMES_DIR" "$ICONS_DIR"
 
-    echo "Uninstallation completed!"
+    log_message "Uninstallation completed!"
     exit 0
 }
 
@@ -100,14 +106,14 @@ detect_desktop_environment() {
     elif command_exists xfce4-session; then
         DESKTOP_ENVIRONMENT="xfce"
     else
-        echo "Unable to detect desktop environment. Please specify with the -d option."
+        log_message "Unable to detect desktop environment. Please specify with the -d option."
         usage
     fi
 }
 
 # Function to install the Docklike plugin from source
 install_docklike_plugin() {
-    echo "Installing xfce4-docklike-plugin from source..."
+    log_message "Installing xfce4-docklike-plugin from source..."
 
     # Install dependencies
     install_dnf_package "xfce4-dev-tools"
@@ -115,27 +121,46 @@ install_docklike_plugin() {
 
     # Clone the repository
     git clone https://github.com/nsz32/docklike-plugin "$GIT_DIR/docklike-plugin"
-    cd "$GIT_DIR/docklike-plugin"
+    pushd "$GIT_DIR/docklike-plugin" || exit 1
 
     # Build and install
     ./autogen.sh
     make
     sudo make install
 
-    echo "xfce4-docklike-plugin installed successfully."
+    popd || exit 1
+
+    log_message "xfce4-docklike-plugin installed successfully."
 }
 
 # Function to set the desktop background
 set_desktop_background() {
+    if [[ ! -f "$BACKGROUND_IMAGE" ]]; then
+        log_message "Warning: Background image not found at $BACKGROUND_IMAGE"
+        return 1
+    fi
+
     case "$DESKTOP_ENVIRONMENT" in
         kde)
-            kwriteconfig5 --file "$(kreadconfig5 --file kiwin --key SystemSettings)" --group "Wallpaper" --key "Image" "$BACKGROUND_IMAGE"
+            if command_exists kwriteconfig5; then
+                kwriteconfig5 --file "$(kreadconfig5 --file kiwin --key SystemSettings)" --group "Wallpaper" --key "Image" "$BACKGROUND_IMAGE"
+            else
+                log_message "Warning: kwriteconfig5 not found. Unable to set KDE background."
+            fi
             ;;
         gnome)
-            gsettings set org.gnome.desktop.background picture-uri "file://$BACKGROUND_IMAGE"
+            if command_exists gsettings; then
+                gsettings set org.gnome.desktop.background picture-uri "file://$BACKGROUND_IMAGE"
+            else
+                log_message "Warning: gsettings not found. Unable to set GNOME background."
+            fi
             ;;
         xfce)
-            xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_IMAGE"
+            if command_exists xfconf-query; then
+                xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_IMAGE"
+            else
+                log_message "Warning: xfconf-query not found. Unable to set XFCE background."
+            fi
             ;;
     esac
 }
@@ -143,30 +168,43 @@ set_desktop_background() {
 # Function to install Starship
 install_starship() {
     if ! command_exists starship; then
-        echo "Installing Starship..."
+        log_message "Installing Starship..."
         curl -sS https://starship.rs/install.sh | sh
         echo 'eval "$(starship init bash)"' >> "$HOME_DIR/.bashrc"
-        echo "Starship installed successfully."
+        log_message "Starship installed successfully."
     else
-        echo "Starship is already installed."
+        log_message "Starship is already installed."
     fi
 }
 
 # Function to install MyBash
 install_mybash() {
-    echo "Installing MyBash from Chris Titus Tech..."
+    log_message "Installing MyBash from Chris Titus Tech..."
     git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git "$GIT_DIR/mybash"
-    cd "$GIT_DIR/mybash"
+    pushd "$GIT_DIR/mybash" || exit 1
     chmod +x setup.sh
     ./setup.sh
-    echo "MyBash installation completed."
+    popd || exit 1
+    log_message "MyBash installation completed."
 }
 
 # Function to install CLI Pride Flags
 install_cli_pride_flags() {
-    echo "Installing Node.js and CLI Pride Flags..."
+    log_message "Installing Node.js and CLI Pride Flags..."
     install_dnf_package "nodejs"
-    sudo npm install -g cli-pride-flags
+    if command_exists npm; then
+        sudo npm install -g cli-pride-flags
+    else
+        log_message "Warning: npm not found after installing Node.js. Unable to install cli-pride-flags."
+    fi
+}
+
+# Function to check and install Git
+ensure_git_installed() {
+    if ! command_exists git; then
+        log_message "Git not found. Installing Git..."
+        install_dnf_package "git"
+    fi
 }
 
 # Parse command-line options
@@ -195,6 +233,9 @@ while getopts ":cd:thu" opt; do
 done
 shift $((OPTIND -1))
 
+# Start logging
+log_message "Starting Fedora setup script"
+
 # If uninstall flag is set, perform uninstallation
 if [ "$UNINSTALL" = true ]; then
     perform_uninstall
@@ -206,11 +247,14 @@ if [ -z "$DESKTOP_ENVIRONMENT" ]; then
 fi
 
 # Update system packages
-echo "Updating system packages..."
+log_message "Updating system packages..."
 sudo dnf distro-sync --refresh -y
 
+# Ensure Git is installed
+ensure_git_installed
+
 # Ensure GIT_DIR exists
-echo "Ensuring Git directory exists at $GIT_DIR..."
+log_message "Ensuring Git directory exists at $GIT_DIR..."
 mkdir -p "$GIT_DIR"
 
 # Install essential applications
@@ -242,12 +286,15 @@ install_cli_pride_flags
 
 # Check for Chromebook Audio Setup
 if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
-    echo "Setting up Chromebook Linux Audio..."
+    log_message "Setting up Chromebook Linux Audio..."
     git clone --depth=1 https://github.com/ChrisTitusTech/chromebook-linux-audio.git "$GIT_DIR/chromebook-linux-audio"
-    cd "$GIT_DIR/chromebook-linux-audio"
+    pushd "$GIT_DIR/chromebook-linux-audio" || exit 1
     chmod +x setup.sh
     ./setup.sh
+    popd || exit 1
 fi
 
 # Completion Notification
-echo "All done, $(whoami)! Your Fedora Linux setup is complete. Yippee!"
+log_message "All done, $(whoami)! Your Fedora Linux setup is complete. Yippee!"
+
+log_message "Setup completed. Log file: $LOG_FILE"
