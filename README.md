@@ -13,6 +13,7 @@
   - Password manager (Bitwarden)
   - Music streaming (Spotify)
   - VPN client (Surfshark)
+  - DockBarX for XFCE
 - **Flatpak and Snap Setup**: Adds repositories and installs applications via Flatpak and Snap.
 - **Ulauncher**: Installs Ulauncher, a quick launcher.
 - **Editor**: Installs the Pulsar code editor.
@@ -26,6 +27,7 @@
 1. **Fedora-based distribution**: The script is designed with Fedora in mind and uses the dnf package manager.
 2. **Git Installed**: You'll need git to clone repositories used in this setup.
 3. **Internet Connection**: The script downloads several packages and repositories from the internet.
+4. **XFCE4 Panel**: The script checks for the XFCE panel and starts it if not running, ensuring a smooth setup experience.
 
 ## Usage
 Follow the steps below to set up your environment using this script.
@@ -46,17 +48,27 @@ Run the script with the desired options:
 ./setup.sh [options]
 ```
 
-|Command-Line Options                             | 
+| Command-Line Options                             |
 |-------------------------------------------------|
-|Flag |Description                                |
-|-c	  |Setup Chromebook Linux Audio.              |
-|-h	  |Display help message with usage information|
+| Flag | Description                               |
+| -c   | Setup Chromebook Linux Audio.             |
+| -d   | Specify desktop environment (default is auto-detected; options: kde, gnome, xfce). |
+| -h   | Display help message with usage information |
 
 To run the standard setup with Chromebook audio:
 ```sh
 ./setup.sh -c
 ```
+
 To view the help message:
 ```sh
 ./setup.sh -h
 ```
+
+To specify the desktop environment as XFCE:
+```sh
+./setup.sh -d xfce
+```
+
+### Note
+Make sure that your XFCE panel is running before executing the script, or let the script handle starting it for you.

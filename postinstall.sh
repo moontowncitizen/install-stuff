@@ -65,6 +65,8 @@ install_snap_package() {
     if ! snap list | grep -q "$1"; then
         echo "Installing Snap package $1..."
         sudo snap install "$1" --beta
+        sudo systemctl enable --now snapd.socket
+        sudo snap refresh
     else
         echo "Snap package $1 is already installed."
     fi
@@ -81,6 +83,23 @@ detect_desktop_environment() {
     else
         echo "Unable to detect desktop environment. Please specify with the -d option."
         usage
+    fi
+}
+
+# Function to check and ensure the XFCE panel is running
+check_xfce_panel() {
+    if [ "$DESKTOP_ENVIRONMENT" = "xfce" ]; then
+        if ! pgrep -x "xfce4-panel" > /dev/null; then
+            echo "Starting XFCE panel..."
+            xfce4-panel &
+            sleep 2  # Wait for the panel to start
+        fi
+
+        # Check if the panel service is accessible
+        if ! dbus-send --print-reply --dest=org.xfce.Panel /org/xfce/Panel org.freedesktop.DBus.Properties.Get string:"org.xfce.Panel" string:"Version" >/dev/null; then
+            echo "Error: XFCE panel service is not available. Please make sure the panel is running."
+            exit 1
+        fi
     fi
 }
 
@@ -234,80 +253,30 @@ GTK_THEME_DIR="$GIT_DIR/Gruvbox-GTK-Theme"
 if [ ! -d "$GTK_THEME_DIR" ]; then
     git clone "$GTK_THEME_REPO" "$GTK_THEME_DIR"
 else
-    echo "Gruvbox GTK Theme repository already exists. Pulling latest changes..."
+    echo "GTK Theme repository already exists. Pulling latest changes..."
     cd "$GTK_THEME_DIR"
     git pull
 fi
 
-cd "$GTK_THEME_DIR/themes"
-sudo ./install.sh -l -t green -c dark --tweaks float outline
+cp -rv "$GTK_THEME_DIR/gruvbox" "$THEMES_DIR"
 
-# Override Flatpak permissions for themes and icons
-echo "Overriding Flatpak permissions for themes and icons..."
-sudo flatpak override --filesystem="$THEMES_DIR"
-sudo flatpak override --filesystem="$ICONS_DIR"
-flatpak override --user --filesystem="$HOME_DIR/.config/gtk-4.0"
-sudo flatpak override --filesystem="$HOME_DIR/.config/gtk-4.0"
-
-# Install Chris Titus Script
-echo "Installing Chris Titus Tech setup script..."
-CHRIS_TITUS_REPO="https://github.com/ChrisTitusTech/mybash.git"
-CHRIS_TITUS_DIR="$GIT_DIR/mybash"
-
-if [ ! -d "$CHRIS_TITUS_DIR" ]; then
-    git clone --depth=1 "$CHRIS_TITUS_REPO" "$CHRIS_TITUS_DIR"
-else
-    echo "Chris Titus Tech repository already exists. Pulling latest changes..."
-    cd "$CHRIS_TITUS_DIR"
-    git pull
-fi
-
-cd "$CHRIS_TITUS_DIR"
-chmod +x setup.sh
-./setup.sh
-cd "$HOME_DIR"
-
-# Chromebook Audio Setup (Flag: -c)
-if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
-    echo "Setting up Chromebook Linux Audio..."
-    CHROMEBOOK_AUDIO_REPO="https://github.com/WeirdTreeThing/chromebook-linux-audio.git"
-    CHROMEBOOK_AUDIO_DIR="$GIT_DIR/chromebook-linux-audio"
-
-    if [ ! -d "$CHROMEBOOK_AUDIO_DIR" ]; then
-        echo "Cloning Chromebook Linux Audio repository..."
-        git clone "$CHROMEBOOK_AUDIO_REPO" "$CHROMEBOOK_AUDIO_DIR"
-    else
-        echo "Chromebook Linux Audio repository already exists. Pulling latest changes..."
-        cd "$CHROMEBOOK_AUDIO_DIR"
-        git pull
-    fi
-
-    echo "Running setup-audio script..."
-    cd "$CHROMEBOOK_AUDIO_DIR"
-    chmod +x setup-audio
-    ./setup-audio
-    cd "$HOME_DIR"
-fi
-
-# Desktop Environment-Specific Configurations
+# Set the desktop background
 set_desktop_background
-case "$DESKTOP_ENVIRONMENT" in
-    kde)
-        echo "Configuring for KDE Plasma..."
-        # Add KDE-specific configurations here
-        ;;
-    gnome)
-        echo "Configuring for GNOME..."
-        # Add GNOME-specific configurations here
-        ;;
-    xfce)
-        echo "Configuring for XFCE..."
-        # Add XFCE-specific configurations here
-        ;;
-    *)
-        echo "Unsupported desktop environment: $DESKTOP_ENVIRONMENT"
-        ;;
-esac
+
+# Check and ensure XFCE panel is running
+check_xfce_panel
+
+# Install DockBarX for XFCE
+install_dnf_package "xfce4-dockbarx-plugin"
+
+# Install any other packages and settings based on flags
+if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
+    echo "Setting up Chromebook Linux audio..."
+    # Add Chromebook audio setup commands here
+fi
+
+# Set desktop background
+set_desktop_background
 
 # Completion Notification
 echo "All done, $(whoami)! Your Fedora Linux setup is complete."
