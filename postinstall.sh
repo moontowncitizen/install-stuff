@@ -125,6 +125,50 @@ install_docklike_plugin() {
     echo "xfce4-docklike-plugin installed successfully."
 }
 
+# Function to set the desktop background
+set_desktop_background() {
+    case "$DESKTOP_ENVIRONMENT" in
+        kde)
+            kwriteconfig5 --file "$(kreadconfig5 --file kiwin --key SystemSettings)" --group "Wallpaper" --key "Image" "$BACKGROUND_IMAGE"
+            ;;
+        gnome)
+            gsettings set org.gnome.desktop.background picture-uri "file://$BACKGROUND_IMAGE"
+            ;;
+        xfce)
+            xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "$BACKGROUND_IMAGE"
+            ;;
+    esac
+}
+
+# Function to install Starship
+install_starship() {
+    if ! command_exists starship; then
+        echo "Installing Starship..."
+        curl -sS https://starship.rs/install.sh | sh
+        echo 'eval "$(starship init bash)"' >> "$HOME_DIR/.bashrc"
+        echo "Starship installed successfully."
+    else
+        echo "Starship is already installed."
+    fi
+}
+
+# Function to install MyBash
+install_mybash() {
+    echo "Installing MyBash from Chris Titus Tech..."
+    git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git "$GIT_DIR/mybash"
+    cd "$GIT_DIR/mybash"
+    chmod +x setup.sh
+    ./setup.sh
+    echo "MyBash installation completed."
+}
+
+# Function to install CLI Pride Flags
+install_cli_pride_flags() {
+    echo "Installing Node.js and CLI Pride Flags..."
+    install_dnf_package "nodejs"
+    sudo npm install -g cli-pride-flags
+}
+
 # Parse command-line options
 while getopts ":cd:thu" opt; do
     case ${opt} in
@@ -181,6 +225,29 @@ install_dnf_package "ulauncher"
 
 # Install the Docklike plugin
 install_docklike_plugin
+
+# Set the desktop background
+set_desktop_background
+
+# Install Starship
+install_starship
+
+# Install MyBash if flag is set
+if [ "$INSTALL_MYBASH" = true ]; then
+    install_mybash
+fi
+
+# Install CLI Pride Flags
+install_cli_pride_flags
+
+# Check for Chromebook Audio Setup
+if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
+    echo "Setting up Chromebook Linux Audio..."
+    git clone --depth=1 https://github.com/ChrisTitusTech/chromebook-linux-audio.git "$GIT_DIR/chromebook-linux-audio"
+    cd "$GIT_DIR/chromebook-linux-audio"
+    chmod +x setup.sh
+    ./setup.sh
+fi
 
 # Completion Notification
 echo "All done, $(whoami)! Your Fedora Linux setup is complete. Yippee!"
