@@ -248,7 +248,7 @@ cp -rv "$GRUVBOX_ICONS_DIR/Gruvbox-Plus-Dark" "$ICONS_DIR"
 # Install GTK Theme
 echo "Installing GTK theme..."
 GTK_THEME_REPO="https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git"
-GTK_THEME_DIR="$GIT_DIR/Gruvbox-GTK-Theme"
+GTK_THEME_DIR="$GIT_DIR/Gruvbox-GTK-Theme/theme"
 
 if [ ! -d "$GTK_THEME_DIR" ]; then
     git clone "$GTK_THEME_REPO" "$GTK_THEME_DIR"
@@ -279,4 +279,4 @@ fi
 set_desktop_background
 
 # Completion Notification
-echo "All done, $(whoami)! Your Fedora Linux setup is complete."
+echo "All done, $(whoami)! Your Fedora Linux setup is complete.Yipeee!"
