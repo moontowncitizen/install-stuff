@@ -17,6 +17,8 @@ ICONS_DIR="$HOME_DIR/.local/share/icons"
 FLATPAK_REMOTE="https://flathub.org/repo/flathub.flatpakrepo"
 BACKGROUND_IMAGE="$HOME_DIR/Pictures/gruvbox/gruvbox_random.png"
 LOG_FILE="/tmp/fedora_setup_$(date +%Y%m%d_%H%M%S).log"
+DOCKLIKE_RPM="$INSTALL_STUFF_REPO/rpms/xfce4-docklike-plugin-0.4.2-1.fc40.x86_64.rpm"
+PULSAR_RPM="$INSTALL_STUFF_REPO/rpms/pulsar-1.121.2024091820.x86_64.rpm"
 
 # Flags
 CHROMEBOOK_AUDIO_SETUP=false
@@ -87,7 +89,11 @@ perform_uninstall() {
     uninstall_dnf_package "gtk-murrine-engine"
     uninstall_dnf_package "xfce4-dockbarx-plugin"
     uninstall_dnf_package "ulauncher"
+    uninstall_dnf_package "cmake"
+    uninstall_dnf_package "libtool"
     uninstall_dnf_package "xfce4-docklike-plugin"
+    uninstall_dnf_package "gnome-tweaks"
+    uninstall_dnf_package "gnome-shell-extension-dash-to-dock"
 
     # Remove the cloned repositories and configuration files
     log_message "Removing configuration and theme files..."
@@ -109,28 +115,6 @@ detect_desktop_environment() {
         log_message "Unable to detect desktop environment. Please specify with the -d option."
         usage
     fi
-}
-
-# Function to install the Docklike plugin from source
-install_docklike_plugin() {
-    log_message "Installing xfce4-docklike-plugin from source..."
-
-    # Install dependencies
-    install_dnf_package "xfce4-dev-tools"
-    install_dnf_package "cmake"
-
-    # Clone the repository
-    git clone https://github.com/nsz32/docklike-plugin "$GIT_DIR/docklike-plugin"
-    pushd "$GIT_DIR/docklike-plugin" || exit 1
-
-    # Build and install
-    ./autogen.sh
-    make
-    sudo make install
-
-    popd || exit 1
-
-    log_message "xfce4-docklike-plugin installed successfully."
 }
 
 # Function to set the desktop background
@@ -207,6 +191,49 @@ ensure_git_installed() {
     fi
 }
 
+# Function to install xfce4-docklike-plugin RPM
+install_xfce_docklike_plugin() {
+    if [ "$DESKTOP_ENVIRONMENT" = "xfce" ]; then
+        if [ -f "$DOCKLIKE_RPM" ]; then
+            log_message "Installing xfce4-docklike-plugin RPM..."
+            sudo dnf install "$DOCKLIKE_RPM" -y
+        else
+            log_message "Warning: xfce4-docklike-plugin RPM not found at $DOCKLIKE_RPM"
+        fi
+    fi
+}
+
+# Function to install Pulsar RPM
+install_pulsar_rpm() {
+    if [ -f "$PULSAR_RPM" ]; then
+        log_message "Installing Pulsar RPM..."
+        sudo dnf install "$PULSAR_RPM" -y
+    else
+        log_message "Warning: Pulsar RPM not found at $PULSAR_RPM"
+    fi
+}
+
+# Function to install GNOME-specific packages and extensions
+install_gnome_packages() {
+    if [ "$DESKTOP_ENVIRONMENT" = "gnome" ]; then
+        log_message "Installing GNOME-specific packages and extensions..."
+        install_dnf_package "gnome-tweaks"
+        install_dnf_package "gnome-shell-extension-dash-to-dock"
+
+        # Enable Dash to Dock extension
+        gnome-extensions enable dash-to-dock@micxgx.gmail.com
+
+        log_message "GNOME-specific installations completed."
+    fi
+}
+
+# Function to install X Window system development files
+install_x11_development_files() {
+    log_message "Installing X Window system libraries and header files..."
+    sudo dnf groupinstall "X Software Development" -y
+    sudo dnf install xorg-x11-server-devel libX11-devel libXtst-devel libXrandr-devel -y
+}
+
 # Parse command-line options
 while getopts ":cd:thu" opt; do
     case ${opt} in
@@ -236,6 +263,9 @@ shift $((OPTIND -1))
 # Start logging
 log_message "Starting Fedora setup script"
 
+# Install X11 development files (needed for graphical environments)
+install_x11_development_files
+
 # If uninstall flag is set, perform uninstallation
 if [ "$UNINSTALL" = true ]; then
     perform_uninstall
@@ -246,37 +276,19 @@ if [ -z "$DESKTOP_ENVIRONMENT" ]; then
     detect_desktop_environment
 fi
 
-# Update system packages
-log_message "Updating system packages..."
-sudo dnf distro-sync --refresh -y
+# Install Chromebook audio setup if requested
+if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
+    log_message "Setting up Chromebook Linux audio..."
+    ensure_git_installed
+    git clone --depth=1 https://github.com/WeirdTreeThing/chromebook-linux-audio.git "$GIT_DIR/chromebook-linux-audio"
+    pushd "$GIT_DIR/chromebook-linux-audio" || exit 1
+    chmod +x setup-audio.sh
+    sudo ./setup-audio.sh
+    popd || exit 1
+    log_message "Chromebook Linux audio setup completed."
+fi
 
-# Ensure Git is installed
-ensure_git_installed
-
-# Ensure GIT_DIR exists
-log_message "Ensuring Git directory exists at $GIT_DIR..."
-mkdir -p "$GIT_DIR"
-
-# Install essential applications
-install_dnf_package "kitty"
-install_dnf_package "sassc"
-install_dnf_package "libsass"
-install_dnf_package "snapd"
-install_dnf_package "qbittorrent"
-install_dnf_package "libreoffice"
-install_dnf_package "gtk-murrine-engine"
-install_dnf_package "ulauncher"
-
-# Install the Docklike plugin
-install_docklike_plugin
-
-# Set the desktop background
-set_desktop_background
-
-# Install Starship
-install_starship
-
-# Install MyBash if flag is set
+# Install MyBash from Chris Titus Tech if requested
 if [ "$INSTALL_MYBASH" = true ]; then
     install_mybash
 fi
@@ -284,15 +296,20 @@ fi
 # Install CLI Pride Flags
 install_cli_pride_flags
 
-# Check for Chromebook Audio Setup
-if [ "$CHROMEBOOK_AUDIO_SETUP" = true ]; then
-    log_message "Setting up Chromebook Linux Audio..."
-    git clone --depth=1 https://github.com/ChrisTitusTech/chromebook-linux-audio.git "$GIT_DIR/chromebook-linux-audio"
-    pushd "$GIT_DIR/chromebook-linux-audio" || exit 1
-    chmod +x setup.sh
-    ./setup.sh
-    popd || exit 1
-fi
+# Set desktop background
+set_desktop_background
+
+# Install Starship
+install_starship
+
+# Install Pulsar RPM
+install_pulsar_rpm
+
+# Install XFCE docklike plugin if applicable
+install_xfce_docklike_plugin
+
+# Install GNOME-specific packages and extensions if applicable
+install_gnome_packages
 
 # Completion Notification
 log_message "All done, $(whoami)! Your Fedora Linux setup is complete. Yippee!"
