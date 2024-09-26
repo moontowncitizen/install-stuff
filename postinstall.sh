@@ -18,7 +18,6 @@ FLATPAK_REMOTE="https://flathub.org/repo/flathub.flatpakrepo"
 BACKGROUND_IMAGE="$HOME_DIR/Pictures/gruvbox/gruvbox_random.png"
 LOG_FILE="/tmp/fedora_setup_$(date +%Y%m%d_%H%M%S).log"
 DOCKLIKE_RPM="$INSTALL_STUFF_REPO/rpms/xfce4-docklike-plugin-0.4.2-1.fc40.x86_64.rpm"
-PULSAR_RPM="$INSTALL_STUFF_REPO/rpms/pulsar-1.121.2024091820.x86_64.rpm"
 
 # Flags
 CHROMEBOOK_AUDIO_SETUP=false
@@ -203,15 +202,6 @@ install_xfce_docklike_plugin() {
     fi
 }
 
-# Function to install Pulsar RPM
-install_pulsar_rpm() {
-    if [ -f "$PULSAR_RPM" ]; then
-        log_message "Installing Pulsar RPM..."
-        sudo dnf install "$PULSAR_RPM" -y
-    else
-        log_message "Warning: Pulsar RPM not found at $PULSAR_RPM"
-    fi
-}
 
 # Function to install GNOME-specific packages and extensions
 install_gnome_packages() {
@@ -302,8 +292,12 @@ set_desktop_background
 # Install Starship
 install_starship
 
-# Install Pulsar RPM
-install_pulsar_rpm
+#Install Pulsar
+cd
+cd git
+cd install-stuff
+cd rpms
+curl -L -o pulsar.rpm "https://download.pulsar-edit.dev/?os=linux&type=linux_rpm" && sudo rpm -i pulsar.rpm
 
 # Install XFCE docklike plugin if applicable
 install_xfce_docklike_plugin
