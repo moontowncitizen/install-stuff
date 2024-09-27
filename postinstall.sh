@@ -226,7 +226,7 @@ common_apps=(
     "sassc" "libsass" "nodejs" "kitty" "snapd" "qbittorrent" "libreoffice"
     "gtk-murrine-engine" "ulauncher" "cmake" "libtool" "clapper" "git"
     "curl" "wget" "vim" "nano" "htop" "starship" "bash-completion" "fastfetch"
-    "chromium"
+    "chromium" "flatpak" "flathub" "kde-connect"
 )
 for app in "${common_apps[@]}"; do
     install_dnf_package "$app"
