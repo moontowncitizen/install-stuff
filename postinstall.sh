@@ -82,16 +82,6 @@ create_directories() {
     mkdir -p "$GIT_DIR" "$DESKTOP_DIR" "$OVERLORD_DIR" "$DOWNLOADS_DIR" "$THEMES_DIR" "$ICONS_DIR"
 }
 
-# Function to backup existing configurations
-backup_configs() {
-    log_message "Backing up existing configurations..."
-    local backup_dir="$HOME_DIR/config_backup_$(date +%Y%m%d_%H%M%S)"
-    mkdir -p "$backup_dir"
-    cp -r "$HOME_DIR/.config" "$backup_dir/" 2>/dev/null || log_message "Warning: Failed to backup .config"
-    cp -r "$HOME_DIR/.local/share/themes" "$backup_dir/" 2>/dev/null || log_message "Warning: Failed to backup themes"
-    cp -r "$HOME_DIR/.local/share/icons" "$backup_dir/" 2>/dev/null || log_message "Warning: Failed to backup icons"
-}
-
 # Function to install Chromebook audio setup
 install_chromebook_audio() {
     log_message "Setting up Chromebook Linux audio..."
@@ -213,9 +203,8 @@ log_message "Copying configuration files..."
 cp -rv "$INSTALL_STUFF_REPO/.config" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .config"
 cp -rv "$INSTALL_STUFF_REPO/.fonts" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .fonts"
 cp -rv "$INSTALL_STUFF_REPO/.icons" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .icons"
-cd
-mkdir .pulsar
-cp cp -rv "$INSTALL_STUFF_REPO/.pulsar" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .pulsar"
+cp -rv "$INSTALL_STUFF_REPO/Pictures" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy Pictures"
+
 # Install common apps
 log_message "Installing common applications..."
 common_apps=(
@@ -250,7 +239,7 @@ cd
 cd git
 git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git
 cd mybash
-chmod +x setup.#!/bin/sh
+chmod +x setup.sh
 ./setup.sh
 cd
 
