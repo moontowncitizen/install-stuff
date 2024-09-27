@@ -49,7 +49,6 @@ while getopts ":ckhx" opt; do
   esac
 done
 
-
 # Function to log messages
 log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a "$LOG_FILE"
@@ -184,6 +183,114 @@ set_desktop_background() {
     fi
 }
 
+# Function to install common applications
+install_common_apps() {
+    log_message "Installing common applications..."
+    common_apps=(
+        "sassc" "libsass" "nodejs" "kitty" "snapd" "qbittorrent" "libreoffice"
+        "gtk-murrine-engine" "ulauncher" "cmake" "libtool" "clapper" "git"
+        "curl" "wget" "vim" "nano" "htop" "starship" "bash-completion" "fastfetch"
+        "chromium" "flatpak" "flathub" "kde-connect"
+    )
+    for app in "${common_apps[@]}"; do
+        install_dnf_package "$app"
+    done
+}
+
+# Function to install Flatpak applications
+install_flatpak_apps() {
+    log_message "Installing Flatpak applications..."
+    sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    sudo flatpak install -y bitwarden spotify || log_message "Warning: Failed to install Flatpak applications"
+}
+
+# Function to set up Snap
+setup_snap() {
+    log_message "Setting up Snap..."
+    sudo systemctl enable --now snapd.socket || log_message "Warning: Failed to enable snapd.socket"
+    sudo ln -sf /var/lib/snapd/snap /snap || log_message "Warning: Failed to create snap symlink"
+    sudo snap refresh || log_message "Warning: Failed to refresh snap"
+    sudo snap install surfshark --edge || log_message "Warning: Failed to install Surfshark"
+}
+
+# Function to install MyBash
+install_mybash() {
+    log_message "Installing MyBash..."
+    pushd "$GIT_DIR" || return
+    git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git
+    cd mybash || return
+    chmod +x setup.sh
+    ./setup.sh
+    popd || return
+}
+
+# Function to install CLI Pride Flags
+install_cli_pride_flags() {
+    log_message "Installing CLI Pride Flags..."
+    if command_exists npm; then
+        npm i -g cli-pride-flags || log_message "Warning: Failed to install CLI Pride Flags"
+    else
+        log_message "Warning: npm not found. Skipping CLI Pride Flags installation."
+    fi
+}
+
+# Function to install Pulsar
+install_pulsar() {
+    log_message "Installing Pulsar..."
+    pushd "$INSTALL_STUFF_REPO/rpms" || return
+    if ! curl -L -o pulsar.rpm "https://download.pulsar-edit.dev/?os=linux&type=linux_rpm"; then
+        log_message "Error: Failed to download Pulsar RPM"
+    else
+        sudo rpm -i pulsar.rpm || log_message "Warning: Failed to install Pulsar RPM"
+    fi
+    popd || return
+}
+
+# Function to install icons
+install_icons() {
+    log_message "Installing Gruvbox Plus icons..."
+    pushd "$GIT_DIR" || return
+    if ! curl -L -o gruvbox-plus-icons.zip https://github.com/SylEleuth/gruvbox-plus-icon-pack/releases/download/v5.5.0/gruvbox-plus-icon-pack-5.5.0.zip; then
+        log_message "Error: Failed to download Gruvbox Plus icons"
+    else
+        unzip -o gruvbox-plus-icons.zip -d "$HOME_DIR/.local/share/icons/" || log_message "Warning: Failed to extract icons to .local/share/icons"
+        unzip -o gruvbox-plus-icons.zip -d "$HOME_DIR/.icons/" || log_message "Warning: Failed to extract icons to .icons"
+    fi
+    popd || return
+
+    log_message "Installing Tela Dark Icons..."
+    pushd "$GIT_DIR" || return
+    if ! git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git; then
+        log_message "Error: Failed to clone Tela-circle-icon-theme repository"
+    else
+        cd Tela-circle-icon-theme || return
+        sudo chmod +x install.sh
+        ./install.sh || log_message "Warning: Failed to install Tela Dark Icons"
+    fi
+    popd || return
+}
+
+# Function to install GTK themes
+install_gtk_themes() {
+    log_message "Installing GTK themes..."
+    pushd "$GIT_DIR" || return
+    if ! git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git; then
+        log_message "Error: Failed to clone Gruvbox-GTK-Theme repository"
+    else
+        cd Gruvbox-GTK-Theme/themes || return
+        ./install.sh --tweaks outline float -t green -l -c dark || log_message "Warning: Failed to install GTK themes"
+    fi
+    popd || return
+}
+
+# Function to set Flatpak overrides
+set_flatpak_overrides() {
+    log_message "Setting Flatpak overrides..."
+    flatpak override --user --filesystem="$HOME_DIR/.themes" || log_message "Warning: Failed to set Flatpak override for .themes"
+    flatpak override --user --filesystem="$HOME_DIR/.icons" || log_message "Warning: Failed to set Flatpak override for .icons"
+    flatpak override --user --filesystem=xdg-config/gtk-4.0 || log_message "Warning: Failed to set Flatpak override for gtk-4.0"
+}
+
 # Main execution starts here
 log_message "Starting Fedora 40 XFCE setup script"
 
@@ -196,7 +303,6 @@ fi
 
 update_system
 create_directories
-backup_configs
 
 # Copy configuration files
 log_message "Copying configuration files..."
@@ -205,103 +311,25 @@ cp -rv "$INSTALL_STUFF_REPO/.fonts" "$HOME_DIR/" 2>/dev/null || log_message "War
 cp -rv "$INSTALL_STUFF_REPO/.icons" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .icons"
 cp -rv "$INSTALL_STUFF_REPO/Pictures" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy Pictures"
 
-# Install common apps
-log_message "Installing common applications..."
-common_apps=(
-    "sassc" "libsass" "nodejs" "kitty" "snapd" "qbittorrent" "libreoffice"
-    "gtk-murrine-engine" "ulauncher" "cmake" "libtool" "clapper" "git"
-    "curl" "wget" "vim" "nano" "htop" "starship" "bash-completion" "fastfetch"
-    "chromium" "flatpak" "flathub" "kde-connect"
-)
-for app in "${common_apps[@]}"; do
-    install_dnf_package "$app"
-done
-
-# Install Flatpak applications
-log_message "Installing Flatpak applications..."
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y bitwarden spotify || log_message "Warning: Failed to install Flatpak applications"
-
-# Set up Snap
-log_message "Setting up Snap..."
-sudo systemctl enable --now snapd.socket || log_message "Warning: Failed to enable snapd.socket"
-sudo ln -sf /var/lib/snapd/snap /snap || log_message "Warning: Failed to create snap symlink"
-sudo snap refresh || log_message "Warning: Failed to refresh snap"
-sudo snap install surfshark --edge || log_message "Warning: Failed to install Surfshark"
+install_common_apps
+install_flatpak_apps
+setup_snap
 
 # Install Chromebook audio setup if flag is set
 if [ "$INSTALL_CHROMEBOOK_AUDIO" = true ]; then
     install_chromebook_audio
 fi
 
-# Install MyBash
-cd
-cd git
-git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git
-cd mybash
-chmod +x setup.sh
-./setup.sh
-cd
-
-# Install CLI Pride Flags
-log_message "Installing CLI Pride Flags..."
-if command_exists npm; then
-    npm i -g cli-pride-flags || log_message "Warning: Failed to install CLI Pride Flags"
-else
-    log_message "Warning: npm not found. Skipping CLI Pride Flags installation."
-fi
-
-# Install Pulsar
-log_message "Installing Pulsar..."
-pushd "$INSTALL_STUFF_REPO/rpms" || exit 1
-if ! curl -L -o pulsar.rpm "https://download.pulsar-edit.dev/?os=linux&type=linux_rpm"; then
-    log_message "Error: Failed to download Pulsar RPM"
-else
-    sudo rpm -i pulsar.rpm || log_message "Warning: Failed to install Pulsar RPM"
-fi
-popd || exit 1
-
-# Install icons
-log_message "Installing Gruvbox Plus icons..."
-pushd "$GIT_DIR" || exit 1
-if ! curl -L -o gruvbox-plus-icons.zip https://github.com/SylEleuth/gruvbox-plus-icon-pack/releases/download/v5.5.0/gruvbox-plus-icon-pack-5.5.0.zip; then
-    log_message "Error: Failed to download Gruvbox Plus icons"
-else
-    unzip -o gruvbox-plus-icons.zip -d "$HOME_DIR/.local/share/icons/" || log_message "Warning: Failed to extract icons to .local/share/icons"
-    unzip -o gruvbox-plus-icons.zip -d "$HOME_DIR/.icons/" || log_message "Warning: Failed to extract icons to .icons"
-fi
-popd || exit 1
-
-# Install Tela Dark Icons
-log_message "Installing Tela Dark Icons..."
-pushd "$GIT_DIR" || exit 1
-if ! git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git; then
-    log_message "Error: Failed to clone Tela-circle-icon-theme repository"
-else
-    cd Tela-circle-icon-theme || exit 1
-    sudo chmod +x install.sh
-    ./install.sh || log_message "Warning: Failed to install Tela Dark Icons"
-fi
-popd || exit 1
-
-# Install GTK themes
-log_message "Installing GTK themes..."
-pushd "$GIT_DIR" || exit 1
-if ! git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git; then
-    log_message "Error: Failed to clone Gruvbox-GTK-Theme repository"
-else
-    cd Gruvbox-GTK-Theme/themes || exit 1
-    ./install.sh --tweaks outline float -t green -l -c dark || log_message "Warning: Failed to install GTK themes"
-fi
-popd || exit 1
-
-# Flatpak overrides for themes and icons
-flatpak override --user --filesystem="$HOME/.themes" || log_message "Warning: Failed to set Flatpak override for .themes"
-flatpak override --user --filesystem="$HOME/.icons" || log_message "Warning: Failed to set Flatpak override for .icons"
-flatpak override --user --filesystem=xdg-config/gtk-4.0 || log_message "Warning: Failed to set Flatpak override for gtk-4.0"
+install_mybash
+install_cli_pride_flags
+install_pulsar
+install_icons
+install_gtk_themes
 
 # Install XFCE-specific packages and configurations
-install_xfce
+if [ "$INSTALL_XFCE" = true ]; then
+    install_xfce
+fi
 
 # Set desktop background
 set_desktop_background
