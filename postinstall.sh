@@ -1,4 +1,4 @@
-#!/bin/bash
+#!#!/bin/bash
 
 set -euo pipefail
 
@@ -63,26 +63,16 @@ command_exists() {
 install_dnf_package() {
     if ! rpm -q "$1" &>/dev/null; then
         log_message "Installing $1..."
-        sudo dnf install "$1" -y
+        sudo dnf install "$1" -y || log_message "Warning: Failed to install $1"
     else
         log_message "$1 is already installed."
-    fi
-}
-
-# Function to uninstall a package using DNF
-uninstall_dnf_package() {
-    if rpm -q "$1" &>/dev/null; then
-        log_message "Uninstalling $1..."
-        sudo dnf remove "$1" -y
-    else
-        log_message "$1 is not installed."
     fi
 }
 
 # Function to update the system
 update_system() {
     log_message "Updating system packages..."
-    sudo dnf distro-sync --refresh -y
+    sudo dnf distro-sync --refresh -y || log_message "Warning: System update failed"
 }
 
 # Function to create necessary directories
@@ -96,9 +86,9 @@ backup_configs() {
     log_message "Backing up existing configurations..."
     local backup_dir="$HOME_DIR/config_backup_$(date +%Y%m%d_%H%M%S)"
     mkdir -p "$backup_dir"
-    cp -r "$HOME_DIR/.config" "$backup_dir/" || log_message "Warning: Failed to backup .config"
-    cp -r "$HOME_DIR/.local/share/themes" "$backup_dir/" || log_message "Warning: Failed to backup themes"
-    cp -r "$HOME_DIR/.local/share/icons" "$backup_dir/" || log_message "Warning: Failed to backup icons"
+    cp -r "$HOME_DIR/.config" "$backup_dir/" 2>/dev/null || log_message "Warning: Failed to backup .config"
+    cp -r "$HOME_DIR/.local/share/themes" "$backup_dir/" 2>/dev/null || log_message "Warning: Failed to backup themes"
+    cp -r "$HOME_DIR/.local/share/icons" "$backup_dir/" 2>/dev/null || log_message "Warning: Failed to backup icons"
 }
 
 # Function to install Chromebook audio setup
@@ -107,10 +97,10 @@ install_chromebook_audio() {
     if ! git clone https://github.com/WeirdTreeThing/chromebook-linux-audio.git "$GIT_DIR/chromebook-linux-audio"; then
         log_message "Error: Failed to clone chromebook-linux-audio repository"
     else
-        pushd "$GIT_DIR/chromebook-linux-audio" || exit 1
+        pushd "$GIT_DIR/chromebook-linux-audio" || return
         chmod +x setup-audio
         ./setup-audio || log_message "Warning: Failed to run setup-audio script"
-        popd || exit 1
+        popd || return
     fi
 }
 
@@ -118,20 +108,16 @@ install_chromebook_audio() {
 install_kde_plasma_theming() {
     log_message "Installing KDE Plasma theming..."
 
-    # Aurorae themes
-    local aurorae_dir="$HOME_DIR/.local/share/aurorae"
-    mkdir -p "$aurorae_dir"
-    cp -R "$INSTALL_STUFF_REPO/.local/share/aurorae/"* "$aurorae_dir/"
+    local dirs=(
+        "$HOME_DIR/.local/share/aurorae"
+        "$HOME_DIR/.local/share/backgrounds"
+        "$HOME_DIR/.local/share/plasma"
+    )
 
-    # Backgrounds
-    local backgrounds_dir="$HOME_DIR/.local/share/backgrounds"
-    mkdir -p "$backgrounds_dir"
-    cp -R "$INSTALL_STUFF_REPO/.local/share/backgrounds/"* "$backgrounds_dir/"
-
-    # Plasma themes
-    local plasma_dir="$HOME_DIR/.local/share/plasma"
-    mkdir -p "$plasma_dir"
-    cp -R "$INSTALL_STUFF_REPO/.local/share/plasma/"* "$plasma_dir/"
+    for dir in "${dirs[@]}"; do
+        mkdir -p "$dir"
+        cp -R "$INSTALL_STUFF_REPO/${dir#$HOME_DIR/}/"* "$dir/" 2>/dev/null || log_message "Warning: Failed to copy to $dir"
+    done
 
     log_message "KDE Plasma theming installation completed."
 }
@@ -146,9 +132,10 @@ install_additional_kde_packages() {
     fi
 
     # Install packages
-    install_dnf_package "haruna"
-    install_dnf_package "lutris"
-    install_dnf_package "steam"
+    local kde_packages=("haruna" "lutris" "steam")
+    for package in "${kde_packages[@]}"; do
+        install_dnf_package "$package"
+    done
 
     log_message "Additional KDE packages installation completed."
 }
@@ -158,7 +145,7 @@ install_xfce() {
     log_message "Installing XFCE-specific packages and configurations..."
 
     # Install XFCE-specific packages
-    xfce_packages=(
+    local xfce_packages=(
         "xfce4-panel" "xfce4-session" "xfce4-settings" "xfdesktop"
         "xfwm4" "xfce4-terminal" "thunar" "xfce4-appfinder"
         "xfce4-power-manager" "xfce4-notifyd" "xfce4-screenshooter"
@@ -215,15 +202,22 @@ set_desktop_background() {
 # Main execution starts here
 log_message "Starting Fedora setup script"
 
+# Check for sufficient disk space (e.g., 10GB free)
+free_space=$(df -BG / | awk 'NR==2 {print $4}' | sed 's/G//')
+if [ "$free_space" -lt 10 ]; then
+    log_message "Error: Insufficient disk space. At least 10GB free space is required."
+    exit 1
+fi
+
 update_system
 create_directories
 backup_configs
 
 # Copy configuration files
 log_message "Copying configuration files..."
-cp -rv "$INSTALL_STUFF_REPO/.config" "$HOME_DIR/" || log_message "Warning: Failed to copy .config"
-cp -rv "$INSTALL_STUFF_REPO/.fonts" "$HOME_DIR/" || log_message "Warning: Failed to copy .fonts"
-cp -rv "$INSTALL_STUFF_REPO/.icons" "$HOME_DIR/" || log_message "Warning: Failed to copy .icons"
+cp -rv "$INSTALL_STUFF_REPO/.config" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .config"
+cp -rv "$INSTALL_STUFF_REPO/.fonts" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .fonts"
+cp -rv "$INSTALL_STUFF_REPO/.icons" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .icons"
 
 # Install common apps
 log_message "Installing common applications..."
@@ -239,15 +233,15 @@ done
 
 # Install Flatpak applications
 log_message "Installing Flatpak applications..."
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install -y bitwarden spotify || log_message "Warning: Failed to install Flatpak applications"
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install -y bitwarden spotify || log_message "Warning: Failed to install Flatpak applications"
 
 # Set up Snap
 log_message "Setting up Snap..."
-systemctl enable --now snapd.socket || log_message "Warning: Failed to enable snapd.socket"
-ln -sf /var/lib/snapd/snap /snap || log_message "Warning: Failed to create snap symlink"
-snap refresh || log_message "Warning: Failed to refresh snap"
-snap install surfshark --edge || log_message "Warning: Failed to install Surfshark"
+sudo systemctl enable --now snapd.socket || log_message "Warning: Failed to enable snapd.socket"
+sudo ln -sf /var/lib/snapd/snap /snap || log_message "Warning: Failed to create snap symlink"
+sudo snap refresh || log_message "Warning: Failed to refresh snap"
+sudo snap install surfshark --edge || log_message "Warning: Failed to install Surfshark"
 
 # Install Chromebook audio setup if flag is set
 if [ "$INSTALL_CHROMEBOOK_AUDIO" = true ]; then
@@ -271,13 +265,13 @@ pushd "$INSTALL_STUFF_REPO/rpms" || exit 1
 if ! curl -L -o pulsar.rpm "https://download.pulsar-edit.dev/?os=linux&type=linux_rpm"; then
     log_message "Error: Failed to download Pulsar RPM"
 else
-    rpm -i pulsar.rpm || log_message "Warning: Failed to install Pulsar RPM"
+    sudo rpm -i pulsar.rpm || log_message "Warning: Failed to install Pulsar RPM"
 fi
 popd || exit 1
 
 # Install icons
 log_message "Installing Gruvbox Plus icons..."
-pushd "$GIT_DIR/install-stuff" || exit 1
+pushd "$GIT_DIR" || exit 1
 if ! curl -L -o gruvbox-plus-icons.zip https://github.com/SylEleuth/gruvbox-plus-icon-pack/releases/download/v5.5.0/gruvbox-plus-icon-pack-5.5.0.zip; then
     log_message "Error: Failed to download Gruvbox Plus icons"
 else
@@ -287,27 +281,31 @@ fi
 popd || exit 1
 
 # Install Tela Dark Icons
-cd
-cd git
-git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git
-cd Tela-circle-icon-theme
-sudo chmod +x install.sh
-./install.sh
+log_message "Installing Tela Dark Icons..."
+pushd "$GIT_DIR" || exit 1
+if ! git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git; then
+    log_message "Error: Failed to clone Tela-circle-icon-theme repository"
+else
+    cd Tela-circle-icon-theme || exit 1
+    sudo chmod +x install.sh
+    ./install.sh || log_message "Warning: Failed to install Tela Dark Icons"
+fi
+popd || exit 1
 
 # Install GTK themes
 log_message "Installing GTK themes..."
-cd "$GIT_DIR" || exit 1
+pushd "$GIT_DIR" || exit 1
 if ! git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme.git; then
     log_message "Error: Failed to clone Gruvbox-GTK-Theme repository"
 else
     cd Gruvbox-GTK-Theme/themes || exit 1
     ./install.sh --tweaks outline float -t green -l -c dark || log_message "Warning: Failed to install GTK themes"
 fi
-cd || exit 1
+popd || exit 1
 
 # Flatpak overrides for themes and icons
-flatpak override --user --filesystem=$HOME/.themes || log_message "Warning: Failed to set Flatpak override for .themes"
-flatpak override --user --filesystem=$HOME/.icons || log_message "Warning: Failed to set Flatpak override for .icons"
+flatpak override --user --filesystem="$HOME/.themes" || log_message "Warning: Failed to set Flatpak override for .themes"
+flatpak override --user --filesystem="$HOME/.icons" || log_message "Warning: Failed to set Flatpak override for .icons"
 flatpak override --user --filesystem=xdg-config/gtk-4.0 || log_message "Warning: Failed to set Flatpak override for gtk-4.0"
 
 # Install KDE Plasma theming and additional packages if flag is set
@@ -325,7 +323,7 @@ fi
 set_desktop_background
 
 # Set correct permissions for the home directory
-chown -R "$SUDO_USER:$SUDO_USER" "$HOME_DIR"
+sudo chown -R "$SUDO_USER:$SUDO_USER" "$HOME_DIR
 
 # Completion Notification
 log_message "All done, $SUDO_USER! Your Fedora Linux setup is complete. Yippee!"
