@@ -233,6 +233,11 @@ install_cli_pride_flags() {
         log_message "Warning: npm not found. Skipping CLI Pride Flags installation."
     fi
 }
+# gruvbox ulauncher
+cd
+mkdir -p ~/.config/ulauncher/user-themes
+cd git
+git clone https://github.com/SylEleuth/ulauncher-gruvbox ~/.config/ulauncher/user-themes/gruvbox-ulauncher
 
 # Function to install Pulsar
 install_pulsar() {

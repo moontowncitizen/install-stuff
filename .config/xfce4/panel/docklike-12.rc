@@ -1,0 +1,8 @@
+[user]
+pinned=pulsar;chromium-browser;thunar;xfce-settings-manager;kitty;libreoffice-impress;libreoffice-writer;
+forceIconSize=false
+iconSize=64
+indicatorColorFromTheme=true
+indicatorStyle=3
+inactiveIndicatorStyle=3
+showPreviews=true

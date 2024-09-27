@@ -1,0 +1,5 @@
+WebBrowser=chromium-browser
+MailReader=sylpheed-claws
+FileManager=thunar
+TerminalEmulator=kitty
+
