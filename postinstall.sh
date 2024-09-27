@@ -1,4 +1,4 @@
-#!#!/bin/bash
+#!/bin/bash
 
 set -euo pipefail
 
@@ -19,7 +19,7 @@ DOCKLIKE_RPM="$INSTALL_STUFF_REPO/rpms/xfce4-docklike-plugin-0.4.2-1.fc40.x86_64
 # Flags
 INSTALL_CHROMEBOOK_AUDIO=false
 INSTALL_KDE_THEMES=false
-INSTALL_XFCE=false
+INSTALL_XFCE=true  # Set to true by default for XFCE Fedora 40
 
 # Function to display usage
 usage() {
@@ -29,11 +29,11 @@ Usage: $0 [options]
 Options:
   -c    Install Chromebook audio setup
   -k    Install KDE Plasma theming and additional packages
-  -x    Install XFCE-specific packages and configurations
+  -x    Install XFCE-specific packages and configurations (default: enabled)
   -h    Display this help message
 
 Example:
-  $0 -c -x    Install Chromebook audio and XFCE-specific setup
+  $0 -c    Install Chromebook audio with default XFCE setup
 EOF
     exit 1
 }
@@ -48,6 +48,7 @@ while getopts ":ckhx" opt; do
     \? ) echo "Invalid option: $OPTARG" 1>&2; usage ;;
   esac
 done
+
 
 # Function to log messages
 log_message() {
@@ -200,7 +201,7 @@ set_desktop_background() {
 }
 
 # Main execution starts here
-log_message "Starting Fedora setup script"
+log_message "Starting Fedora 40 XFCE setup script"
 
 # Check for sufficient disk space (e.g., 10GB free)
 free_space=$(df -BG / | awk 'NR==2 {print $4}' | sed 's/G//')
@@ -308,26 +309,22 @@ flatpak override --user --filesystem="$HOME/.themes" || log_message "Warning: Fa
 flatpak override --user --filesystem="$HOME/.icons" || log_message "Warning: Failed to set Flatpak override for .icons"
 flatpak override --user --filesystem=xdg-config/gtk-4.0 || log_message "Warning: Failed to set Flatpak override for gtk-4.0"
 
-# Install KDE Plasma theming and additional packages if flag is set
-if [ "$INSTALL_KDE_THEMES" = true ]; then
-    install_kde_plasma_theming
-    install_additional_kde_packages
-fi
-
-# Install XFCE-specific packages and configurations if flag is set
-if [ "$INSTALL_XFCE" = true ]; then
-    install_xfce
-fi
+# Install XFCE-specific packages and configurations
+install_xfce
 
 # Set desktop background
 set_desktop_background
 
 # Set correct permissions for the home directory
-sudo chown -R "$SUDO_USER:$SUDO_USER" "$HOME_DIR
+sudo chown -R "$SUDO_USER:$SUDO_USER" "$HOME_DIR"
 
 # Completion Notification
-log_message "All done, $SUDO_USER! Your Fedora Linux setup is complete. Yippee!"
+log_message "All done, $SUDO_USER! Your Fedora 40 XFCE setup is complete. Yippee!"
 log_message "Setup completed. Log file: $LOG_FILE"
 
 # Prompt for reboot
-read -p "It's recommended to reboot your system now. Would you like to reboot? (y/n) " -
+read -p "It's recommended to reboot your system now. Would you like to reboot? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo reboot
+fi
