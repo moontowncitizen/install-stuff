@@ -178,12 +178,6 @@ install_xfce() {
     log_message "XFCE-specific setup completed."
 }
 
-# Function to install MyBash from Chris Titus Tech
-install_mybash() {
-    log_message "Installing MyBash..."
-    bash <(curl -s https://raw.githubusercontent.com/ChrisTitusTech/mybash/main/install.sh) || log_message "Warning: Failed to install MyBash"
-}
-
 # Function to set desktop background
 set_desktop_background() {
     log_message "Setting desktop background..."
@@ -219,7 +213,9 @@ log_message "Copying configuration files..."
 cp -rv "$INSTALL_STUFF_REPO/.config" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .config"
 cp -rv "$INSTALL_STUFF_REPO/.fonts" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .fonts"
 cp -rv "$INSTALL_STUFF_REPO/.icons" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .icons"
-
+cd
+mkdir .pulsar
+cp cp -rv "$INSTALL_STUFF_REPO/.pulsar" "$HOME_DIR/" 2>/dev/null || log_message "Warning: Failed to copy .pulsar"
 # Install common apps
 log_message "Installing common applications..."
 common_apps=(
@@ -250,7 +246,13 @@ if [ "$INSTALL_CHROMEBOOK_AUDIO" = true ]; then
 fi
 
 # Install MyBash
-install_mybash
+cd
+cd git
+git clone --depth=1 https://github.com/ChrisTitusTech/mybash.git
+cd mybash
+chmod +x setup.#!/bin/sh
+./setup.sh
+cd
 
 # Install CLI Pride Flags
 log_message "Installing CLI Pride Flags..."
