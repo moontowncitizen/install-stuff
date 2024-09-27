@@ -1,0 +1,26 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "zayronxio"
+            }
+        ],
+        "Name": "kpple menu",
+        "Name[es]": "Menú Kpple",
+        "Name[zh_CN]": "Kpple菜单",
+        "Name[zh_TW]": "Kpple菜單",
+        "Id": "org.kpple.kppleMenu",
+        "Description": "The Kpple menu is a drop-down menu that is usually found on the left side of the menu bar.",
+        "Category": "Application Launchers",
+        "Icon": "start-here-kde",
+        "EnabledByDefault": true,
+        "License": "GPL-2.0",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "1.4-2",
+        "Website": "https://github.com/zayronxio/Chaac-weather"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-MainScript": "ui/main.qml"
+}

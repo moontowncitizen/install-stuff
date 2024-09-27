@@ -18,32 +18,88 @@ DOCKLIKE_RPM="$INSTALL_STUFF_REPO/rpms/xfce4-docklike-plugin-0.4.2-1.fc40.x86_64
 
 # Flags
 INSTALL_CHROMEBOOK_AUDIO=false
+INSTALL_KDE_THEMES=false
+INSTALL_XFCE=false
+
+# Function to display usage
+usage() {
+    cat << EOF
+Usage: $0 [options]
+
+Options:
+  -c    Install Chromebook audio setup
+  -k    Install KDE Plasma theming and additional packages
+  -x    Install XFCE-specific packages and configurations
+  -h    Display this help message
+
+Example:
+  $0 -c -x    Install Chromebook audio and XFCE-specific setup
+EOF
+    exit 1
+}
 
 # Parse command-line options
-while getopts ":c" opt; do
+while getopts ":ckhx" opt; do
   case ${opt} in
-    c )
-      INSTALL_CHROMEBOOK_AUDIO=true
-      ;;
-    \? )
-      echo "Invalid option: $OPTARG" 1>&2
-      exit 1
-      ;;
+    c ) INSTALL_CHROMEBOOK_AUDIO=true ;;
+    k ) INSTALL_KDE_THEMES=true ;;
+    x ) INSTALL_XFCE=true ;;
+    h ) usage ;;
+    \? ) echo "Invalid option: $OPTARG" 1>&2; usage ;;
   esac
 done
-
-# Check for root privileges
-if [[ $EUID -ne 0 ]]; then
-    echo "This script must be run as root or with sudo" 1>&2
-    exit 1
-fi
 
 # Function to log messages
 log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a "$LOG_FILE"
 }
 
-# ... [Other functions remain the same] ...
+# Function to check if a command exists
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Function to install a package using DNF if not already installed
+install_dnf_package() {
+    if ! rpm -q "$1" &>/dev/null; then
+        log_message "Installing $1..."
+        sudo dnf install "$1" -y
+    else
+        log_message "$1 is already installed."
+    fi
+}
+
+# Function to uninstall a package using DNF
+uninstall_dnf_package() {
+    if rpm -q "$1" &>/dev/null; then
+        log_message "Uninstalling $1..."
+        sudo dnf remove "$1" -y
+    else
+        log_message "$1 is not installed."
+    fi
+}
+
+# Function to update the system
+update_system() {
+    log_message "Updating system packages..."
+    sudo dnf distro-sync --refresh -y
+}
+
+# Function to create necessary directories
+create_directories() {
+    log_message "Creating necessary directories..."
+    mkdir -p "$GIT_DIR" "$DESKTOP_DIR" "$OVERLORD_DIR" "$DOWNLOADS_DIR" "$THEMES_DIR" "$ICONS_DIR"
+}
+
+# Function to backup existing configurations
+backup_configs() {
+    log_message "Backing up existing configurations..."
+    local backup_dir="$HOME_DIR/config_backup_$(date +%Y%m%d_%H%M%S)"
+    mkdir -p "$backup_dir"
+    cp -r "$HOME_DIR/.config" "$backup_dir/" || log_message "Warning: Failed to backup .config"
+    cp -r "$HOME_DIR/.local/share/themes" "$backup_dir/" || log_message "Warning: Failed to backup themes"
+    cp -r "$HOME_DIR/.local/share/icons" "$backup_dir/" || log_message "Warning: Failed to backup icons"
+}
 
 # Function to install Chromebook audio setup
 install_chromebook_audio() {
@@ -58,16 +114,109 @@ install_chromebook_audio() {
     fi
 }
 
+# Function to install KDE Plasma theming
+install_kde_plasma_theming() {
+    log_message "Installing KDE Plasma theming..."
+
+    # Aurorae themes
+    local aurorae_dir="$HOME_DIR/.local/share/aurorae"
+    mkdir -p "$aurorae_dir"
+    cp -R "$INSTALL_STUFF_REPO/.local/share/aurorae/"* "$aurorae_dir/"
+
+    # Backgrounds
+    local backgrounds_dir="$HOME_DIR/.local/share/backgrounds"
+    mkdir -p "$backgrounds_dir"
+    cp -R "$INSTALL_STUFF_REPO/.local/share/backgrounds/"* "$backgrounds_dir/"
+
+    # Plasma themes
+    local plasma_dir="$HOME_DIR/.local/share/plasma"
+    mkdir -p "$plasma_dir"
+    cp -R "$INSTALL_STUFF_REPO/.local/share/plasma/"* "$plasma_dir/"
+
+    log_message "KDE Plasma theming installation completed."
+}
+
+# Function to install additional KDE packages
+install_additional_kde_packages() {
+    log_message "Installing Haruna, Lutris, and Steam..."
+
+    # Enable RPM Fusion repositories if not already enabled
+    if ! dnf repolist | grep -q "rpmfusion-free"; then
+        sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+    fi
+
+    # Install packages
+    install_dnf_package "haruna"
+    install_dnf_package "lutris"
+    install_dnf_package "steam"
+
+    log_message "Additional KDE packages installation completed."
+}
+
+# Function to install XFCE-specific packages and configurations
+install_xfce() {
+    log_message "Installing XFCE-specific packages and configurations..."
+
+    # Install XFCE-specific packages
+    xfce_packages=(
+        "xfce4-panel" "xfce4-session" "xfce4-settings" "xfdesktop"
+        "xfwm4" "xfce4-terminal" "thunar" "xfce4-appfinder"
+        "xfce4-power-manager" "xfce4-notifyd" "xfce4-screenshooter"
+        "xfce4-taskmanager" "xfce4-whiskermenu-plugin" "xfce4-pulseaudio-plugin"
+    )
+    for package in "${xfce_packages[@]}"; do
+        install_dnf_package "$package"
+    done
+
+    # Install and configure xfce4-docklike-plugin
+    log_message "Installing xfce4-docklike-plugin..."
+    if [ -f "$DOCKLIKE_RPM" ]; then
+        sudo rpm -i "$DOCKLIKE_RPM" || log_message "Warning: Failed to install xfce4-docklike-plugin"
+    else
+        log_message "Warning: xfce4-docklike-plugin RPM not found at $DOCKLIKE_RPM"
+    fi
+
+    # Copy XFCE-specific configuration files
+    log_message "Copying XFCE configuration files..."
+    cp -rv "$INSTALL_STUFF_REPO/.config/xfce4" "$HOME_DIR/.config/" || log_message "Warning: Failed to copy XFCE config files"
+
+    # Set XFCE-specific desktop background
+    if [ -f "$BACKGROUND_IMAGE" ]; then
+        xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "$BACKGROUND_IMAGE"
+    else
+        log_message "Warning: Background image not found at $BACKGROUND_IMAGE"
+    fi
+
+    log_message "XFCE-specific setup completed."
+}
+
+# Function to install MyBash from Chris Titus Tech
+install_mybash() {
+    log_message "Installing MyBash..."
+    bash <(curl -s https://raw.githubusercontent.com/ChrisTitusTech/mybash/main/install.sh) || log_message "Warning: Failed to install MyBash"
+}
+
+# Function to set desktop background
+set_desktop_background() {
+    log_message "Setting desktop background..."
+    if [ -f "$BACKGROUND_IMAGE" ]; then
+        if [ "$INSTALL_XFCE" = true ]; then
+            xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "$BACKGROUND_IMAGE"
+        elif [ "$INSTALL_KDE_THEMES" = true ]; then
+            plasma-apply-wallpaperimage "$BACKGROUND_IMAGE"
+        else
+            log_message "Warning: Desktop environment not specified. Skipping background setting."
+        fi
+    else
+        log_message "Warning: Background image not found at $BACKGROUND_IMAGE"
+    fi
+}
+
 # Main execution starts here
-log_message "Starting Fedora setup script for XFCE"
+log_message "Starting Fedora setup script"
 
-# Update the system
 update_system
-
-# Create necessary directories
 create_directories
-
-# Backup existing configurations
 backup_configs
 
 # Copy configuration files
@@ -76,22 +225,17 @@ cp -rv "$INSTALL_STUFF_REPO/.config" "$HOME_DIR/" || log_message "Warning: Faile
 cp -rv "$INSTALL_STUFF_REPO/.fonts" "$HOME_DIR/" || log_message "Warning: Failed to copy .fonts"
 cp -rv "$INSTALL_STUFF_REPO/.icons" "$HOME_DIR/" || log_message "Warning: Failed to copy .icons"
 
-# Install apps
-log_message "Installing applications..."
-apps=(
+# Install common apps
+log_message "Installing common applications..."
+common_apps=(
     "sassc" "libsass" "nodejs" "kitty" "snapd" "qbittorrent" "libreoffice"
-    "gtk-murrine-engine" "ulauncher" "cmake" "libtool" "xfce4-docklike-plugin"
-    "clapper" "git" "curl" "wget" "vim" "nano" "htop"
+    "gtk-murrine-engine" "ulauncher" "cmake" "libtool" "clapper" "git"
+    "curl" "wget" "vim" "nano" "htop" "starship" "bash-completion" "fastfetch"
+    "chromium"
 )
-for app in "${apps[@]}"; do
+for app in "${common_apps[@]}"; do
     install_dnf_package "$app"
 done
-
-# Install starship
-install_dnf_package "starship"
-
-# Install Bash Autocomplete
-install_dnf_package "bash-completion"
 
 # Install Flatpak applications
 log_message "Installing Flatpak applications..."
@@ -108,15 +252,9 @@ snap install surfshark --edge || log_message "Warning: Failed to install Surfsha
 # Install Chromebook audio setup if flag is set
 if [ "$INSTALL_CHROMEBOOK_AUDIO" = true ]; then
     install_chromebook_audio
-else
-    log_message "Skipping Chromebook audio setup (use -c flag to enable)"
 fi
 
-install_dnf_package "chromium"
-uninstall_dnf_package "firefox"
-
-# Install MyBash from Chris Titus Tech
-install_dnf_package "fastfetch"
+# Install MyBash
 install_mybash
 
 # Install CLI Pride Flags
@@ -126,9 +264,6 @@ if command_exists npm; then
 else
     log_message "Warning: npm not found. Skipping CLI Pride Flags installation."
 fi
-
-# Set desktop background
-set_desktop_background
 
 # Install Pulsar
 log_message "Installing Pulsar..."
@@ -151,8 +286,13 @@ else
 fi
 popd || exit 1
 
-# Install xfce dock like plugin if applicable
-install_xfce_docklike_plugin
+# Install Tela Dark Icons
+cd
+cd git
+git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git
+cd Tela-circle-icon-theme
+sudo chmod +x install.sh
+./install.sh
 
 # Install GTK themes
 log_message "Installing GTK themes..."
@@ -170,20 +310,26 @@ flatpak override --user --filesystem=$HOME/.themes || log_message "Warning: Fail
 flatpak override --user --filesystem=$HOME/.icons || log_message "Warning: Failed to set Flatpak override for .icons"
 flatpak override --user --filesystem=xdg-config/gtk-4.0 || log_message "Warning: Failed to set Flatpak override for gtk-4.0"
 
+# Install KDE Plasma theming and additional packages if flag is set
+if [ "$INSTALL_KDE_THEMES" = true ]; then
+    install_kde_plasma_theming
+    install_additional_kde_packages
+fi
+
+# Install XFCE-specific packages and configurations if flag is set
+if [ "$INSTALL_XFCE" = true ]; then
+    install_xfce
+fi
+
+# Set desktop background
+set_desktop_background
+
 # Set correct permissions for the home directory
 chown -R "$SUDO_USER:$SUDO_USER" "$HOME_DIR"
 
 # Completion Notification
-log_message "All done, $SUDO_USER! Your Fedora Linux setup for XFCE is complete. Yippee!"
+log_message "All done, $SUDO_USER! Your Fedora Linux setup is complete. Yippee!"
 log_message "Setup completed. Log file: $LOG_FILE"
 
 # Prompt for reboot
-read -p "It's recommended to reboot your system now. Would you like to reboot? (y/n) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    log_message "Rebooting system..."
-    reboot
-else
-    log_message "Reboot skipped. Please remember to reboot your system later."
-fi
+read -p "It's recommended to reboot your system now. Would you like to reboot? (y/n) " -
