@@ -1,4 +1,4 @@
-#!/bin/bash
+l#!/bin/bash
 
 set -euo pipefail
 
@@ -334,6 +334,7 @@ install_gtk_themes
 # Install XFCE-specific packages and configurations
 if [ "$INSTALL_XFCE" = true ]; then
     install_xfce
+    sudo dnf install @xfce-desktop-environment
 fi
 
 # Set desktop background
