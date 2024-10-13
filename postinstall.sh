@@ -337,7 +337,7 @@ if [ "$INSTALL_XFCE" = true ]; then
     sudo dnf install @xfce-desktop-environment
 fi
 
-# Set desktop background
+# Set desktop background n
 set_desktop_background
 
 # Set correct permissions for the home directory
